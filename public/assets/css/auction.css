@@ -2775,11 +2775,13 @@ footer .gallery .gallery-item img {
 }
 #page-heading {
   margin-top: 110px;
-  background-image: url(http://dummyimage.com/1400x300/cccccc/fff.jpg);
+  background-image: url("https://i.ibb.co/HFwm3w5/28803.jpg");
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  image-resolution: 300dpi;
   padding-top: 80px;
+  padding-bottom: 80px;
 }
 #page-heading h1 {
   margin: 0px;
@@ -3585,7 +3587,7 @@ footer .gallery .gallery-item img {
   cursor: pointer;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   /*IE7 life-saver */
 }
 .owl-theme .owl-controls .owl-page a {
