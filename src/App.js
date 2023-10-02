@@ -6,6 +6,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Home } from "./Home";
 import Header from "./Header";
 import Footer from "./Footer";
+import Listing from "./Listing";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Header />
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/listing" element={<Listing />} />
               </Routes>{" "}
               <Footer />
             </BrowserRouter>
