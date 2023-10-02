@@ -4,6 +4,8 @@ import "./App.css";
 
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Home } from "./Home";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -14,9 +16,12 @@ function App() {
 
           <div className="sidebar-menu-inner">
             <BrowserRouter>
+              {" "}
+              <Header />
               <Routes>
                 <Route path="/" element={<Home />} />
-              </Routes>
+              </Routes>{" "}
+              <Footer />
             </BrowserRouter>
           </div>
         </div>
