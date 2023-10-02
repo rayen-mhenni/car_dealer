@@ -32,13 +32,13 @@ const Header = (props) => {
                     <a href="index.html">Home</a>
                   </li>
                   <li>
-                    <a href="about.html">About Us</a>
+                    <a href="about.html">Inventory</a>
                   </li>
                   <li>
-                    <a href="services.html">Services</a>
+                    <a href="services.html">Financing</a>
                   </li>
                   <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="contact.html">Conatct us</a>
                   </li>
                 </ul>
               </nav>
@@ -50,87 +50,15 @@ const Header = (props) => {
                   <a href="index.html">Home</a>
                 </li>
                 <li>
-                  <a href="about.html">About Us</a>
+                  <a href="about.html">Inventory</a>
                 </li>
                 <li>
-                  <a href="services.html">Services</a>
+                  <a href="services.html">Financing</a>
                 </li>
-                <li>
-                  <a href="#" className="has-submenu">
-                    Listing
-                  </a>
-                  <ul className="sub-menu">
-                    <li>
-                      <a href="listing-right.html">Sidebar Right</a>
-                    </li>
-                    <li>
-                      <a href="listing-left.html">Sidebar Left</a>
-                    </li>
-                    <li>
-                      <a href="listing-grid.html">Grids System</a>
-                    </li>
-                    <li>
-                      <a href="single-list.html">Car Details</a>
-                    </li>
-                  </ul>
+                <li >
+                  <a href="contact.html">Conatct us</a>
                 </li>
-                <li>
-                  <a href="#" className="has-submenu">
-                    Blog
-                  </a>
-                  <ul className="sub-menu">
-                    <li>
-                      <a href="blog-right.html">Classic</a>
-                    </li>
-                    <li>
-                      <a href="blog-grid.html">Grids System</a>
-                    </li>
-                    <li>
-                      <a href="grid-right.html">Grids Sidebar</a>
-                    </li>
-                    <li>
-                      <a href="single-blog.html">Single Post</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="contact.html">Contact</a>
-                </li>
-                <li>
-                  <p>
-                    <a
-                      href="#"
-                      id="example-show"
-                      className="showLink"
-                      onclick="showHide('example');return false;"
-                    >
-                      <i className="fa fa-search" />
-                    </a>
-                  </p>
-                  <div id="example" className="more">
-                    <form method="get" id="blog-search" className="blog-search">
-                      <input
-                        type="text"
-                        className="blog-search-field"
-                        name="s"
-                        placeholder="Type to search"
-                        defaultValue=""
-                      />
-                    </form>
-                    <p>
-                      <a
-                        href="#"
-                        id="example-hide"
-                        className="hideLink"
-                        onclick="showHide('example');return false;"
-                      >
-                        <i
-                          className="
-                        fa fa-close"
-                        />
-                      </a>
-                    </p>
-                  </div>
+                <li >
                 </li>
               </ul>
             </nav>
