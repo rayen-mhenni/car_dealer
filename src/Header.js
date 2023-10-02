@@ -29,16 +29,16 @@ const Header = (props) => {
               <nav class="responsive-menu text-left hidden-md hidden-lg">
                 <ul>
                   <li>
-                    <a href="index.html">Home</a>
+                    <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <a href="about.html">Inventory</a>
+                    <Link to="/listing">Inventory</Link>
                   </li>
                   <li>
-                    <a href="services.html">Financing</a>
+                    <Link to="/financing">Financing</Link>
                   </li>
                   <li>
-                    <a href="contact.html">Conatct us</a>
+                    <Link to="/contact">Conatct us</Link>
                   </li>
                 </ul>
               </nav>
@@ -47,16 +47,16 @@ const Header = (props) => {
             <nav className="main-navigation text-left hidden-xs hidden-sm">
               <ul>
                 <li>
-                  <a href="index.html">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a href="about.html">Inventory</a>
+                  <Link to="/listing">Inventory</Link>
                 </li>
                 <li>
-                  <a href="services.html">Financing</a>
+                  <Link to="/financing">Financing</Link>
                 </li>
                 <li >
-                  <a href="contact.html">Conatct us</a>
+                  <Link to="/contact">Conatct us</Link>
                 </li>
                 <li >
                 </li>

@@ -21,7 +21,7 @@ function App() {
           <Route path="/single/:id" element={<SingleList />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     </div>
   );

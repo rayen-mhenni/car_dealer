@@ -45,6 +45,8 @@ p {
   line-height: 22px;
   color: #888888;
 }
+
+
 #sub-header {
   width: 100%;
   height: 42px;
@@ -79,7 +81,7 @@ p {
   font-size: 13px;
 }
 #sub-header ul li a:hover {
-  color: #f4c23d;
+  color: #e4ca73;
 }
 #sub-header .right-info {
   float: right;
@@ -107,7 +109,7 @@ p {
   font-weight: normal !important;
 }
 #sub-header .right-info ul li a:hover {
-  color: #f4c23d;
+  color: #e4ca73;
 }
 #sub-header .right-info ul li:last-child {
   border-right: none;
@@ -119,19 +121,20 @@ p {
   top: 0;
   left: 0;
   z-index: 9999;
-  background-color: #fafafa;
+  background-color: #000;
   -webkit-transition: all 400ms;
   -moz-transition: all 400ms;
   -o-transition: all 400ms;
   transition: all 400ms;
 }
+
 .site-header .main-header .logo {
   float: left;
   line-height: 110px;
-  border-right: 1px solid #eeeeee;
-  padding-right: 60px;
+  padding-right: 250px;
   margin-right: 40px;
 }
+
 @media (max-width: 991px) {
   .site-header .main-header .logo {
     padding-right: 20px;
@@ -139,13 +142,15 @@ p {
   }
 }
 .scrolled-header {
-  background-color: rgba(250, 250, 250, 0.97);
+  background-color: rgba(0, 0, 0, 0);
   top: 0;
 }
+
 .header-right-toggle {
   margin-top: 10px;
   margin-right: 20px;
 }
+
 .header-right-toggle a {
   padding-left: 5px;
   margin-top: 25px;
@@ -160,7 +165,7 @@ p {
 a.side-menu-button {
   text-transform: uppercase;
   font-weight: 700;
-  color: #222222;
+  color: #000;
 }
 a.side-menu-button i {
   margin-right: 6px;
@@ -202,7 +207,7 @@ nav.main-navigation ul li ul.sub-menu li a {
   padding: 5px 22px;
 }
 nav.main-navigation ul li ul.sub-menu li a:hover {
-  color: #f4c23d;
+  color: #e4ca73;
 }
 nav.main-navigation ul li ul.sub-menu li:last-child {
   float: none;
@@ -218,7 +223,7 @@ nav.main-navigation ul li:hover ul.sub-menu {
 }
 nav.main-navigation ul a {
   font-size: 12px;
-  color: #222222;
+  color: #fff;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -231,7 +236,7 @@ nav.main-navigation ul a i {
   }
 }
 nav.main-navigation ul a:hover {
-  color: #f4c23d;
+  color: #e4ca73;
 }
 nav.main-navigation ul li:last-child {
   float: right;
@@ -323,7 +328,7 @@ nav.responsive-menu a {
   display: block;
   padding: 5px 10px;
   margin: 0;
-  color: #222222;
+  color: #fff;
 }
 .sidebar-menu-inner {
   position: relative;
@@ -563,7 +568,7 @@ footer .gallery .gallery-item img {
 }
 #sub-footer p em {
   font-style: normal;
-  color: #f4c23d;
+  color: #e4ca73;
 }
 #sub-footer ul {
   padding: 0;
@@ -717,7 +722,7 @@ footer .gallery .gallery-item img {
   margin-bottom: 5%;
   width: 60px;
   height: 2px;
-  background-color: #f4c23d;
+  background-color: #e4ca73;
   margin-left: auto;
   margin-right: auto;
 }
@@ -734,7 +739,7 @@ footer .gallery .gallery-item img {
   color: #222222;
 }
 .meet-team .team-member .thumb-holder .hover-content ul li a:hover {
-  color: #f4c23d;
+  color: #e4ca73;
 }
 .meet-team .team-member .thumb-holder:hover .hover-content {
   opacity: 1;
@@ -774,11 +779,11 @@ footer .gallery .gallery-item img {
   background-color: rgba(250, 250, 250, 0.2);
 }
 .blog-news .left-video .video-content .inner-content i:hover {
-  color: #f4c23d;
+  color: #e4ca73;
   cursor: pointer;
 }
 .blog-news .left-video .video-content .inner-content .tittle {
-  border-right: 4px solid #f4c23d;
+  border-right: 4px solid #e4ca73;
 }
 .blog-news .left-video .video-content .inner-content .tittle h2 {
   color: #ffffff;
@@ -786,7 +791,7 @@ footer .gallery .gallery-item img {
   margin-bottom: 10px;
 }
 .blog-news .left-video .video-content .inner-content .tittle h2:hover {
-  color: #f4c23d;
+  color: #e4ca73;
 }
 .blog-news .left-video .video-content .inner-content .tittle a {
   text-decoration: none;
@@ -806,7 +811,7 @@ footer .gallery .gallery-item img {
   padding-right: 10px;
 }
 .blog-news .left-video .video-content .inner-content .tittle ul li a {
-  color: #f4c23d;
+  color: #e4ca73;
 }
 .blog-news .left-video .video-content .inner-content .tittle ul li:last-child {
   border-right: none;
@@ -819,7 +824,7 @@ footer .gallery .gallery-item img {
   margin-top: 40px;
 }
 .blog-news .blog-item .up-content {
-  border-left: 4px solid #f4c23d;
+  border-left: 4px solid #e4ca73;
   padding-left: 15px;
 }
 .blog-news .blog-item .up-content ul {
@@ -836,7 +841,7 @@ footer .gallery .gallery-item img {
   padding-right: 10px;
 }
 .blog-news .blog-item .up-content ul li a {
-  color: #f4c23d;
+  color: #e4ca73;
   text-transform: none;
 }
 .blog-news .blog-item .up-content ul li:last-child {
@@ -875,7 +880,7 @@ footer .gallery .gallery-item img {
   margin: 20px;
 }
 .blog-page .blog-item .down-content .post-info {
-  border-left: 4px solid #f4c23d;
+  border-left: 4px solid #e4ca73;
   padding-left: 15px;
 }
 .blog-page .blog-item .down-content ul {
@@ -892,7 +897,7 @@ footer .gallery .gallery-item img {
   padding-right: 10px;
 }
 .blog-page .blog-item .down-content ul li a {
-  color: #f4c23d;
+  color: #e4ca73;
   text-transform: none;
 }
 .blog-page .blog-item .down-content ul li:last-child {
@@ -971,11 +976,11 @@ footer .gallery .gallery-item img {
   }
 }
 .blog-page .blog-item-video .video-content .inner-content i:hover {
-  color: #f4c23d;
+  color: #e4ca73;
   cursor: pointer;
 }
 .blog-page .blog-item-video .video-content .inner-content .tittle {
-  border-right: 4px solid #f4c23d;
+  border-right: 4px solid #e4ca73;
 }
 .blog-page .blog-item-video .video-content .inner-content .tittle h2 {
   color: #ffffff;
@@ -983,7 +988,7 @@ footer .gallery .gallery-item img {
   margin-bottom: 10px;
 }
 .blog-page .blog-item-video .video-content .inner-content .tittle h2:hover {
-  color: #f4c23d;
+  color: #e4ca73;
 }
 .blog-page .blog-item-video .video-content .inner-content .tittle a {
   text-decoration: none;
@@ -1008,7 +1013,7 @@ footer .gallery .gallery-item img {
   padding-right: 10px;
 }
 .blog-page .blog-item-video .video-content .inner-content .tittle ul li a {
-  color: #f4c23d;
+  color: #e4ca73;
 }
 .blog-page
   .blog-item-video
@@ -1113,7 +1118,7 @@ footer .gallery .gallery-item img {
   margin-top: 20px;
 }
 .blog-grid .blog-item .down-content .post-info {
-  border-left: 4px solid #f4c23d;
+  border-left: 4px solid #e4ca73;
   padding-left: 15px;
 }
 .blog-grid .blog-item .down-content ul {
@@ -1130,7 +1135,7 @@ footer .gallery .gallery-item img {
   padding-right: 10px;
 }
 .blog-grid .blog-item .down-content ul li a {
-  color: #f4c23d;
+  color: #e4ca73;
   text-transform: none;
 }
 .blog-grid .blog-item .down-content ul li:last-child {
@@ -1169,7 +1174,7 @@ footer .gallery .gallery-item img {
   margin: 20px;
 }
 .single-blog .blog-item .down-content .post-info {
-  border-left: 4px solid #f4c23d;
+  border-left: 4px solid #e4ca73;
   padding-left: 15px;
 }
 .single-blog .blog-item .down-content ul {
@@ -1186,7 +1191,7 @@ footer .gallery .gallery-item img {
   padding-right: 10px;
 }
 .single-blog .blog-item .down-content ul li a {
-  color: #f4c23d;
+  color: #e4ca73;
   text-transform: none;
 }
 .single-blog .blog-item .down-content ul li:last-child {
@@ -1221,7 +1226,7 @@ footer .gallery .gallery-item img {
   line-height: 65px;
   width: 50px;
   height: 50px;
-  background-color: #f4c23d;
+  background-color: #e4ca73;
   display: block;
   font-size: 34px;
   float: left;
@@ -1529,7 +1534,7 @@ footer .gallery .gallery-item img {
   margin-top: -15px;
   margin-right: -15px;
   float: right;
-  background-color: #f4c23d;
+  background-color: #e4ca73;
   font-size: 13px;
   text-transform: uppercase;
   color: #222222;
@@ -1686,7 +1691,7 @@ footer .gallery .gallery-item img {
   margin-top: -15px;
   margin-right: -15px;
   float: right;
-  background-color: #f4c23d;
+  background-color: #e4ca73;
   font-size: 13px;
   text-transform: uppercase;
   color: #222222;
@@ -1860,7 +1865,7 @@ footer .gallery .gallery-item img {
   margin-top: -37px;
   margin-right: 0px;
   float: right;
-  background-color: #f4c23d;
+  background-color: #e4ca73;
   font-size: 13px;
   text-transform: uppercase;
   color: #222222;
@@ -1927,7 +1932,7 @@ footer .gallery .gallery-item img {
 }
 .listing-page #listing-cars .featured-item .right-content .item-rate ul li i {
   font-size: 13px;
-  color: #f4c23d;
+  color: #e4ca73;
 }
 .listing-page #listing-cars .featured-item .right-content .car-info {
   margin-top: 20px;
@@ -2121,7 +2126,7 @@ footer .gallery .gallery-item img {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 700;
-  background-color: #f4c23d;
+  background-color: #e4ca73;
   float: right;
   width: 110px;
   height: 40px;
@@ -2192,7 +2197,7 @@ footer .gallery .gallery-item img {
 .car-details .tabs li.active a,
 .car-details .tabs li.active a:hover {
   color: #222222;
-  border-bottom: 2px solid #f4c23d;
+  border-bottom: 2px solid #e4ca73;
 }
 .car-details .tabs .tab-content {
   margin-top: 20px;
@@ -2235,7 +2240,7 @@ footer .gallery .gallery-item img {
   margin: 5px 0px;
 }
 .car-details .more-info ul li i {
-  color: #f4c23d;
+  color: #e4ca73;
   margin-right: 10px;
 }
 #sidebar .sidebar-content {
@@ -2254,7 +2259,7 @@ footer .gallery .gallery-item img {
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 700;
-  border-left: 4px solid #f4c23d;
+  border-left: 4px solid #e4ca73;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 10px;
@@ -2329,7 +2334,7 @@ footer .gallery .gallery-item img {
   .slider-range
   .ui-slider-horizontal
   .ui-slider-range {
-  background-color: #f4c23d;
+  background-color: #e4ca73;
 }
 #sidebar .sidebar-content .search-form .slider-range .ui-slider-horizontal {
   border-radius: 0px;
@@ -2416,7 +2421,7 @@ footer .gallery .gallery-item img {
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 700;
-  border-left: 4px solid #f4c23d;
+  border-left: 4px solid #e4ca73;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 7px;
@@ -2467,7 +2472,7 @@ footer .gallery .gallery-item img {
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 700;
-  border-left: 4px solid #f4c23d;
+  border-left: 4px solid #e4ca73;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 10px;
@@ -2484,7 +2489,7 @@ footer .gallery .gallery-item img {
   color: #336699;
   text-transform: uppercase;
   font-weight: 700;
-  border-left: 4px solid #f4c23d;
+  border-left: 4px solid #e4ca73;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 10px;
@@ -2754,7 +2759,7 @@ footer .gallery .gallery-item img {
   margin: 4px 3px;
 }
 #side-bar .tags ul li a {
-  border-left: 4px solid #f4c23d;
+  border-left: 4px solid #e4ca73;
   padding: 8px 10px;
   background-color: #336699;
   font-family: "Montserrat", sans-serif;
@@ -2764,7 +2769,7 @@ footer .gallery .gallery-item img {
   display: inline-block;
 }
 #side-bar .tags ul li a:hover {
-  color: #f4c23d;
+  color: #e4ca73;
 }
 #side-bar .sidebar-widget h4 {
   font-family: "Montserrat", sans-serif;
@@ -2830,7 +2835,7 @@ footer .gallery .gallery-item img {
   color: #ffffff;
 }
 #page-heading .page-active ul li:last-child a {
-  color: #f4c23d;
+  color: #e4ca73;
 }
 .slider {
   margin-top: 110px;
@@ -2863,7 +2868,7 @@ footer .gallery .gallery-item img {
 }
 .third-line em {
   font-style: normal;
-  color: #f4c23d;
+  color: #e4ca73;
 }
 .slider-thumb .thumb-item .top-content {
   background-color: #2e5c89;
@@ -2889,7 +2894,7 @@ footer .gallery .gallery-item img {
   width: 60px;
   -webkit-transform: rotate(0deg) skew(0deg);
   transform: rotate(0deg) skew(0deg);
-  border-left: 80px solid #f4c23d;
+  border-left: 80px solid #e4ca73;
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
 }
@@ -2969,7 +2974,7 @@ footer .gallery .gallery-item img {
   margin-left: 70px;
 }
 .why-us .services .service-item:hover i {
-  background-color: #f4c23d;
+  background-color: #e4ca73;
   cursor: pointer;
 }
 .why-us .right-img img {
@@ -3155,7 +3160,7 @@ footer .gallery .gallery-item img {
   }
 }
 #cta-2 .right-content ul li a:hover {
-  color: #f4c23d;
+  color: #e4ca73;
 }
 .testimonials #owl-testimonials .item h2 {
   font-family: "Montserrat", sans-serif;
@@ -3182,7 +3187,7 @@ footer .gallery .gallery-item img {
 .advanced-button {
   width: 160px;
   height: 40px;
-  background-color: #f4c23d;
+  background-color: #e4ca73;
   line-height: 40px;
 }
 .advanced-button a {
@@ -3203,7 +3208,7 @@ footer .gallery .gallery-item img {
 }
 .simple-button a {
   display: inline-block;
-  background-color: #f4c23d;
+  background-color: #e4ca73;
   line-height: 40px;
   text-align: center;
   width: 120px;
@@ -3252,7 +3257,7 @@ footer .gallery .gallery-item img {
   height: 46px;
   line-height: 46px;
   font-size: 18px;
-  background-color: #f4c23d !important;
+  background-color: #e4ca73 !important;
 }
 .heading-section h2 {
   font-family: "Montserrat", sans-serif;
