@@ -3,25 +3,28 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Home } from "./Home";
 
 function App() {
   return (
     <div className="App">
-      <div class="sidebar-menu-container" id="sidebar-menu-container">
-        <div class="sidebar-menu-push">
-          <div class="sidebar-menu-overlay"></div>
+      <div className="sidebar-menu-container" id="sidebar-menu-container">
+        <div className="sidebar-menu-push">
+          <div className="sidebar-menu-overlay"></div>
 
-          <div class="sidebar-menu-inner">
+          <div className="sidebar-menu-inner">
             <BrowserRouter>
-              <Routes>{/* <Route path="/" element={<Home />} /> */}</Routes>
+              <Routes>
+                <Route path="/" element={<Home />} />
+              </Routes>
             </BrowserRouter>
           </div>
         </div>
 
-        <nav class="sidebar-menu slide-from-left">
-          <div class="nano">
-            <div class="content">
-              <nav class="responsive-menu">
+        <nav classname="sidebar-menu slide-from-left">
+          <div classname="nano">
+            <div classname="content">
+              <nav classname="responsive-menu">
                 <ul>
                   <li>
                     <a href="index.html">Home</a>
@@ -32,9 +35,9 @@ function App() {
                   <li>
                     <a href="services.html">Services</a>
                   </li>
-                  <li class="menu-item-has-children">
+                  <li classname="menu-item-has-children">
                     <a href="#">Listing</a>
-                    <ul class="sub-menu">
+                    <ul classname="sub-menu">
                       <li>
                         <a href="listing-right.html">Sidebar Right</a>
                       </li>
@@ -49,9 +52,9 @@ function App() {
                       </li>
                     </ul>
                   </li>
-                  <li class="menu-item-has-children">
+                  <li classname="menu-item-has-children">
                     <a href="#">Blog</a>
-                    <ul class="sub-menu">
+                    <ul classname="sub-menu">
                       <li>
                         <a href="blog-right.html">Classic</a>
                       </li>
