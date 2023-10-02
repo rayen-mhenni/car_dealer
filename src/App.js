@@ -7,6 +7,8 @@ import { Home } from "./Home";
 import Header from "./Header";
 import Footer from "./Footer";
 import Listing from "./Listing";
+import SingleList from "./SingleList";
+import Contact from "./Contact";
 
 function App() {
   return (
@@ -17,12 +19,13 @@ function App() {
 
           <div className="sidebar-menu-inner">
             <BrowserRouter>
-              {" "}
               <Header />
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/listing" element={<Listing />} />
-              </Routes>{" "}
+                <Route path="/single/:id" element={<SingleList />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
               <Footer />
             </BrowserRouter>
           </div>

@@ -7,9 +7,10 @@ const Header = (props) => {
       <div id="main-header" className="main-header header-sticky">
         <div className="inner-header container clearfix">
           <div className="logo">
-            <a href="index.html">
+            <Link to='/'>
               <img src="assets/images/logo.png" alt="" />
-            </a>
+            </Link>
+
           </div>
           <div className="header-right-toggle pull-right hidden-md hidden-lg">
             <a href="javascript:void(0)" className="side-menu-button">
@@ -19,55 +20,18 @@ const Header = (props) => {
           <nav className="main-navigation text-left hidden-xs hidden-sm">
             <ul>
               <li>
-                <a href="index.html">Home</a>
+                <Link to='/'> Home</Link>
               </li>
+
               <li>
-                <a href="about.html">About Us</a>
+                <Link to='/listing'> Listing</Link>
               </li>
+
+
               <li>
-                <a href="services.html">Services</a>
+                <Link to='/contact'> Contact</Link>
               </li>
-              <li>
-                <a href="#" className="has-submenu">
-                  Listing
-                </a>
-                <ul className="sub-menu">
-                  <li>
-                    <a href="listing-right.html">Sidebar Right</a>
-                  </li>
-                  <li>
-                    <a href="listing-left.html">Sidebar Left</a>
-                  </li>
-                  <li>
-                    <a href="listing-grid.html">Grids System</a>
-                  </li>
-                  <li>
-                    <a href="single-list.html">Car Details</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#" className="has-submenu">
-                  Blog
-                </a>
-                <ul className="sub-menu">
-                  <li>
-                    <a href="blog-right.html">Classic</a>
-                  </li>
-                  <li>
-                    <a href="blog-grid.html">Grids System</a>
-                  </li>
-                  <li>
-                    <a href="grid-right.html">Grids Sidebar</a>
-                  </li>
-                  <li>
-                    <a href="single-blog.html">Single Post</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="contact.html">Contact</a>
-              </li>
+
               <li>
                 <p>
                   <a

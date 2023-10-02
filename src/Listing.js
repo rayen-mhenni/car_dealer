@@ -11,13 +11,6 @@ export default function Listing() {
                             <h1>Listing Results</h1>
                             <div className="line" />
                             <span>Praesent volutpat nisi sed imperdiet facilisis felis turpis fermentum lectus</span>
-                            <div className="page-active">
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><i className="fa fa-dot-circle-o" /></li>
-                                    <li><a href="listin-right.html">Listing Results</a></li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -90,14 +83,20 @@ export default function Listing() {
                             </div>
 
                         </div>
+
+
                         <div id="listing-cars" className="col-md-9">
                             <div className="pre-featured">
                                 <div className="info-text">
-                                    <h4>24 results founded</h4>
+                                    <h4>50 results founded</h4>
                                 </div>
                                 <div className="right-content">
                                     <div className="input-select">
-                                        <select name="mark" id="mark">
+
+                                        <select name="mark" onClick={(e) => {
+                                            console.log('rrrrrrrrrr', e.target.value)
+                                        }}
+                                            id="mark">
                                             <option value={-1}>Sorted by</option>
                                             <option>Price</option>
                                             <option>Miles</option>
@@ -113,126 +112,8 @@ export default function Listing() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="featured-item">
-                                <img src="http://dummyimage.com/310x210/cccccc/fff.jpg" alt="" />
-                                <div className="right-content">
-                                    <a href="single-list.html"><h2>Mercedes Amg 6.3</h2></a>
-                                    <span>52,000</span>
-                                    <div className="light-line" />
-                                    <p>Donec eu nullas sapien pretium volutpat vel quis turpis. Donec vel risus lacinia euismod urna vel fringilla justo.</p>
-                                    <div className="view-details">
-                                        <a href="#">View Details</a>
-                                    </div>
-                                    <div className="item-rate">
-                                        <ul>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star-o" /></li>
-                                        </ul>
-                                    </div>
-                                    <div className="car-info">
-                                        <ul>
-                                            <li><i className="icon-gaspump" />Diesel</li>
-                                            <li><i className="icon-car" />Sport</li>
-                                            <li><i className="icon-road2" />12,000</li>
-                                            <li><i className="icon-car" />Sport</li>
-                                            <li><i className="icon-road2" />12,000</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="featured-item">
-                                <img src="http://dummyimage.com/310x210/cccccc/fff.jpg" alt="" />
-                                <div className="right-content">
-                                    <a href="single-list.html"><h2>volkswagen passat</h2></a>
-                                    <span>30,000</span>
-                                    <div className="light-line" />
-                                    <p>Donec eu nullas sapien pretium volutpat vel quis turpis. Donec vel risus lacinia euismod urna vel fringilla justo.</p>
-                                    <div className="view-details">
-                                        <a href="#">View Details</a>
-                                    </div>
-                                    <div className="item-rate">
-                                        <ul>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star-o" /></li>
-                                        </ul>
-                                    </div>
-                                    <div className="car-info">
-                                        <ul>
-                                            <li><i className="icon-gaspump" />Diesel</li>
-                                            <li><i className="icon-car" />Sport</li>
-                                            <li><i className="icon-road2" />12,000</li>
-                                            <li><i className="icon-car" />Sport</li>
-                                            <li><i className="icon-road2" />12,000</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="featured-item">
-                                <img src="http://dummyimage.com/310x210/cccccc/fff.jpg" alt="" />
-                                <div className="right-content">
-                                    <a href="single-list.html"><h2>Mercedes amg Gt s 6.3</h2></a>
-                                    <span>65,000</span>
-                                    <div className="light-line" />
-                                    <p>Donec eu nullas sapien pretium volutpat vel quis turpis. Donec vel risus lacinia euismod urna vel fringilla justo.</p>
-                                    <div className="view-details">
-                                        <a href="#">View Details</a>
-                                    </div>
-                                    <div className="item-rate">
-                                        <ul>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star-o" /></li>
-                                        </ul>
-                                    </div>
-                                    <div className="car-info">
-                                        <ul>
-                                            <li><i className="icon-gaspump" />Diesel</li>
-                                            <li><i className="icon-car" />Sport</li>
-                                            <li><i className="icon-road2" />12,000</li>
-                                            <li><i className="icon-car" />Sport</li>
-                                            <li><i className="icon-road2" />12,000</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="featured-item">
-                                <img src="http://dummyimage.com/310x210/cccccc/fff.jpg" alt="" />
-                                <div className="right-content">
-                                    <a href="single-list.html"><h2>bmw m4 convertible</h2></a>
-                                    <span>64,000</span>
-                                    <div className="light-line" />
-                                    <p>Donec eu nullas sapien pretium volutpat vel quis turpis. Donec vel risus lacinia euismod urna vel fringilla justo.</p>
-                                    <div className="view-details">
-                                        <a href="#">View Details</a>
-                                    </div>
-                                    <div className="item-rate">
-                                        <ul>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star-o" /></li>
-                                        </ul>
-                                    </div>
-                                    <div className="car-info">
-                                        <ul>
-                                            <li><i className="icon-gaspump" />Diesel</li>
-                                            <li><i className="icon-car" />Sport</li>
-                                            <li><i className="icon-road2" />12,000</li>
-                                            <li><i className="icon-car" />Sport</li>
-                                            <li><i className="icon-road2" />12,000</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+
+
                             <div className="featured-item last-featured">
                                 <img src="http://dummyimage.com/310x210/cccccc/fff.jpg" alt="" />
                                 <div className="right-content">
@@ -243,15 +124,7 @@ export default function Listing() {
                                     <div className="view-details">
                                         <a href="#">View Details</a>
                                     </div>
-                                    <div className="item-rate">
-                                        <ul>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star" /></li>
-                                            <li><i className="fa fa-star-o" /></li>
-                                        </ul>
-                                    </div>
+
                                     <div className="car-info">
                                         <ul>
                                             <li><i className="icon-gaspump" />Diesel</li>
@@ -263,16 +136,17 @@ export default function Listing() {
                                     </div>
                                 </div>
                             </div>
+
                             <div className="pagination">
                                 <div className="prev">
                                     <a href="#"><i className="fa fa-arrow-left" />Prev</a>
                                 </div>
                                 <div className="page-numbers">
                                     <ul>
-                                        <li><a href="#">1</a></li>
+                                        <li className="active"><a href="#">1</a></li>
                                         <li><a href="#">...</a></li>
                                         <li><a href="#">14</a></li>
-                                        <li className="active"><a href="#">15</a></li>
+                                        <li ><a href="#">15</a></li>
                                         <li><a href="#">16</a></li>
                                         <li><a href="#">...</a></li>
                                         <li><a href="#">47</a></li>
