@@ -1,8 +1,70 @@
 import React from "react";
 
 export const Home = () => {
-  return (
-    <div>
+    return (
+        <div className="cover">
+
+            <section className="hero-fullscreen coming-soon-2">
+                <div className="hero-static-fullscreen">
+                    <div className="hero-image cover-img">
+                        <div className="overlay">
+                            <div className="hero-container container">
+                                <div className="hero-content wow alert animated" style={{ visibility: 'visible' }}>
+                                    <div className="wow slideInLeft" style={{ visibility: 'visible', animationName: 'slideInLeft' }}>
+                                        <img src="assets\img\logo-homepage.png" />
+                                    </div>
+                                    <br /><br />
+                                    {/* Begin page content */}
+                                    <section className="home-block-1">
+                                        <div className="container">
+                                            <div>
+                                                <div id="filter-horizontal" className="row">
+                                                    <form action="inventory.php" method="GET" className="clearfix select-form">
+                                                        <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                            <select id="make" name="make_id" className="custom-select margin-bottom-0" tabIndex={1}>
+                                                                <option value>Sélectionnez marque</option>
+                                                                <option value={0}>Tout</option>
+                                                                <option value={1}>Acura</option><option value={6}>Audi</option><option value={8}>BMW</option><option value={13}>Chevrolet</option><option value={14}>Chrysler</option><option value={15}>Dodge</option><option value={16}>Ford</option><option value={35}>GMC</option><option value={17}>Honda</option><option value={18}>Hyundai</option><option value={19}>Infiniti</option><option value={20}>Jeep</option><option value={21}>Kia</option><option value={41}>Lexus</option><option value={22}>Mazda</option><option value={23}>Mercedes-Benz</option><option value={37}>Mini</option><option value={24}>Mitsubishi</option><option value={25}>Nissan</option><option value={28}>Subaru</option><option value={29}>Suzuki</option><option value={30}>Toyota</option><option value={31}>Volkswagen</option><option value={32}>Volvo</option>
+                                                            </select>
+                                                        </div>
+                                                        <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                            <div id="model-wrapper">
+                                                                <select id="model" name="model_id" className="custom-select margin-bottom-0" tabIndex={1}>
+                                                                    <option value>Sélectionnez modèle</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                            <div id="year-wrapper">
+                                                                <select name="year" className="custom-select margin-bottom-0" tabIndex={1}>
+                                                                    <option value>Sélectionnez l'année</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                            <button id="search-filter" type="submit" value="submit" className="pull-left btn-inventory margin-bottom-none md-button">Recherche</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <p>
+                                        <br /><br />
+                                    </p><div className="hidden" data-wow-delay="0.3s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                                    </div>
+                                    <p />
+                                    <div className="cars-on-home margin-top-15 hidden-xs">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            {/* 
       <div className="slider">
         <div className="fullwidthbanner-container">
           <div className="fullwidthbanner">
@@ -413,6 +475,7 @@ export const Home = () => {
           </div>
         </div>
       </div>
+
       <div id="cta-1">
         <div className="container">
           <div className="row">
@@ -431,6 +494,7 @@ export const Home = () => {
           </div>
         </div>
       </div>
+
       <section className="why-us">
         <div className="container">
           <div className="row">
@@ -695,191 +759,8 @@ export const Home = () => {
             </div>
           </div>
         </div>
-      </section>
-      <section className="blog-news">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="heading-section-2 text-center">
-                <h2>Blog News</h2>
-                <span>
-                  Vivamus gravida magna massa in cursus mi vehicula at. Nunc sem
-                  quam suscipit
-                </span>
-                <div className="dec">
-                  <i className="fa fa-file" />
-                </div>
-                <div className="line-dec" />
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-6">
-              <div className="left-video">
-                <img
-                  src="http://dummyimage.com/570x390/cccccc/fff.jpg"
-                  alt=""
-                />
-                <div className="video-content">
-                  <div className="inner-content">
-                    <i className="fa fa-play" />
-                    <div className="tittle">
-                      <a href="single-blog.html">
-                        <h2>Hella kogi whatever, small batch pickled</h2>
-                      </a>
-                      <ul>
-                        <li>May 14, 2015</li>
-                        <li>
-                          Posted by <a href="#">Admin</a>
-                        </li>
-                        <li>2 Comments</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="blog-item">
-                <div className="up-content">
-                  <ul>
-                    <li>May 14, 2015</li>
-                    <li>
-                      Posted by <a href="#">Admin</a>
-                    </li>
-                  </ul>
-                  <div className="tittle">
-                    <a href="single-blog.html">
-                      <h2>Normcore pour-over taxidermy twee</h2>
-                    </a>
-                  </div>
-                </div>
-                <p>
-                  Praesent mollis at odio in aliquam. Morbi sit amet enim ante.
-                  Phasellus commodo urna sed laoreet mauris iaculis blandit.
-                  Nulla facilisi. Quisque blandit magna nec
-                </p>
-                <a href="single-blog.html">Read More</a>
-              </div>
-              <div className="blog-item">
-                <div className="up-content">
-                  <ul>
-                    <li>May 14, 2015</li>
-                    <li>
-                      Posted by <a href="#">Admin</a>
-                    </li>
-                  </ul>
-                  <div className="tittle">
-                    <a href="single-blog.html">
-                      <h2>Retro art party vinyl meditation</h2>
-                    </a>
-                  </div>
-                </div>
-                <p>
-                  Praesent mollis at odio in aliquam. Morbi sit amet enim ante.
-                  Phasellus commodo urna sed laoreet mauris iaculis blandit.
-                  Nulla facilisi. Quisque blandit magna nec
-                </p>
-                <a href="single-blog.html">Read More</a>
-              </div>
-            </div>
-          </div>
+      </section> */}
+
         </div>
-      </section>
-      <section className="clients">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div id="owl-demo">
-                <div className="item">
-                  <img src="assets/images/client-1.png" alt="" />
-                </div>
-                <div className="item">
-                  <img src="assets/images/client-2.png" alt="" />
-                </div>
-                <div className="item">
-                  <img src="assets/images/client-3.png" alt="" />
-                </div>
-                <div className="item">
-                  <img src="assets/images/client-4.png" alt="" />
-                </div>
-                <div className="item">
-                  <img src="assets/images/client-5.png" alt="" />
-                </div>
-                <div className="item">
-                  <img src="assets/images/client-6.png" alt="" />
-                </div>
-                <div className="item">
-                  <img src="assets/images/client-3.png" alt="" />
-                </div>
-                <div className="item">
-                  <img src="assets/images/client-2.png" alt="" />
-                </div>
-                <div className="item">
-                  <img src="assets/images/client-1.png" alt="" />
-                </div>
-                <div className="item">
-                  <img src="assets/images/client-4.png" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div id="cta-2">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 col-sm-12">
-              <div className="left-content">
-                <h2>Subscribe to the auction</h2>
-                <form method="get" id="subscribe" className="blog-search">
-                  <input
-                    type="text"
-                    className="blog-search-field"
-                    name="s"
-                    placeholder="E-mail Address"
-                    defaultValue
-                  />
-                  <div className="simple-button">
-                    <a href="#">Subscribe</a>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <div className="col-md-4 col-sm-12">
-              <div className="right-content">
-                <ul>
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-facebook" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-flickr" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-twitter" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-dribbble" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-skype" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
