@@ -1628,50 +1628,54 @@ footer .gallery .gallery-item img {
 }
 
 .contact-form #contact_form input {
-  border: 1px solid #eeeeee;
+  border: 1px solid #383737;
+  background-color: #383737;
   margin-bottom: 25px;
   width: 100%;
   padding-left: 45px;
   font-family: "Roboto", sans-serif;
   font-size: 12px;
-  color: #888888;
+  color: #fff;
   height: 40px;
   outline: none;
 }
 
-.contact-form #contact_form input[class="name"] {
-  background-image: url(../images/name-icon.png);
+::placeholder {
+  color: #fff;
+  opacity: 1; 
+}
+
+/* .contact-form #contact_form input[class="name"] {
   background-position: 10px;
   background-repeat: no-repeat;
+
 }
 
 .contact-form #contact_form input[class="email"] {
-  background-image: url(../images/email-icon.png);
   background-position: 10px;
   background-repeat: no-repeat;
 }
 
 .contact-form #contact_form input[class="phone"] {
-  background-image: url(../images/phone-icon.png);
   background-position: 10px;
   background-repeat: no-repeat;
 }
 
 .contact-form #contact_form input[class="site"] {
-  background-image: url(../images/site-icon.png);
   background-position: 10px;
   background-repeat: no-repeat;
 }
 
 .contact-form #contact_form textarea[class="message"] {
-  background-image: url(../images/message-icon.png);
   background-position: top left;
   background-position: 10px 15px;
   background-repeat: no-repeat;
-}
+  color: #fff;
+} */
 
 .contact-form #contact_form textarea {
-  border: 1px solid #eeeeee;
+  border: 1px solid #383737;
+  background-color: #383737;
   margin-bottom: 25px;
   width: 100%;
   max-width: 100%;
@@ -1679,7 +1683,7 @@ footer .gallery .gallery-item img {
   max-height: 180px;
   font-family: "Roboto", sans-serif;
   font-size: 12px;
-  color: #888888;
+  color: #fff;
   height: 40px;
   padding: 12px 45px;
   outline: none;
@@ -1705,12 +1709,13 @@ footer .gallery .gallery-item img {
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 7px;
+  color: #fff;
 }
 
 .contact-info span {
   font-family: "Roboto", sans-serif;
   font-size: 12px;
-  color: #888888;
+  color: #e8debed1;
 }
 
 .contact-info a {

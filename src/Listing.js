@@ -1,7 +1,49 @@
 import React from "react";
 import Footer from "./Footer";
+import Select from "react-select";
 
 export default function Listing() {
+
+  const colourStyles = {
+    control: styles => ({
+      ...styles,
+      backgroundColor: 'rgba(135, 129, 129, 0.264)',
+      border: 'none',
+      color: '#000',
+      outline: "none",
+      padding: '3px'
+    }),
+    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+      return {
+        ...styles,
+        backgroundColor: 'rgba(135, 129, 129, 0.264)',
+        color: '#000',
+        fontSize: 'larger',
+        ':active': {
+          ...styles[':active'],
+          backgroundColor: !isDisabled
+            ? isSelected
+              ? '#e4ca73'
+              : 'rgba(135, 129, 129, 0.264)'
+            : undefined
+        },
+      };
+    },
+    placeholder: (styles) => ({
+      ...styles,
+      color: '#fff',
+      fontSize: 'smal'
+    }),
+    singleValue: (styles, { data }) => ({
+      ...styles,
+      color: '#fff',
+      fontSize: 'smal'
+    }),
+    input: (styles) => ({ ...styles, color: '#fff' }),
+
+
+  };
+
   return (
     <div className="inventory">
       <div id="page-heading">
@@ -28,42 +70,91 @@ export default function Listing() {
                   <h4>Search our inventory</h4>
                 </div>
                 <div className="search-form">
-                  <div className="select">
-                    <select name="mark" id="make">
-                      <option value={-1}>Select Make</option>
-                      <option>honda</option>
-                      <option>dodge</option>
-                      <option>ford</option>
-                      <option>chevrolet</option>
-                    </select>
-                  </div>
-                  <div className="select">
-                    <select name="mark" id="model">
-                      <option value={-1}>Select Model</option>
-                      <option>Price</option>
-                      <option>Miles</option>
-                      <option>Year</option>
-                      <option>Near</option>
-                    </select>
-                  </div>
-                  <div className="select">
-                    <select name="mark" id="model">
-                      <option value={-1}>Select Year</option>
-                      <option>Price</option>
-                      <option>Miles</option>
-                      <option>Year</option>
-                      <option>Near</option>
-                    </select>
-                  </div>
-                  <div className="select">
-                    <select name="mark" id="model">
-                      <option value={-1}>Select Transmission</option>
-                      <option>Price</option>
-                      <option>Miles</option>
-                      <option>Year</option>
-                      <option>Near</option>
-                    </select>
-                  </div>
+                  <Select
+                    className="basic-single select-inv"
+                    isClearable={true}
+                    classNamePrefix="select"
+                    placeholder='Select Mark'
+                    name="color"
+                    maxMenuHeight={"200px"}
+                    options={
+                      [
+                        { value: '1', label: '1' },
+                        { value: '2', label: '2' },
+                        { value: '3', label: '3' },
+                        { value: '4', label: '4' },
+                        { value: '5', label: '5' },
+                        { value: '6', label: '6' },
+                        { value: '7', label: '7' },
+
+                      ]
+                    }
+                    styles={colourStyles}
+                  />
+
+                  <Select
+                    className="basic-single select-inv"
+                    isClearable={true}
+                    classNamePrefix="select"
+                    placeholder='Select Model'
+                    name="color"
+                    maxMenuHeight={"200px"}
+                    options={
+                      [
+                        { value: '1', label: '1' },
+                        { value: '2', label: '2' },
+                        { value: '3', label: '3' },
+                        { value: '4', label: '4' },
+                        { value: '5', label: '5' },
+                        { value: '6', label: '6' },
+                        { value: '7', label: '7' },
+
+                      ]
+                    }
+                    styles={colourStyles}
+                  />
+                  <Select
+                    className="basic-single select-inv"
+                    isClearable={true}
+                    classNamePrefix="select"
+                    placeholder='Select Year'
+                    name="color"
+                    maxMenuHeight={"200px"}
+                    options={
+                      [
+                        { value: '1', label: '1' },
+                        { value: '2', label: '2' },
+                        { value: '3', label: '3' },
+                        { value: '4', label: '4' },
+                        { value: '5', label: '5' },
+                        { value: '6', label: '6' },
+                        { value: '7', label: '7' },
+
+                      ]
+                    }
+                    styles={colourStyles}
+                  />
+                  <Select
+                    className="basic-single select-inv"
+                    isClearable={true}
+                    classNamePrefix="select"
+                    placeholder='Select Transmissions'
+                    name="color"
+                    maxMenuHeight={"200px"}
+                    options={
+                      [
+                        { value: '1', label: '1' },
+                        { value: '2', label: '2' },
+                        { value: '3', label: '3' },
+                        { value: '4', label: '4' },
+                        { value: '5', label: '5' },
+                        { value: '6', label: '6' },
+                        { value: '7', label: '7' },
+
+                      ]
+                    }
+                    styles={colourStyles}
+                  />
                   {/* <div className="slider-range">
                     <p>
                       <input
@@ -99,19 +190,27 @@ export default function Listing() {
                 </div>
                 <div className="right-content">
                   <div className="input-select">
-                    <select
-                      name="mark"
-                      onClick={(e) => {
-                        console.log("rrrrrrrrrr", e.target.value);
-                      }}
-                      id="mark"
-                    >
-                      <option value={-1}>Sorted by</option>
-                      <option>Price</option>
-                      <option>Miles</option>
-                      <option>Year</option>
-                      <option>Near</option>
-                    </select>
+                    <Select
+                      className="basic-single"
+                      isClearable={true}
+                      classNamePrefix="select"
+                      placeholder='Sord Cars By'
+                      name="color"
+                      maxMenuHeight={"200px"}
+                      options={
+                        [
+                          { value: '1', label: '1' },
+                          { value: '2', label: '2' },
+                          { value: '3', label: '3' },
+                          { value: '4', label: '4' },
+                          { value: '5', label: '5' },
+                          { value: '6', label: '6' },
+                          { value: '7', label: '7' },
+
+                        ]
+                      }
+                      styles={colourStyles}
+                    />
                   </div>
                 </div>
               </div>
@@ -198,7 +297,7 @@ export default function Listing() {
                 </div>
               </div>
 
-              
+
               <div className="featured-item last-featured">
                 <img
                   src="https://e0.pxfuel.com/wallpapers/192/395/desktop-wallpaper-car-high-resolution-high-quality-car.jpg"
