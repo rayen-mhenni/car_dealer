@@ -20,7 +20,11 @@ export const Home = () => {
                 fontSize: 'larger',
                 ':active': {
                     ...styles[':active'],
-                    backgroundColor: '#e4ca73',
+                    backgroundColor: !isDisabled
+                        ? isSelected
+                            ? '#e4ca73'
+                            : 'rgba(135, 129, 129, 0.264)'
+                        : undefined
                 },
             };
         },
@@ -67,12 +71,12 @@ export const Home = () => {
                         options={
                             [
                                 { value: '1', label: '1' },
-                                { value: '2', label: '1' },
-                                { value: '3', label: '1' },
-                                { value: '4', label: '1' },
-                                { value: '5', label: '1' },
-                                { value: '6', label: '1' },
-                                { value: '7', label: '1' },
+                                { value: '2', label: '2' },
+                                { value: '3', label: '3' },
+                                { value: '4', label: '4' },
+                                { value: '5', label: '5' },
+                                { value: '6', label: '6' },
+                                { value: '7', label: '7' },
 
                             ]
                         }
@@ -85,7 +89,16 @@ export const Home = () => {
                         classNamePrefix="select"
                         placeholder='Select Mark'
                         name="color"
-                        options={[{ value: '1', label: '1' }]}
+                        options={ [
+                            { value: '1', label: '1' },
+                            { value: '2', label: '2' },
+                            { value: '3', label: '3' },
+                            { value: '4', label: '4' },
+                            { value: '5', label: '5' },
+                            { value: '6', label: '6' },
+                            { value: '7', label: '7' },
+
+                        ]}
                         maxMenuHeight={"100px"}
                         styles={colourStyles}
                     />
@@ -96,7 +109,16 @@ export const Home = () => {
                         classNamePrefix="select"
                         placeholder='Select Mark'
                         name="color"
-                        options={[{ value: '1', label: '1' }]}
+                        options={ [
+                            { value: '1', label: '1' },
+                            { value: '2', label: '2' },
+                            { value: '3', label: '3' },
+                            { value: '4', label: '4' },
+                            { value: '5', label: '5' },
+                            { value: '6', label: '6' },
+                            { value: '7', label: '7' },
+
+                        ]}
                         maxMenuHeight={"100px"}
                         styles={colourStyles}
                     />
@@ -111,10 +133,10 @@ export const Home = () => {
 
             </div>
 
-            <hr />
+            <hr className="home-hr" />
 
             <p>
-                Copyrights 2023 <em>RO</em> Developed by RO
+                Copyrights 2023 <em>Primo Carthage</em> Developed by RO
             </p>
 
 
