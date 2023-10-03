@@ -100,7 +100,7 @@ function Contact() {
                 </div>
                 <div className="email">
                   <h4>Email</h4>
-                  <a href="#">info@auction.com</a>
+                  <a href="#">info@RO.com</a>
                 </div>
                 <div className="address">
                   <h4>Address</h4>
