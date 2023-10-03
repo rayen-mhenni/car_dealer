@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 export default function Listing() {
   return (
-    <div>
+    <div className="inventory">
       <div id="page-heading">
         <div className="container">
           <div className="row">
@@ -116,6 +116,89 @@ export default function Listing() {
                 </div>
               </div>
 
+              <div className="featured-item last-featured">
+                <img
+                  src="https://e0.pxfuel.com/wallpapers/192/395/desktop-wallpaper-car-high-resolution-high-quality-car.jpg"
+                  className="carPic"
+                  alt=""
+                />
+                <div className="right-content">
+                  <a href="/details">
+                    <h2>audi a6 tfsi s-line</h2>
+                  </a>
+                  <span>48,000 $</span>
+                  <div className="light-line" />
+                  <p>
+                    <div className="card_specs">
+                      <table class="car-specs">
+                        <tbody>
+                          <tr>
+                            <td class="option-primary">Vin:&nbsp;</td>
+                            <td class="spec">2T1BR32EX4C838931</td>
+                          </tr>
+                          <tr>
+                            <td class="option-primary">Make:&nbsp;</td>
+                            <td class="spec">Toyota</td>
+                          </tr>
+                          <tr>
+                            <td class="option-primary">Model:&nbsp;</td>
+                            <td class="spec">Corolla</td>
+                          </tr>
+                          <tr>
+                            <td class="option-primary">Body type:&nbsp;</td>
+                            <td class="spec">Sedan</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <table class="car-specs-2 hidden-md hidden-sm hidden-xs">
+                        <tbody>
+                          <tr>
+                            <td class="option-primary">Engine:&nbsp;</td>
+                            <td class="spec">1.8 L</td>
+                          </tr>
+                          <tr>
+                            <td class="option-primary">Cylinders:&nbsp;</td>
+                            <td class="spec">4</td>
+                          </tr>
+                          <tr>
+                            <td class="option-primary">
+                              Exterior color:&nbsp;
+                            </td>
+                            <td class="spec">Black</td>
+                          </tr>
+                          <tr>
+                            <td class="option-primary">
+                              Interior color:&nbsp;
+                            </td>
+                            <td class="spec">Grey</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div className="view-details">
+                        <a href="/details">View Details</a>
+                      </div>
+                    </div>
+                  </p>
+
+                  <div className="car-info">
+                    <ul>
+                      <li>
+                        <i className="icon-gaspump" />
+                        Diesel
+                      </li>
+                      <li>year</li>
+                      <li>
+                        <i className="icon-road2" />
+                        12,000 Mile
+                      </li>
+                      <li>Automatique</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              
               <div className="featured-item last-featured">
                 <img
                   src="https://e0.pxfuel.com/wallpapers/192/395/desktop-wallpaper-car-high-resolution-high-quality-car.jpg"
