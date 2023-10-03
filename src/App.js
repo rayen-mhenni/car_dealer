@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import Listing from "./Listing";
 import SingleList from "./SingleList";
 import Contact from "./Contact";
+import Details from "./Details";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/listing" element={<Listing />} />
           <Route path="/single/:id" element={<SingleList />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/details" element={<Details />} />
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>

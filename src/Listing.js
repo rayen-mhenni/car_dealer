@@ -122,7 +122,7 @@ export default function Listing() {
                   alt=""
                 />
                 <div className="right-content">
-                  <a href="single-list.html">
+                  <a href="/details">
                     <h2>audi a6 tfsi s-line</h2>
                   </a>
                   <span>48,000 $</span>
@@ -175,7 +175,7 @@ export default function Listing() {
                         </tbody>
                       </table>
                       <div className="view-details">
-                        <a href="#">View Details</a>
+                        <a href="/details">View Details</a>
                       </div>
                     </div>
                   </p>
