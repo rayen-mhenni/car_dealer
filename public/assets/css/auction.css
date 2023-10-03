@@ -130,9 +130,14 @@ p {
 .site-header .main-header .logo {
   float: left;
   line-height: 110px;
-  padding-right: 250px;
+  padding-right: 150px;
   margin-right: 40px;
 }
+.site-header .main-header .logo img{
+  max-width: 200px;
+}
+
+
 
 @media (max-width: 991px) {
   .site-header .main-header .logo {
@@ -426,12 +431,16 @@ nav.responsive-menu a {
   }
 }
 footer {
-  background-color: #26313c;
+  background-color: #000000c9;
   padding: 60px 0px 70px 0px;
 }
+
 footer p {
-  color: #8997a5;
+  color: #fff;
 }
+
+
+
 footer h4 {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
@@ -441,6 +450,11 @@ footer h4 {
   margin-bottom: 45px;
   margin-top: 15px;
 }
+
+footer .about-us img{
+  width: 100%;
+}
+
 footer .about-us p {
   margin-top: 30px;
   margin-bottom: 15px;
@@ -453,7 +467,7 @@ footer .about-us ul {
 footer .about-us ul li {
   margin-top: 15px;
   display: block;
-  color: #8997a5;
+  color: #fff;
   font-style: "Roboto", sans-serif;
   font-size: 12px;
 }
@@ -464,7 +478,7 @@ footer .about-us ul li i {
   line-height: 30px;
   display: inline-block;
   border: 1px solid rgba(250, 250, 250, 0.2);
-  color: #ffffff;
+  color: #fff;
   font-size: 13px;
   margin-right: 15px;
 }
@@ -487,7 +501,7 @@ footer .featured-links ul li {
   margin-bottom: 15px;
 }
 footer .featured-links ul li a {
-  color: #8997a5;
+  color: #fff;
   font-style: "Roboto", sans-serif;
   font-size: 12px;
 }
@@ -552,12 +566,12 @@ footer .gallery .gallery-item img {
   overflow: hidden;
 }
 #sub-footer {
-  background-color: #1e2832;
+  background-color: #1f1e1ec9;
   padding: 15px 0px;
 }
 #sub-footer p {
   margin-bottom: 0px;
-  color: #8997a5;
+  color: #fff;
 }
 @media (max-width: 991px) {
   #sub-footer p {
