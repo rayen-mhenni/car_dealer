@@ -126,7 +126,6 @@ function Contact() {
         allowFullScreen=""
         loading="lazy"
       ></iframe>
-      <div id="map" />
       <Footer />
     </div>
   );
