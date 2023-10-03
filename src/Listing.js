@@ -117,7 +117,8 @@ export default function Listing() {
 
               <div className="featured-item last-featured">
                 <img
-                  src="http://dummyimage.com/310x210/cccccc/fff.jpg"
+                  src="https://e0.pxfuel.com/wallpapers/192/395/desktop-wallpaper-car-high-resolution-high-quality-car.jpg"
+                  className="carPic"
                   alt=""
                 />
                 <div className="right-content">
