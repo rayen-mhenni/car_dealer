@@ -26,15 +26,15 @@ export default function Details() {
               </div>
               <Carousel>
                 <div>
-                  <img src="https://hips.hearstapps.com/hmg-prod/images/2024-audi-rs6-performance-city-rear-1669663117.jpg?crop=0.488xw:0.651xh;0.139xw,0.236xh&resize=1200:*" />
+                  <img className="carousel-car" src="https://hips.hearstapps.com/hmg-prod/images/2024-audi-rs6-performance-city-rear-1669663117.jpg?crop=0.488xw:0.651xh;0.139xw,0.236xh&resize=1200:*" />
                   {/* <p className="legend">Legend 1</p> */}
                 </div>
                 <div>
-                  <img src="https://static.moniteurautomobile.be/imgcontrol/images_tmp/clients/moniteur/c680-d465/content/medias/images/news/40000/900/50/audi_rs6-performance-31.jpg" />
+                  <img className="carousel-car" src="https://static.moniteurautomobile.be/imgcontrol/images_tmp/clients/moniteur/c680-d465/content/medias/images/news/40000/900/50/audi_rs6-performance-31.jpg" />
                   {/* <p className="legend">Legend 2</p> */}
                 </div>
                 <div>
-                  <img src="https://i.gaw.to/content/photos/43/51/435124-l-audi-rs-6-avant-2021-a-un-prix-qui-reflete-bien-sa-folie.jpeg?1024x640" />
+                  <img className="carousel-car" src="https://i.gaw.to/content/photos/43/51/435124-l-audi-rs-6-avant-2021-a-un-prix-qui-reflete-bien-sa-folie.jpeg?1024x640" />
                   {/* <p className="legend">Legend 3</p> */}
                 </div>
               </Carousel>

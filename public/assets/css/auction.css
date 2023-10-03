@@ -133,11 +133,9 @@ p {
   padding-right: 150px;
   margin-right: 40px;
 }
-.site-header .main-header .logo img{
+.site-header .main-header .logo img {
   max-width: 200px;
 }
-
-
 
 @media (max-width: 991px) {
   .site-header .main-header .logo {
@@ -439,8 +437,6 @@ footer p {
   color: #fff;
 }
 
-
-
 footer h4 {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
@@ -451,7 +447,7 @@ footer h4 {
   margin-top: 15px;
 }
 
-footer .about-us img{
+footer .about-us img {
   width: 100%;
 }
 
@@ -2030,6 +2026,7 @@ footer .gallery .gallery-item img {
   flex-wrap: nowrap;
   justify-content: space-around;
 }
+
 .view-details {
   display: flex;
   align-content: center;
