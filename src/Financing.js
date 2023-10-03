@@ -34,7 +34,7 @@ function Financing() {
 
                         <div className="col-md-3 col-sm-6 col-xs-12">
                           Title
-                          <input type="text" name="s" placeholder="First name" />
+                          <input type="text" name="s"  />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
                           First name *
@@ -46,13 +46,13 @@ function Financing() {
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
                           Date of birth *
-                          <input type="text" name="s" placeholder="DD-MM-YYYY" />
+                          <input type="text" name="s"  />
                         </div>
                       </div>
                       <div className="row">
                         <div className="col-md-3 col-sm-6 col-xs-12">
                           SIN
-                          <input type="text" name="s" placeholder="xx-xxx-xxx" />
+                          <input type="text" name="s"  />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
                           Email *
@@ -70,7 +70,7 @@ function Financing() {
                       <div className="row">
                         <div className="col-md-3 col-sm-6 col-xs-12">
                           Current Address Duration (years)
-                          <input type="text" name="s" placeholder="First name" />
+                          <input type="text" name="s"  />
                         </div>
                       </div>
                       <div className="row">
