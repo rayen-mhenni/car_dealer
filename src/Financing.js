@@ -30,7 +30,9 @@ function Financing() {
                       encType="multipart/form-data"
                     >
                       <div className="row">
+                      
                         <h4>PERSONAL INFORMATION</h4>
+                        <br />
 
                         <div className="col-md-3 col-sm-6 col-xs-12">
                           Title
@@ -49,6 +51,7 @@ function Financing() {
                           <input type="text" name="s"  />
                         </div>
                       </div>
+
                       <div className="row">
                         <div className="col-md-3 col-sm-6 col-xs-12">
                           SIN
@@ -64,15 +67,20 @@ function Financing() {
                         </div>
                       </div>
                       <br />
+                      <hr/>
+
                       <div className="row">
                         <h4>CONTACT INFORMATION</h4>
+                        <br />
                       </div>
+
                       <div className="row">
                         <div className="col-md-3 col-sm-6 col-xs-12">
                           Current Address Duration (years)
                           <input type="text" name="s"  />
                         </div>
                       </div>
+
                       <div className="row">
                         <div className="col-md-3 col-sm-6 col-xs-12">
                           Street *
@@ -93,9 +101,12 @@ function Financing() {
                       </div>
 
                       <br />
+                      <hr/>
                       <div className="row">
                         <h4>CURRENT JOB</h4>
+                        <br />
                       </div>
+                      
                       <div className="row">
                         <div className="col-md-3 col-sm-6 col-xs-12">
                           Company
@@ -110,10 +121,14 @@ function Financing() {
                           <input type="text" name="s" />
                         </div>
                       </div>
+
                       <br />
+                      <hr/>
                       <div className="row">
                         <h4>FINANCIAL INFORMATION</h4>
+                        <br />
                       </div>
+                      
                       <div className="row">
                         <div className="col-md-3 col-sm-6 col-xs-12">
                           Monthly Income
@@ -128,11 +143,15 @@ function Financing() {
                           <input type="text" name="s" />
                         </div>
                       </div>
+
+                      <hr/>
+
                       <div className="row">
                         <br />
                         <h4>Disclosure & Privacy Notice</h4>
                         <br />
                       </div>
+
                       <div className="row">
                         <span>
                           By checking this box, I consent to the collection, use
@@ -157,6 +176,8 @@ function Financing() {
                           to the Terms & Conditions above.
                         </strong>
                       </div>
+                      
+
                       <div className="col-md-12 col-sm-12 col-xs-12">
                         <div className="advanced-button">
                           <a href="#">
@@ -165,6 +186,7 @@ function Financing() {
                           </a>
                         </div>
                       </div>
+
                     </form>
                   </div>
                 </div>
