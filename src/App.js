@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import Listing from "./Listing";
 import Contact from "./Contact";
 import Details from "./Details";
+import Financing from "./Financing";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/listing" element={<Listing />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/details" element={<Details />} />
+          <Route path="/financing" element={<Financing />} />
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>
