@@ -32,7 +32,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <i className="fa fa-envelope-o" />
-                    contact@auction.com
+                    contact@RO.com
                   </li>
                 </ul>
               </div>
@@ -81,7 +81,7 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-12 col-sm-12">
               <p>
-                Copyrights 2015 <em>Auction</em>. Developed by Robert
+                Copyrights 2015 <em>RO</em>. Developed by RO
               </p>
             </div>
 
