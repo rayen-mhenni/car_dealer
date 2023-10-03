@@ -4,7 +4,7 @@ import { Carousel } from "react-responsive-carousel";
 
 export default function Details() {
   return (
-    <>
+    <div className="inventory">
       <div id="page-heading">
         <div className="container">
           <div className="row">
@@ -140,6 +140,6 @@ export default function Details() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

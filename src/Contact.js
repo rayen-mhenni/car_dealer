@@ -3,7 +3,8 @@ import Footer from "./Footer";
 
 function Contact() {
   return (
-    <div>
+    <div className="inventory">
+
       <div id="page-heading">
         <div className="container">
           <div className="row">
@@ -36,7 +37,7 @@ function Contact() {
                         className="name"
                         name="s"
                         placeholder="First name"
-                        defaultValue
+                        
                       />
                     </div>
                     <div className="col-md-6 col-sm-12 col-xs-12">
@@ -45,7 +46,7 @@ function Contact() {
                         className="email"
                         name="s"
                         placeholder="Email address"
-                        defaultValue
+                        
                       />
                     </div>
                     <div className="col-md-6 col-sm-12 col-xs-12">
@@ -54,7 +55,7 @@ function Contact() {
                         className="site"
                         name="s"
                         placeholder="Phone"
-                        defaultValue
+                        
                       />
                     </div>
                     <div className="col-md-6 col-sm-12 col-xs-12">
@@ -63,7 +64,7 @@ function Contact() {
                         className="phone"
                         name="s"
                         placeholder="Your website	"
-                        defaultValue
+                        
                       />
                     </div>
                     <div className="col-md-12 col-sm-12 col-xs-12">
@@ -72,7 +73,7 @@ function Contact() {
                         className="message"
                         name="message"
                         placeholder="Write message"
-                        defaultValue={""}
+                        
                       />
                     </div>
                     <div className="col-md-12 col-sm-12 col-xs-12">
@@ -99,7 +100,7 @@ function Contact() {
                 </div>
                 <div className="email">
                   <h4>Email</h4>
-                  <a href="#">info@RO.com</a>
+                  <span>test@RO.com</span>
                 </div>
                 <div className="address">
                   <h4>Address</h4>

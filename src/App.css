@@ -81,6 +81,10 @@
   margin-left: 10px;
 }
 
+ .select-inv {
+  margin-bottom: 15px;
+}
+
 .home .search-form .home-advanced-button {
   width: 10%;
   margin-left: 10px;
@@ -123,10 +127,15 @@
     border: none;
     margin-left: 0px;
   }
-
-
 }
 
+.inventory {
+  background-color: #000000eb;
+}
+
+.map {
+  filter: grayscale(100%) invert(92%) contrast(83%);
+}
 
 
 
