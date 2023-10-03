@@ -11,8 +11,7 @@ function Contact() {
               <h1>Contact Us</h1>
               <div className="line" />
               <span>
-                Praesent volutpat nisi sed imperdiet facilisis felis turpis
-                fermentum lectus
+              Your dream car is just a visit away!
               </span>
             </div>
           </div>
