@@ -1,61 +1,128 @@
 import React from "react";
+import Select from "react-select";
 
 export const Home = () => {
+
+    const colourStyles = {
+        control: styles => ({
+            ...styles,
+            backgroundColor: 'rgba(135, 129, 129, 0.264)',
+            border: 'none',
+            color: '#000',
+            outline: "none",
+            padding: '8px'
+        }),
+        option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+            return {
+                ...styles,
+                backgroundColor: 'rgba(135, 129, 129, 0.264)',
+                color: '#000',
+                fontSize: 'larger',
+                ':active': {
+                    ...styles[':active'],
+                    backgroundColor: '#e4ca73',
+                },
+            };
+        },
+        placeholder: (styles) => ({
+            ...styles,
+            color: '#fff',
+            fontSize: 'larger'
+        }),
+        singleValue: (styles, { data }) => ({
+            ...styles,
+            color: '#fff',
+            fontSize: 'larger'
+        }),
+        input: (styles) => ({ ...styles, color: '#fff' }),
+
+
+    };
+
     return (
-        <div className="cover">
+
+        <div className="home">
+
+            <div className="cover">
+
+                <div className="title">
+                    <img src="assets/images/home-header.png" alt="" />
+                </div>
+
+            </div>
 
             <div className="card">
 
-                <div className="car-logo">
-
-                    <a href="index.html">
-                        <img src="assets/images/logo-card.png" alt="" />
-                    </a>
-
-                </div>
 
                 <div className="search-form">
 
-                    <div className="select">
-                        <select name="mark" id="make">
-                            <option value={-1}>Select Makes</option>
-                            <option>Price</option>
-                            <option>Miles</option>
-                            <option>Year</option>
-                            <option>Near</option>
-                        </select>
-                    </div>
 
-                    <div className="select">
-                        <select name="mark" id="make">
-                            <option value={-1}>Select Makes</option>
-                            <option>Price</option>
-                            <option>Miles</option>
-                            <option>Year</option>
-                            <option>Near</option>
-                        </select>
-                    </div>
+                    <Select
+                        className="basic-single select-home"
+                        isClearable={true}
+                        classNamePrefix="select"
+                        placeholder='Select Mark'
+                        name="color"
+                        maxMenuHeight={"100px"}
+                        options={
+                            [
+                                { value: '1', label: '1' },
+                                { value: '2', label: '1' },
+                                { value: '3', label: '1' },
+                                { value: '4', label: '1' },
+                                { value: '5', label: '1' },
+                                { value: '6', label: '1' },
+                                { value: '7', label: '1' },
 
-                    <div className="select">
-                        <select name="mark" id="make">
-                            <option value={-1}>Select Makes</option>
-                            <option>Price</option>
-                            <option>Miles</option>
-                            <option>Year</option>
-                            <option>Near</option>
-                        </select>
-                    </div>
+                            ]
+                        }
+                        styles={colourStyles}
+                    />
 
-                    <div className="advanced-button-cover">
-                        Search Now
-                    </div>
+                    <Select
+                        className="basic-single select-home"
+                        isClearable={true}
+                        classNamePrefix="select"
+                        placeholder='Select Mark'
+                        name="color"
+                        options={[{ value: '1', label: '1' }]}
+                        maxMenuHeight={"100px"}
+                        styles={colourStyles}
+                    />
+
+                    <Select
+                        className="basic-single select-home"
+                        isClearable={true}
+                        classNamePrefix="select"
+                        placeholder='Select Mark'
+                        name="color"
+                        options={[{ value: '1', label: '1' }]}
+                        maxMenuHeight={"100px"}
+                        styles={colourStyles}
+                    />
+
+
+                    <button className="home-advanced-button">  Search Now </button>
 
 
                 </div>
+
 
 
             </div>
 
+            <hr />
+
+            <p>
+                Copyrights 2023 <em>RO</em> Developed by RO
+            </p>
+
+
+
         </div>
+
     );
 };
+
+
+
