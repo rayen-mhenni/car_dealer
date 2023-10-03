@@ -7,7 +7,6 @@ import { Home } from "./Home";
 import Header from "./Header";
 import Footer from "./Footer";
 import Listing from "./Listing";
-import SingleList from "./SingleList";
 import Contact from "./Contact";
 import Details from "./Details";
 
@@ -19,7 +18,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/listing" element={<Listing />} />
-          <Route path="/single/:id" element={<SingleList />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/details" element={<Details />} />
         </Routes>

@@ -34,7 +34,7 @@ html {
 }
 html ::selection {
   color: #ffffff;
-  background: #336699;
+  background: #e4ca73;
 }
 section {
   padding: 70px 0;
@@ -50,15 +50,15 @@ p {
   width: 100%;
   height: 42px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSI0MCUiIHN0b3AtY29sb3I9IiMyZjVlOGUiIHN0b3Atb3BhY2l0eT0iMSIvPjxzdG9wIG9mZnNldD0iNDAlIiBzdG9wLWNvbG9yPSIjMzM2Njk5IiBzdG9wLW9wYWNpdHk9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjbGVzc2hhdC1nZW5lcmF0ZWQpIiAvPjwvc3ZnPg==);
-  background-image: -webkit-linear-gradient(-45deg, #2f5e8e 40%, #336699 40%);
-  background-image: -moz-linear-gradient(-45deg, #2f5e8e 40%, #336699 40%);
-  background-image: -o-linear-gradient(-45deg, #2f5e8e 40%, #336699 40%);
-  background-image: linear-gradient(-45deg, #2f5e8e 40%, #336699 40%);
+  background-image: -webkit-linear-gradient(-45deg, #2f5e8e 40%, #e4ca73 40%);
+  background-image: -moz-linear-gradient(-45deg, #2f5e8e 40%, #e4ca73 40%);
+  background-image: -o-linear-gradient(-45deg, #2f5e8e 40%, #e4ca73 40%);
+  background-image: linear-gradient(-45deg, #2f5e8e 40%, #e4ca73 40%);
 }
 @media (max-width: 991px) {
   #sub-header {
     background-image: none;
-    background-color: #336699;
+    background-color: #e4ca73;
   }
 }
 #sub-header ul {
@@ -629,7 +629,7 @@ footer .gallery .gallery-item img {
 .who-is .left-content a {
   font-size: 11px;
   font-family: "Montserrat", sans-serif;
-  color: #336699;
+  color: #e4ca73;
   text-transform: uppercase;
 }
 .who-is .left-content a:hover {
@@ -643,7 +643,7 @@ footer .gallery .gallery-item img {
   display: block;
   margin-bottom: 50px;
   width: 100%;
-  background: #f5fafe;
+  background: #000;
   height: 10px;
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -685,13 +685,13 @@ footer .gallery .gallery-item img {
 .who-is .right-content .skillbar-bar {
   height: 10px;
   width: 0px;
-  background: #f5fafe;
+  background: #000;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
 .meet-team {
-  background-color: #f5fafe;
+  background-color: #000;
 }
 @media (max-width: 991px) {
   .meet-team .team-member {
@@ -866,7 +866,7 @@ footer .gallery .gallery-item img {
   margin-bottom: 5px;
 }
 .blog-news .blog-item .up-content .tittle h2:hover {
-  color: #336699;
+  color: #e4ca73;
 }
 .blog-news .blog-item .up-content .tittle a {
   text-decoration: none;
@@ -877,7 +877,7 @@ footer .gallery .gallery-item img {
 .blog-news .blog-item a {
   font-size: 11px;
   font-family: "Montserrat", sans-serif;
-  color: #336699;
+  color: #e4ca73;
   text-transform: uppercase;
 }
 .blog-news .blog-item a:hover {
@@ -922,7 +922,7 @@ footer .gallery .gallery-item img {
   margin-bottom: 5px;
 }
 .blog-page .blog-item .down-content .tittle h2:hover {
-  color: #336699;
+  color: #e4ca73;
 }
 .blog-page .blog-item .down-content .tittle a {
   text-decoration: none;
@@ -933,7 +933,7 @@ footer .gallery .gallery-item img {
 .blog-page .blog-item a {
   font-size: 11px;
   font-family: "Montserrat", sans-serif;
-  color: #336699;
+  color: #e4ca73;
   text-transform: uppercase;
 }
 .blog-page .blog-item a:hover {
@@ -1056,7 +1056,7 @@ footer .gallery .gallery-item img {
   margin-bottom: -36px;
 }
 .blog-page .pagination .prev a {
-  background-color: #f5fafe;
+  background-color: #000;
   border: 1px solid #e5f2ff;
   padding: 0px 15px;
   height: 36px;
@@ -1064,7 +1064,7 @@ footer .gallery .gallery-item img {
   line-height: 36px;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
-  color: #336699;
+  color: #e4ca73;
   text-transform: uppercase;
 }
 .blog-page .pagination .prev a i {
@@ -1075,7 +1075,7 @@ footer .gallery .gallery-item img {
   margin-top: -36px;
 }
 .blog-page .pagination .next a {
-  background-color: #f5fafe;
+  background-color: #000;
   border: 1px solid #e5f2ff;
   padding: 0px 15px;
   height: 36px;
@@ -1083,7 +1083,7 @@ footer .gallery .gallery-item img {
   line-height: 36px;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
-  color: #336699;
+  color: #e4ca73;
   text-transform: uppercase;
 }
 .blog-page .pagination .next a i {
@@ -1091,7 +1091,7 @@ footer .gallery .gallery-item img {
 }
 .blog-page .pagination .page-numbers {
   text-align: center;
-  background-color: #f5fafe;
+  background-color: #000;
   border: 1px solid #e5f2ff;
   height: 36px;
   width: 245px;
@@ -1112,11 +1112,11 @@ footer .gallery .gallery-item img {
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   line-height: 36px;
-  color: #336699;
+  color: #e4ca73;
   text-transform: uppercase;
 }
 .blog-page .pagination .page-numbers ul .active a {
-  border-bottom: 2px solid #336699;
+  border-bottom: 2px solid #e4ca73;
   padding-bottom: 7px;
   padding-right: 3px;
   padding-left: 3px;
@@ -1160,7 +1160,7 @@ footer .gallery .gallery-item img {
   margin-bottom: 5px;
 }
 .blog-grid .blog-item .down-content .tittle h2:hover {
-  color: #336699;
+  color: #e4ca73;
 }
 .blog-grid .blog-item .down-content .tittle a {
   text-decoration: none;
@@ -1171,7 +1171,7 @@ footer .gallery .gallery-item img {
 .blog-grid .blog-item a {
   font-size: 11px;
   font-family: "Montserrat", sans-serif;
-  color: #336699;
+  color: #e4ca73;
   text-transform: uppercase;
 }
 .blog-grid .blog-item a:hover {
@@ -1216,7 +1216,7 @@ footer .gallery .gallery-item img {
   margin-bottom: 5px;
 }
 .single-blog .blog-item .down-content .tittle h2:hover {
-  color: #336699;
+  color: #e4ca73;
 }
 .single-blog .blog-item .down-content .tittle a {
   text-decoration: none;
@@ -1307,7 +1307,7 @@ footer .gallery .gallery-item img {
 .single-blog .comments .comment-item .reply-button a {
   font-size: 11px;
   font-family: "Montserrat", sans-serif;
-  color: #336699;
+  color: #e4ca73;
   text-transform: uppercase;
 }
 .single-blog .comments .comment-item .reply-button a:hover {
@@ -1471,7 +1471,7 @@ footer .gallery .gallery-item img {
 .contact-info a {
   font-family: "Roboto", sans-serif;
   font-size: 12px;
-  color: #336699;
+  color: #e4ca73;
 }
 .contact-info .fax {
   margin-top: 30px;
@@ -1483,10 +1483,10 @@ footer .gallery .gallery-item img {
   margin-top: 30px;
 }
 .featured-listing {
-  background-color: #f5fafe;
+  background-color: #000;
 }
 .featured-listing .heading-section-2 .dec i {
-  background-color: #f5fafe;
+  background-color: #000;
 }
 .featured-listing #featured-cars .col-md-15 {
   padding-left: 15px;
@@ -1608,12 +1608,13 @@ footer .gallery .gallery-item img {
   padding-right: 0px;
 }
 .featured-listing #featured-cars .featured-item:hover h2 {
-  color: #336699;
+  color: #e4ca73;
 }
 .pre-featured {
-  background-color: #f5fafe;
+  background-color: #000;
   margin-bottom: 30px;
 }
+
 .pre-featured h4 {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
@@ -1622,6 +1623,7 @@ footer .gallery .gallery-item img {
   float: left;
   margin-left: 20px;
   margin-top: 25px;
+  color: #fff;
 }
 .pre-featured .right-content {
   text-align: right;
@@ -1632,13 +1634,14 @@ footer .gallery .gallery-item img {
 }
 .pre-featured .right-content .input-select select {
   cursor: pointer;
-  border: 1px solid #e5f2ff;
+  /* border: 1px solid #e5f2ff; */
+  background-color: rgba(135, 129, 129, 0.264);
   width: 180px;
   height: 36px;
   padding: 5px;
   font-family: "Montserrat", sans-serif;
   font-size: 11px;
-  color: #336699;
+  color: #fff;
   text-transform: uppercase;
   outline: none;
 }
@@ -1662,7 +1665,7 @@ footer .gallery .gallery-item img {
   display: inline-block;
 }
 .pre-featured .right-content .grid-list ul li a {
-  color: #336699;
+  color: #e4ca73;
   width: 36px;
   height: 36px;
   text-align: center;
@@ -1752,7 +1755,7 @@ footer .gallery .gallery-item img {
   padding-right: 0px;
 }
 .listing-grid .featured-item:hover h2 {
-  color: #336699;
+  color: #e4ca73;
 }
 .listing-grid .pagination {
   display: inline-block;
@@ -1763,7 +1766,7 @@ footer .gallery .gallery-item img {
   margin-bottom: -36px;
 }
 .listing-grid .pagination .prev a {
-  background-color: #f5fafe;
+  background-color: #000;
   border: 1px solid #e5f2ff;
   padding: 0px 15px;
   height: 36px;
@@ -1771,7 +1774,7 @@ footer .gallery .gallery-item img {
   line-height: 36px;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
-  color: #336699;
+  color: #e4ca73;
   text-transform: uppercase;
 }
 .listing-grid .pagination .prev a i {
@@ -1782,7 +1785,7 @@ footer .gallery .gallery-item img {
   margin-top: -36px;
 }
 .listing-grid .pagination .next a {
-  background-color: #f5fafe;
+  background-color: #000;
   border: 1px solid #e5f2ff;
   padding: 0px 15px;
   height: 36px;
@@ -1790,7 +1793,7 @@ footer .gallery .gallery-item img {
   line-height: 36px;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
-  color: #336699;
+  color: #e4ca73;
   text-transform: uppercase;
 }
 .listing-grid .pagination .next a i {
@@ -1798,7 +1801,7 @@ footer .gallery .gallery-item img {
 }
 .listing-grid .pagination .page-numbers {
   text-align: center;
-  background-color: #f5fafe;
+  background-color: #000;
   border: 1px solid #e5f2ff;
   height: 36px;
   width: 245px;
@@ -1819,11 +1822,11 @@ footer .gallery .gallery-item img {
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   line-height: 36px;
-  color: #336699;
+  color: #e4ca73;
   text-transform: uppercase;
 }
 .listing-grid .pagination .page-numbers ul .active a {
-  border-bottom: 2px solid #336699;
+  border-bottom: 2px solid #e4ca73;
   padding-bottom: 7px;
   padding-right: 3px;
   padding-left: 3px;
@@ -1918,7 +1921,7 @@ footer .gallery .gallery-item img {
 .listing-page #listing-cars .featured-item .right-content .view-details a {
   font-size: 11px;
   font-family: "Montserrat", sans-serif;
-  color: #336699;
+  color: #000;
   text-transform: uppercase;
   border: 1px solid #eeeeee;
   padding: 5px 8px;
@@ -1960,7 +1963,7 @@ footer .gallery .gallery-item img {
   }
 }
 .listing-page #listing-cars .featured-item .right-content .car-info ul {
-  background-color: #f5fafe;
+  background-color: #000;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -1980,7 +1983,7 @@ footer .gallery .gallery-item img {
   border-right: 1px solid #eeeeee;
   display: inline-block;
   font-size: 13px;
-  color: #888888;
+  color: #fff;
   font-family: "Roboto", sans-serif;
 }
 @media (max-width: 991px) {
@@ -1993,7 +1996,7 @@ footer .gallery .gallery-item img {
 .listing-page #listing-cars .featured-item .right-content .car-info ul li i {
   margin-left: -5px;
   margin-right: 5px;
-  color: #222222;
+  color: #e4ca73;
 }
 @media (max-width: 991px) {
   .listing-page #listing-cars .featured-item .right-content .car-info ul li i {
@@ -2040,7 +2043,7 @@ footer .gallery .gallery-item img {
   font-weight: bolder;
 }
 .listing-page #listing-cars .featured-item:hover h2 {
-  color: #336699;
+  color: #e4ca73;
 }
 .listing-page #listing-cars .last-featured {
   margin-bottom: 30px;
@@ -2059,7 +2062,7 @@ footer .gallery .gallery-item img {
   margin-bottom: -36px;
 }
 .listing-page #listing-cars .pagination .prev a {
-  background-color: #f5fafe;
+  background-color: #000;
   border: 1px solid #e5f2ff;
   padding: 0px 15px;
   height: 36px;
@@ -2067,7 +2070,7 @@ footer .gallery .gallery-item img {
   line-height: 36px;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
-  color: #336699;
+  color: #fff;
   text-transform: uppercase;
 }
 .listing-page #listing-cars .pagination .prev a i {
@@ -2078,7 +2081,7 @@ footer .gallery .gallery-item img {
   margin-top: -36px;
 }
 .listing-page #listing-cars .pagination .next a {
-  background-color: #f5fafe;
+  background-color: #000;
   border: 1px solid #e5f2ff;
   padding: 0px 15px;
   height: 36px;
@@ -2086,7 +2089,7 @@ footer .gallery .gallery-item img {
   line-height: 36px;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
-  color: #336699;
+  color: #fff;
   text-transform: uppercase;
 }
 .listing-page #listing-cars .pagination .next a i {
@@ -2094,7 +2097,7 @@ footer .gallery .gallery-item img {
 }
 .listing-page #listing-cars .pagination .page-numbers {
   text-align: center;
-  background-color: #f5fafe;
+  background-color: #000;
   border: 1px solid #e5f2ff;
   height: 36px;
   width: 245px;
@@ -2115,11 +2118,11 @@ footer .gallery .gallery-item img {
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   line-height: 36px;
-  color: #336699;
+  color: #fff;
   text-transform: uppercase;
 }
 .listing-page #listing-cars .pagination .page-numbers ul .active a {
-  border-bottom: 2px solid #336699;
+  border-bottom: 2px solid #e4ca73;
   padding-bottom: 7px;
   padding-right: 3px;
   padding-left: 3px;
@@ -2127,7 +2130,7 @@ footer .gallery .gallery-item img {
 .car-details .up-content {
   position: relative;
   width: 100%;
-  background-color: #f5fafe;
+  background-color: #000;
   height: 60px;
 }
 @media (max-width: 991px) {
@@ -2236,7 +2239,7 @@ footer .gallery .gallery-item img {
 .car-details .tabs .tab-content h6 {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  color: #336699;
+  color: #e4ca73;
   font-weight: 400;
 }
 .car-details .tabs .tab-content p {
@@ -2275,11 +2278,11 @@ footer .gallery .gallery-item img {
   margin-right: 10px;
 }
 #sidebar .sidebar-content {
-  background-color: #336699;
+  background-color: #000;
 }
 #sidebar .sidebar-content .head-side-bar {
   padding: 15px 0px;
-  background-color: #2f5e8e;
+  background-color: #000;
 }
 #sidebar .sidebar-content .head-side-bar h4 {
   margin-top: 0px;
@@ -2319,13 +2322,13 @@ footer .gallery .gallery-item img {
   margin-bottom: 20px;
 }
 #sidebar .sidebar-content .search-form select {
-  border: 1px solid #5e90c2;
+  border: none;
   cursor: pointer;
   width: 100%;
-  background-color: #336699;
+  background-color: rgba(135, 129, 129, 0.264);
   font-family: "Roboto", sans-serif;
   font-size: 12px;
-  color: #a7cdf2;
+  color: #fff;
   padding: 8px;
   outline: none;
   -webkit-appearance: none;
@@ -2413,7 +2416,7 @@ footer .gallery .gallery-item img {
   float: right;
   width: 36px;
   height: 36px;
-  background-color: #336699;
+  background-color: #e4ca73;
   display: inline-block;
   text-align: center;
   line-height: 32px;
@@ -2437,7 +2440,7 @@ footer .gallery .gallery-item img {
   }
 }
 #left-info .details {
-  background-color: #f5fafe;
+  background-color: #000;
 }
 #left-info .details .head-side-bar {
   padding: 15px 0px;
@@ -2471,7 +2474,7 @@ footer .gallery .gallery-item img {
   display: block;
   font-family: "Roboto", sans-serif;
   font-size: 12px;
-  color: #336699;
+  color: #e4ca73;
   font-weight: 700;
 }
 #left-info .details .list-info ul li span {
@@ -2487,7 +2490,7 @@ footer .gallery .gallery-item img {
   padding-bottom: 20px;
 }
 #left-info .enquiry {
-  background-color: #f5fafe;
+  background-color: #000;
   margin-top: 30px;
 }
 #left-info .enquiry .head-side-bar {
@@ -2517,7 +2520,7 @@ footer .gallery .gallery-item img {
   margin-left: 20px;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
-  color: #336699;
+  color: #e4ca73;
   text-transform: uppercase;
   font-weight: 700;
   border-left: 4px solid #e4ca73;
@@ -2531,7 +2534,7 @@ footer .gallery .gallery-item img {
 #left-info .enquiry .contact-form p {
   font-family: "Roboto", sans-serif;
   font-size: 12px;
-  color: #336699;
+  color: #e4ca73;
   margin-bottom: 20px;
 }
 #left-info .enquiry .contact-form input {
@@ -2539,7 +2542,7 @@ footer .gallery .gallery-item img {
   height: 40px;
   font-family: "Roboto", sans-serif;
   font-size: 12px;
-  color: #336699;
+  color: #e4ca73;
   outline: none;
   border: 1px solid #e5f2ff;
   margin-bottom: 20px;
@@ -2552,7 +2555,7 @@ footer .gallery .gallery-item img {
   height: 80px;
   font-family: "Roboto", sans-serif;
   font-size: 12px;
-  color: #336699;
+  color: #e4ca73;
   outline: none;
   border: 1px solid #e5f2ff;
   margin-bottom: 10px;
@@ -2621,7 +2624,7 @@ footer .gallery .gallery-item img {
 #left-info .enquiry .call-info h6 {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  color: #336699;
+  color: #e4ca73;
   font-weight: 500;
   margin-top: 5px;
   margin-bottom: 0px;
@@ -2633,7 +2636,7 @@ footer .gallery .gallery-item img {
   font-size: 10px;
 }
 #left-info .enquiry .call-info span {
-  color: #336699;
+  color: #e4ca73;
   font-family: "Montserrat", sans-serif;
 }
 #side-bar {
@@ -2650,14 +2653,14 @@ footer .gallery .gallery-item img {
 #side-bar .search-box input {
   position: relative;
   z-index: 9;
-  background-color: #f5fafe;
+  background-color: #000;
   border: none;
   width: 100%;
   border-radius: 20px;
   height: 44px;
   font-family: "Roboto", sans-serif;
   font-size: 12px;
-  color: #336699;
+  color: #e4ca73;
   outline: none;
   padding-left: 50px;
 }
@@ -2704,7 +2707,7 @@ footer .gallery .gallery-item img {
   display: inline-block;
 }
 #side-bar .categories ul li a:hover {
-  color: #336699;
+  color: #e4ca73;
 }
 #side-bar .latest-posts {
   margin-top: 40px;
@@ -2738,7 +2741,7 @@ footer .gallery .gallery-item img {
   padding-right: 10px;
 }
 #side-bar .latest-posts .latest-item ul li i {
-  color: #336699;
+  color: #e4ca73;
   margin-right: 5px;
   font-size: 13px;
 }
@@ -2759,7 +2762,7 @@ footer .gallery .gallery-item img {
 #side-bar .recent-tweets .recent-item i {
   font-size: 16px;
   margin-top: 5px;
-  color: #336699;
+  color: #e4ca73;
   float: left;
   display: inline-block;
 }
@@ -2768,7 +2771,7 @@ footer .gallery .gallery-item img {
   margin-bottom: 0px;
 }
 #side-bar .recent-tweets .recent-item a {
-  color: #336699;
+  color: #e4ca73;
 }
 #side-bar .recent-tweets .recent-item span {
   font-family: "Roboto", sans-serif;
@@ -2792,7 +2795,7 @@ footer .gallery .gallery-item img {
 #side-bar .tags ul li a {
   border-left: 4px solid #e4ca73;
   padding: 8px 10px;
-  background-color: #336699;
+  background-color: #e4ca73;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   color: #ffffff;
@@ -2877,7 +2880,7 @@ footer .gallery .gallery-item img {
   text-transform: uppercase;
   font-weight: 700;
   color: #fff;
-  background-color: #336699;
+  background-color: #e4ca73;
   padding: 8px 16px;
 }
 .second-line {
@@ -2933,7 +2936,7 @@ footer .gallery .gallery-item img {
   margin-left: 80px;
   margin-top: 12px;
   padding: 10px 10px;
-  background-color: #336699;
+  background-color: #e4ca73;
   font-size: 14px;
   color: #ffffff;
   font-weight: 700;
@@ -2995,7 +2998,7 @@ footer .gallery .gallery-item img {
   display: inline-block;
   text-align: center;
   line-height: 55px;
-  background-color: #f5fafe;
+  background-color: #000;
   border-radius: 50%;
   color: #222222;
   margin-right: 15px;
@@ -3025,7 +3028,7 @@ footer .gallery .gallery-item img {
   }
 }
 .why-us .right-img .img-bg {
-  background-color: #f5fafe;
+  background-color: #000;
   width: 370px;
   height: 340px;
   background-size: cover;
@@ -3040,7 +3043,7 @@ footer .gallery .gallery-item img {
   }
 }
 .clients {
-  background-color: #f5fafe;
+  background-color: #000;
 }
 .clients #owl-demo {
   text-align: center;
@@ -3057,7 +3060,7 @@ footer .gallery .gallery-item img {
   cursor: pointer;
 }
 #cta-1 {
-  background-color: #f5fafe;
+  background-color: #000;
   width: 100%;
   padding: 30px 0px;
 }
@@ -3090,15 +3093,15 @@ footer .gallery .gallery-item img {
 #cta-2 {
   padding: 30px 0px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPjxzdG9wIG9mZnNldD0iNDAlIiBzdG9wLWNvbG9yPSIjMmY1ZThlIiBzdG9wLW9wYWNpdHk9IjEiLz48c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iIzMzNjY5OSIgc3RvcC1vcGFjaXR5PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=);
-  background-image: -webkit-linear-gradient(-0deg, #2f5e8e 40%, #336699 40%);
-  background-image: -moz-linear-gradient(-0deg, #2f5e8e 40%, #336699 40%);
-  background-image: -o-linear-gradient(-0deg, #2f5e8e 40%, #336699 40%);
-  background-image: linear-gradient(-90deg, #2f5e8e 40%, #336699 40%);
+  background-image: -webkit-linear-gradient(-0deg, #2f5e8e 40%, #e4ca73 40%);
+  background-image: -moz-linear-gradient(-0deg, #2f5e8e 40%, #e4ca73 40%);
+  background-image: -o-linear-gradient(-0deg, #2f5e8e 40%, #e4ca73 40%);
+  background-image: linear-gradient(-90deg, #2f5e8e 40%, #e4ca73 40%);
 }
 @media (max-width: 991px) {
   #cta-2 {
     background-image: none;
-    background-color: #336699;
+    background-color: #e4ca73;
   }
 }
 #cta-2 .left-content h2 {
@@ -3196,7 +3199,7 @@ footer .gallery .gallery-item img {
 .testimonials #owl-testimonials .item h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
-  color: #336699;
+  color: #e4ca73;
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 0px;
@@ -3263,7 +3266,7 @@ footer .gallery .gallery-item img {
 .load-more-button {
   width: 130px;
   height: 40px;
-  background-color: #336699;
+  background-color: #e4ca73;
   display: inline-block;
 }
 .load-more-button a {
@@ -3411,7 +3414,7 @@ footer .gallery .gallery-item img {
   }
 }
 .plans .pricing-table {
-  border-top: 5px solid #336699;
+  border-top: 5px solid #e4ca73;
   border-right: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
@@ -3461,7 +3464,7 @@ footer .gallery .gallery-item img {
   margin-right: 10px;
   width: 14px;
   height: 14px;
-  background-color: #336699;
+  background-color: #e4ca73;
   color: #ffffff;
   text-align: center;
   line-height: 14px;
@@ -3532,10 +3535,10 @@ footer .gallery .gallery-item img {
   }
 }
 .owl-controls a {
-  color: #336699;
+  color: #e4ca73;
 }
 .owl-controls a:hover {
-  color: #336699;
+  color: #e4ca73;
 }
 .owl-controls .bg-prev {
   position: absolute;
@@ -3544,7 +3547,7 @@ footer .gallery .gallery-item img {
   height: 50px;
   z-index: 10;
   background: #fff;
-  border: 1px solid #336699;
+  border: 1px solid #e4ca73;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -3560,7 +3563,7 @@ footer .gallery .gallery-item img {
   left: 3px;
   right: 3px;
   bottom: 3px;
-  border: 2px solid #336699;
+  border: 2px solid #e4ca73;
 }
 .owl-controls .prev {
   left: 15px;
@@ -3591,7 +3594,7 @@ footer .gallery .gallery-item img {
   position: relative;
   z-index: 10;
   background: #fff;
-  border: 1px solid #336699;
+  border: 1px solid #e4ca73;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -3607,7 +3610,7 @@ footer .gallery .gallery-item img {
   left: 3px;
   right: 3px;
   bottom: 3px;
-  border: 2px solid #336699;
+  border: 2px solid #e4ca73;
 }
 .owl-controls .next {
   right: 15px;
