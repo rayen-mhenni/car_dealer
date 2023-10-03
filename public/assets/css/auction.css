@@ -2032,6 +2032,10 @@ footer .gallery .gallery-item img {
   align-content: center;
   align-items: center;
 }
+.carPic {
+  max-height: 210px;
+  max-width: 310px;
+}
 .card_specs .option-primary {
   font-weight: bolder;
 }
