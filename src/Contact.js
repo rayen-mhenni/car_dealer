@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from "./Footer";
 
 function Contact() {
     return (
@@ -77,6 +78,7 @@ function Contact() {
 
             <>MAP HERE !</>
             <div id="map" />
+            <Footer />
         </div>
     )
 }

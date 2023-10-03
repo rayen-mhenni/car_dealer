@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 
 export default function Listing() {
   return (
@@ -240,6 +241,7 @@ export default function Listing() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
