@@ -10,12 +10,20 @@ export default function Listing() {
   const [filter, setfilter] = useState(false);
 
   const [data, setData] = useState([]);
+  const [page, setpage] = useState(1);
   const [filterdata, setFilterData] = useState([]);
   const [refetech, setrefetech] = useState(false);
 
   const [mark, setmark] = useState([{}]);
   const [model, setmodel] = useState([{}]);
   const [year, setyear] = useState([{}]);
+
+  const [markfilter, setmarkfilter] = useState(null);
+  const [modelFilter, setmodelFilter] = useState(null);
+  const [yearFilter, setyearFilter] = useState(null);
+  const [transmissionFilter, settransmissionFilter] = useState(null);
+  const [sortFilter, setSortFilter] = useState(null);
+
   const [transmission, settransmission] = useState([
     {
       label: 'Automatique', value: 'automatique'
@@ -80,20 +88,18 @@ export default function Listing() {
   const handelFilter = () => {
     setfilter(true)
 
-    let updatedData = []
+    let updatedData = data
+    if (markfilter) {
 
-    if (mark?.value) {
-
-      updatedData = data?.filter((item) => {
+      updatedData = updatedData?.filter((item) => {
         const startsWith = item.Make
 
           .toLowerCase()
-          .startsWith(mark?.value.toLowerCase());
+          .startsWith(markfilter.toLowerCase());
 
         const includes = item.Make
-
           .toLowerCase()
-          .includes(mark?.value.toLowerCase());
+          .includes(markfilter.toLowerCase());
 
         if (startsWith) {
           return startsWith;
@@ -101,8 +107,77 @@ export default function Listing() {
           return includes;
         } else return null;
       });
-      setFilterData([...updatedData]);
+
+
     }
+
+    if (modelFilter) {
+
+      updatedData = updatedData?.filter((item) => {
+        const startsWith = item.Model
+
+          .toLowerCase()
+          .startsWith(modelFilter.toLowerCase());
+
+        const includes = item.Make
+          .toLowerCase()
+          .includes(modelFilter.toLowerCase());
+
+        if (startsWith) {
+          return startsWith;
+        } else if (!startsWith && includes) {
+          return includes;
+        } else return null;
+      });
+
+
+    }
+
+    if (yearFilter) {
+
+      updatedData = updatedData?.filter((item) => {
+        const startsWith = item.Year
+
+          .toLowerCase()
+          .startsWith(yearFilter.toLowerCase());
+
+        const includes = item.Make
+          .toLowerCase()
+          .includes(yearFilter.toLowerCase());
+
+        if (startsWith) {
+          return startsWith;
+        } else if (!startsWith && includes) {
+          return includes;
+        } else return null;
+      });
+
+
+    }
+
+    if (transmissionFilter) {
+
+      updatedData = updatedData?.filter((item) => {
+        const startsWith = item.Transmission
+
+          .toLowerCase()
+          .startsWith(transmissionFilter.toLowerCase());
+
+        const includes = item.Make
+          .toLowerCase()
+          .includes(transmissionFilter.toLowerCase());
+
+        if (startsWith) {
+          return startsWith;
+        } else if (!startsWith && includes) {
+          return includes;
+        } else return null;
+      });
+
+
+    }
+
+    setFilterData([...updatedData]);
 
 
   }
@@ -111,15 +186,49 @@ export default function Listing() {
     setfilter(false)
   }
 
+  const paginateArray = (array, perPage, page) =>
+    array.slice((page - 1) * perPage, page * perPage)
+
+
 
   const randerData = () => {
 
+    let thedata = []
+
     if (filter) {
-      return filterdata
+      thedata = filterdata
     } else {
-      return data
+      thedata = data
     }
+
+
+    if (sortFilter === '2') {
+      thedata = _.sortBy(thedata, function (o) { return Number(o?.Price ?? 0) }).reverse();
+      return thedata
+    } else if (sortFilter === '1') {
+      thedata = _.sortBy(thedata, function (o) { return Number(o?.Price ?? 0) })
+      return thedata
+
+    } else {
+      return thedata
+    }
+
   }
+
+  const handlePagination = (page) => setpage(page + 1);
+
+  const handleNext = () => {
+    if (paginateArray(randerData(), 10, page + 1)?.length > 0)
+      setpage(page + 1)
+  }
+
+  const handlePrev = () => {
+    if (paginateArray(randerData(), 10, page - 1)?.length > 0)
+     setpage(page - 1)
+  }
+   
+
+
 
   const colourStyles = {
     control: styles => ({
@@ -134,6 +243,7 @@ export default function Listing() {
       return {
         ...styles,
         backgroundColor: 'rgba(135, 129, 129, 0.264)',
+        textAlign: 'center',
         color: '#000',
         fontSize: 'smal',
         ':active': {
@@ -160,6 +270,8 @@ export default function Listing() {
 
 
   };
+
+
 
   return (
     <div className="inventory">
@@ -197,6 +309,9 @@ export default function Listing() {
                     options={
                       mark
                     }
+                    onChange={(e) => {
+                      setmarkfilter(e?.value)
+                    }}
                     styles={colourStyles}
                   />
 
@@ -210,6 +325,9 @@ export default function Listing() {
                     options={
                       model
                     }
+                    onChange={(e) => {
+                      setmodelFilter(e?.value)
+                    }}
                     styles={colourStyles}
                   />
                   <Select
@@ -222,6 +340,9 @@ export default function Listing() {
                     options={
                       year
                     }
+                    onChange={(e) => {
+                      setyearFilter(e?.value)
+                    }}
                     styles={colourStyles}
                   />
                   <Select
@@ -234,6 +355,9 @@ export default function Listing() {
                     options={
                       transmission
                     }
+                    onChange={(e) => {
+                      settransmissionFilter(e?.value)
+                    }}
                     styles={colourStyles}
                   />
                   <div className="advanced-button mb" onClick={() => {
@@ -273,16 +397,13 @@ export default function Listing() {
                       maxMenuHeight={"200px"}
                       options={
                         [
-                          { value: '1', label: '1' },
-                          { value: '2', label: '2' },
-                          { value: '3', label: '3' },
-                          { value: '4', label: '4' },
-                          { value: '5', label: '5' },
-                          { value: '6', label: '6' },
-                          { value: '7', label: '7' },
-
+                          { value: '1', label: 'low to high' },
+                          { value: '2', label: 'high to low' },
                         ]
                       }
+                      onChange={(e) => {
+                        setSortFilter(e?.value)
+                      }}
                       styles={colourStyles}
                     />
                   </div>
@@ -291,8 +412,8 @@ export default function Listing() {
 
               {/* List cars */}
 
-              {data.length &&
-                randerData().map((el) => {
+              {randerData().length &&
+                paginateArray(randerData(), 10, page).map((el) => {
                   return (
                     <div className="featured-item last-featured">
                       <img
@@ -387,42 +508,24 @@ export default function Listing() {
 
               {/* List cars */}
 
-
-
               <div className="pagination">
                 <div className="prev">
-                  <a to="#">
+                  <a to="#" onClick={() => handlePrev()}>
                     <i className="fa fa-arrow-left" />
                     Prev
                   </a>
                 </div>
                 <div className="page-numbers">
                   <ul>
-                    <li className="active">
-                      <a to="#">1</a>
-                    </li>
-                    <li>
-                      <a to="#">...</a>
-                    </li>
-                    <li>
-                      <a to="#">14</a>
-                    </li>
-                    <li>
-                      <a to="#">15</a>
-                    </li>
-                    <li>
-                      <a to="#">16</a>
-                    </li>
-                    <li>
-                      <a to="#">...</a>
-                    </li>
-                    <li>
-                      <a to="#">47</a>
-                    </li>
+                    {[...Array(Math.ceil(randerData().length / 10) || 1).keys()].map((x) => (
+                      <li className={`${x + 1 === page ? 'active' : ''} `}>
+                        <a to="#" onClick={() => handlePagination(x)} >{x + 1}</a>
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <div className="next">
-                  <a to="#">
+                  <a to="#" onClick={() => handleNext()}>
                     Next
                     <i className="fa fa-arrow-right" />
                   </a>
