@@ -4,8 +4,12 @@ import axios from "axios";
 import Select from "react-select";
 import _ from 'lodash'
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Listing() {
+
+  const { t } = useTranslation();
+
   const [isload, setisload] = useState(true);
   const [filter, setfilter] = useState(false);
 
@@ -224,9 +228,9 @@ export default function Listing() {
 
   const handlePrev = () => {
     if (paginateArray(randerData(), 10, page - 1)?.length > 0)
-     setpage(page - 1)
+      setpage(page - 1)
   }
-   
+
 
 
 
@@ -296,14 +300,14 @@ export default function Listing() {
             <div id="sidebar" className="col-md-3">
               <div className="sidebar-content">
                 <div className="head-side-bar">
-                  <h4>Search our inventory</h4>
+                  <h4>{t( 'Search our inventory')} </h4>
                 </div>
                 <div className="search-form">
                   <Select
                     className="basic-single select-inv"
                     isClearable={true}
                     classNamePrefix="select"
-                    placeholder='Select Mark'
+                    placeholder={t( 'Select Mark')} 
                     name="color"
                     maxMenuHeight={"200px"}
                     options={
@@ -319,7 +323,7 @@ export default function Listing() {
                     className="basic-single select-inv"
                     isClearable={true}
                     classNamePrefix="select"
-                    placeholder='Select Model'
+                    placeholder={t( 'Select Model')} 
                     name="color"
                     maxMenuHeight={"200px"}
                     options={
@@ -334,7 +338,7 @@ export default function Listing() {
                     className="basic-single select-inv"
                     isClearable={true}
                     classNamePrefix="select"
-                    placeholder='Select Year'
+                    placeholder={t( 'Select Year')} 
                     name="color"
                     maxMenuHeight={"200px"}
                     options={
@@ -349,7 +353,7 @@ export default function Listing() {
                     className="basic-single select-inv"
                     isClearable={true}
                     classNamePrefix="select"
-                    placeholder='Select Transmissions'
+                    placeholder={t( 'Select Transmissions')} 
                     name="color"
                     maxMenuHeight={"200px"}
                     options={
@@ -364,7 +368,7 @@ export default function Listing() {
                     handelFilter()
                   }}>
                     <a >
-                      Search Now
+                    {t('Search Now')}  
                       <i className="fa fa-search" />
                     </a>
                   </div>
@@ -373,7 +377,7 @@ export default function Listing() {
                     RestFilter()
                   }}>
                     <a >
-                      Rest Filter
+                      {t('Reset Filter')}
                       <i className="fa fa-search" />
                     </a>
                   </div>
@@ -384,7 +388,7 @@ export default function Listing() {
             <div id="listing-cars" className="col-md-9">
               <div className="pre-featured">
                 <div className="info-text">
-                  <h4> {randerData()?.length} results founded</h4>
+                  <h4> {randerData()?.length} {t('results founded')}  </h4>
                 </div>
                 <div className="right-content">
                   <div className="input-select">
@@ -475,7 +479,7 @@ export default function Listing() {
                               </tbody>
                             </table>
                             <div className="view-details">
-                              <Link to={`/details/${el._id}`}>View Details</Link>
+                              <Link to={`/details/${el._id}`}>{t(' View Details')} </Link>
                             </div>
                           </div>
                         </p>
@@ -488,7 +492,7 @@ export default function Listing() {
                             </li>
                             <li>
                               <i className="icon-road2" />
-                              year {el.year}</li>
+                              year {el.Year}</li>
                             <li>
                               <i className="icon-road2" />
                               {el.Mileage}
