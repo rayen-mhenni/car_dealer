@@ -3,10 +3,12 @@ import Footer from "./Footer";
 import axios from "axios";
 import Select from "react-select";
 import _ from 'lodash'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export default function Listing() {
+
+  const { markparam , modelparam, yearparam } = useParams();
 
   const { t } = useTranslation();
 
@@ -300,14 +302,14 @@ export default function Listing() {
             <div id="sidebar" className="col-md-3">
               <div className="sidebar-content">
                 <div className="head-side-bar">
-                  <h4>{t( 'Search our inventory')} </h4>
+                  <h4>{t('Search our inventory')} </h4>
                 </div>
                 <div className="search-form">
                   <Select
                     className="basic-single select-inv"
                     isClearable={true}
                     classNamePrefix="select"
-                    placeholder={t( 'Select Mark')} 
+                    placeholder={t('Select Mark')}
                     name="color"
                     maxMenuHeight={"200px"}
                     options={
@@ -323,7 +325,7 @@ export default function Listing() {
                     className="basic-single select-inv"
                     isClearable={true}
                     classNamePrefix="select"
-                    placeholder={t( 'Select Model')} 
+                    placeholder={t('Select Model')}
                     name="color"
                     maxMenuHeight={"200px"}
                     options={
@@ -338,7 +340,7 @@ export default function Listing() {
                     className="basic-single select-inv"
                     isClearable={true}
                     classNamePrefix="select"
-                    placeholder={t( 'Select Year')} 
+                    placeholder={t('Select Year')}
                     name="color"
                     maxMenuHeight={"200px"}
                     options={
@@ -353,7 +355,7 @@ export default function Listing() {
                     className="basic-single select-inv"
                     isClearable={true}
                     classNamePrefix="select"
-                    placeholder={t( 'Select Transmissions')} 
+                    placeholder={t('Select Transmissions')}
                     name="color"
                     maxMenuHeight={"200px"}
                     options={
@@ -368,7 +370,7 @@ export default function Listing() {
                     handelFilter()
                   }}>
                     <a >
-                    {t('Search Now')}  
+                      {t('Search Now')}
                       <i className="fa fa-search" />
                     </a>
                   </div>
