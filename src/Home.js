@@ -1,8 +1,99 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Select from "react-select";
+import _ from 'lodash'
+import { useNavigate } from "react-router";
 
 export const Home = () => {
+
+  const nav = useNavigate()
+
+  const { t } = useTranslation();
+
+
+
+  const [isload, setisload] = useState(true);
+  const [filter, setfilter] = useState(false);
+
+  const [data, setData] = useState([]);
+  const [page, setpage] = useState(1);
+  const [filterdata, setFilterData] = useState([]);
+  const [refetech, setrefetech] = useState(false);
+
+  const [mark, setmark] = useState([{}]);
+  const [model, setmodel] = useState([{}]);
+  const [year, setyear] = useState([{}]);
+
+  const [markfilter, setmarkfilter] = useState(null);
+  const [modelFilter, setmodelFilter] = useState(null);
+  const [yearFilter, setyearFilter] = useState(null);
+  const [transmissionFilter, settransmissionFilter] = useState(null);
+  const [sortFilter, setSortFilter] = useState(null);
+
+  const [transmission, settransmission] = useState([
+    {
+      label: 'Automatique', value: 'automatique'
+    },
+    {
+      label: 'Manuelle', value: 'manuelle'
+    }
+  ]);
+
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:5000/api/car")
+      .then((response) => {
+        if (response.data.car) {
+          setData(response.data.car);
+
+          let Make = Object.keys(_.groupBy(response.data.car, 'Make'))
+          let Model = Object.keys(_.groupBy(response.data.car, 'Model'))
+          let Year = Object.keys(_.groupBy(response.data.car, 'Year'))
+
+          const marksOp = []
+          const modelOp = []
+          const YearOp = []
+
+          Make.forEach((el) => {
+            marksOp.push({
+              value: el,
+              label: el,
+            })
+          })
+
+          Model.forEach((el) => {
+            modelOp.push({
+              value: el,
+              label: el,
+            })
+          })
+
+          Year.forEach((el) => {
+            YearOp.push({
+              value: el,
+              label: el,
+            })
+          })
+
+          setmark(marksOp)
+          setmodel(modelOp)
+          setyear(YearOp)
+
+          setisload(false);
+        } else {
+          setisload(false);
+        }
+      });
+  }, [refetech]);
+
+
+  const handrefetech = () => {
+    setrefetech(!refetech);
+  };
+
+
   const colourStyles = {
     control: (styles) => ({
       ...styles,
@@ -40,7 +131,7 @@ export const Home = () => {
     }),
     input: (styles) => ({ ...styles, color: "#fff" }),
   };
-  const { t } = useTranslation();
+
   return (
     <div className="home">
       <div className="cover">
@@ -58,15 +149,10 @@ export const Home = () => {
             placeholder={t("Select Mark")}
             name="color"
             maxMenuHeight={"100px"}
-            options={[
-              { value: "1", label: "1" },
-              { value: "2", label: "2" },
-              { value: "3", label: "3" },
-              { value: "4", label: "4" },
-              { value: "5", label: "5" },
-              { value: "6", label: "6" },
-              { value: "7", label: "7" },
-            ]}
+            options={mark}
+            onChange={(e) => {
+              setmarkfilter(e?.value)
+            }}
             styles={colourStyles}
           />
 
@@ -76,16 +162,11 @@ export const Home = () => {
             classNamePrefix="select"
             placeholder={t("Select model")}
             name="color"
-            options={[
-              { value: "1", label: "1" },
-              { value: "2", label: "2" },
-              { value: "3", label: "3" },
-              { value: "4", label: "4" },
-              { value: "5", label: "5" },
-              { value: "6", label: "6" },
-              { value: "7", label: "7" },
-            ]}
+            options={model}
             maxMenuHeight={"100px"}
+            onChange={(e) => {
+              setmodelFilter(e?.value)
+            }}
             styles={colourStyles}
           />
 
@@ -95,20 +176,17 @@ export const Home = () => {
             classNamePrefix="select"
             placeholder={t("Select year")}
             name="color"
-            options={[
-              { value: "1", label: "1" },
-              { value: "2", label: "2" },
-              { value: "3", label: "3" },
-              { value: "4", label: "4" },
-              { value: "5", label: "5" },
-              { value: "6", label: "6" },
-              { value: "7", label: "7" },
-            ]}
+            options={year}
             maxMenuHeight={"100px"}
+            onChange={(e) => {
+              setyearFilter(e?.value)
+            }}
             styles={colourStyles}
           />
 
-          <button className="home-advanced-button">{t("Search Now")} </button>
+          <button className="home-advanced-button" onClick={() => {
+            nav(`/listing?markfilter=${markfilter ?? ''}&modelFilter=${modelFilter ?? ""}&yearFilter=${yearFilter ?? ''}`)
+          }}>{t("Search Now")} </button>
         </div>
       </div>
 
