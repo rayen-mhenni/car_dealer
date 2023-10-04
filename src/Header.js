@@ -49,7 +49,7 @@ const Header = (props) => {
                     <Link to="/financing">{t("Financing")}</Link>
                   </li>
                   <li>
-                    <Link to="/contact">{t("Conatct us")}</Link>
+                    <Link to="/contact">{t("Contact Us")}</Link>
                   </li>
                   <li>
                     <div className="lang-nav">
@@ -87,7 +87,7 @@ const Header = (props) => {
                   <Link to="/financing">{t("Financing")}</Link>
                 </li>
                 <li>
-                  <Link to="/contact">{t("Conatct us")}</Link>
+                  <Link to="/contact">{t("Contact Us")}</Link>
                 </li>
                 <li>
                   <div className="lang-nav">

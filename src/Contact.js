@@ -35,7 +35,7 @@ function Contact() {
                         type="text"
                         className="name"
                         name="s"
-                        placeholder="First name"
+                        placeholder={t("First name")}
                       />
                     </div>
                     <div className="col-md-6 col-sm-12 col-xs-12">
@@ -43,23 +43,16 @@ function Contact() {
                         type="text"
                         className="email"
                         name="s"
-                        placeholder="Email address"
+                        placeholder={t("Email address")}
                       />
                     </div>
-                    <div className="col-md-6 col-sm-12 col-xs-12">
-                      <input
-                        type="text"
-                        className="site"
-                        name="s"
-                        placeholder="Phone"
-                      />
-                    </div>
+               
                     <div className="col-md-6 col-sm-12 col-xs-12">
                       <input
                         type="text"
                         className="phone"
                         name="s"
-                        placeholder="Your website	"
+                        placeholder={t("subject")}
                       />
                     </div>
                     <div className="col-md-12 col-sm-12 col-xs-12">
@@ -67,7 +60,7 @@ function Contact() {
                         id="message"
                         className="message"
                         name="message"
-                        placeholder="Write message"
+                        placeholder={t("Write message")}
                       />
                     </div>
                     <div className="col-md-12 col-sm-12 col-xs-12">
@@ -93,7 +86,7 @@ function Contact() {
                   <span>{t("+33 20966400 1342")}</span>
                 </div>
                 <div className="email">
-                  <h4> {t("Email")}</h4>
+                  <h4> {t("E-mail")}</h4>
                   <span>{t("test@RO.com")}</span>
                 </div>
                 <div className="address">
