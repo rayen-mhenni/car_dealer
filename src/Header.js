@@ -40,16 +40,16 @@ const Header = (props) => {
               <nav class="responsive-menu text-left hidden-md hidden-lg">
                 <ul>
                   <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/">{t("Home")}</Link>
                   </li>
                   <li>
-                    <Link to="/listing">Inventory</Link>
+                    <Link to="/listing">{t("Inventory")}</Link>
                   </li>
                   <li>
-                    <Link to="/financing">Financing</Link>
+                    <Link to="/financing">{t("Financing")}</Link>
                   </li>
                   <li>
-                    <Link to="/contact">Conatct us</Link>
+                    <Link to="/contact">{t("Conatct us")}</Link>
                   </li>
                   <li>
                     <div className="lang-nav">
@@ -78,16 +78,16 @@ const Header = (props) => {
             <nav className="main-navigation text-left hidden-xs hidden-sm">
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/">{t("Home")}</Link>
                 </li>
                 <li>
-                  <Link to="/listing">Inventory</Link>
+                  <Link to="/listing">{t("Inventory")}</Link>
                 </li>
                 <li>
-                  <Link to="/financing">Financing</Link>
+                  <Link to="/financing">{t("Financing")}</Link>
                 </li>
                 <li>
-                  <Link to="/contact">Conatct us</Link>
+                  <Link to="/contact">{t("Conatct us")}</Link>
                 </li>
                 <li>
                   <div className="lang-nav">

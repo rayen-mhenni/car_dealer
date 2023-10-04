@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Footer from "./Footer";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 function Financing() {
   const [Title, setTitle] = useState("");
@@ -48,6 +49,8 @@ function Financing() {
         setisDone(true);
       });
   };
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="inventory">
@@ -55,9 +58,9 @@ function Financing() {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1>Financing Us</h1>
+                <h1>{t("Financing Us")}</h1>
                 <div className="line" />
-                <span>Your dream car is just a visit away!</span>
+                <span>{t("Your dream car is just a visit away!")}</span>
               </div>
             </div>
           </div>
@@ -76,11 +79,11 @@ function Financing() {
                       encType="multipart/form-data"
                     >
                       <div className="row">
-                        <h4>PERSONAL INFORMATION</h4>
+                        <h4> {t("PERSONAL INFORMATION")}</h4>
                         <br />
 
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Title
+                          {t("Title")}
                           <input
                             type="text"
                             name="s"
@@ -91,7 +94,7 @@ function Financing() {
                           />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          First name *
+                          {t("First name")} *
                           <input
                             type="text"
                             name="s"
@@ -103,7 +106,7 @@ function Financing() {
                           />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Last name *
+                          {t("Last name")} *
                           <input
                             type="text"
                             name="s"
@@ -114,7 +117,7 @@ function Financing() {
                           />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Date of birth *
+                          {t("Date of birth")} *
                           <input
                             type="text"
                             name="s"
@@ -128,7 +131,7 @@ function Financing() {
 
                       <div className="row">
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          SIN
+                          {t("SIN")}
                           <input
                             type="text"
                             name="s"
@@ -139,7 +142,7 @@ function Financing() {
                           />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Email *
+                          {t("Email")} *
                           <input
                             type="text"
                             name="s"
@@ -151,7 +154,7 @@ function Financing() {
                           />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Phone *
+                          {t("Phone")} *
                           <input
                             type="text"
                             name="s"
@@ -167,13 +170,13 @@ function Financing() {
                       <hr />
 
                       <div className="row">
-                        <h4>CONTACT INFORMATION</h4>
+                        <h4>{t("CONTACT INFORMATION")}</h4>
                         <br />
                       </div>
 
                       <div className="row">
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Current Address Duration (years)
+                          {t("Current Address Duration (years)")}
                           <input
                             type="text"
                             name="s"
@@ -187,7 +190,7 @@ function Financing() {
 
                       <div className="row">
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Street *
+                          {t("Street")} *
                           <input
                             type="text"
                             name="s"
@@ -198,7 +201,7 @@ function Financing() {
                           />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          City *
+                          {t("City")} *
                           <input
                             type="text"
                             name="s"
@@ -209,7 +212,7 @@ function Financing() {
                           />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Province*
+                          {t("Province")} *
                           <input
                             type="text"
                             name="s"
@@ -220,7 +223,7 @@ function Financing() {
                           />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Postal Code *
+                          {t("Postal Code")} *
                           <input
                             type="text"
                             name="s"
@@ -235,13 +238,13 @@ function Financing() {
                       <br />
                       <hr />
                       <div className="row">
-                        <h4>CURRENT JOB</h4>
+                        <h4>{t("CURRENT JOB")}</h4>
                         <br />
                       </div>
 
                       <div className="row">
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Company
+                          {t("Company")}
                           <input
                             type="text"
                             name="s"
@@ -252,7 +255,8 @@ function Financing() {
                           />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Position
+                          {t("Position")}
+
                           <input
                             type="text"
                             name="s"
@@ -263,7 +267,8 @@ function Financing() {
                           />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Duration (Years)
+                          {t("Duration (Years) ")}
+
                           <input
                             type="text"
                             name="s"
@@ -278,13 +283,13 @@ function Financing() {
                       <br />
                       <hr />
                       <div className="row">
-                        <h4>FINANCIAL INFORMATION</h4>
+                        <h4> {t("FINANCIAL INFORMATION")}</h4>
                         <br />
                       </div>
 
                       <div className="row">
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Monthly Income
+                          {t("Monthly Income")}
                           <input
                             type="text"
                             name="s"
@@ -295,7 +300,7 @@ function Financing() {
                           />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Residential Status
+                          {t("Residential Status")}
                           <input
                             type="text"
                             name="s"
@@ -306,7 +311,8 @@ function Financing() {
                           />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          Monthly Rent / Mortgage
+                          {t("Monthly Rent / Mortgage")}
+
                           <input
                             type="text"
                             name="s"
@@ -322,33 +328,22 @@ function Financing() {
 
                       <div className="row">
                         <br />
-                        <h4>Disclosure & Privacy Notice</h4>
+                        <h4>{t("Disclosure & Privacy Notice")}</h4>
                         <br />
                       </div>
 
                       <div className="row">
                         <span>
-                          By checking this box, I consent to the collection, use
-                          and disclosure of my personal information as described
-                          in this paragraph. I agree that the personal
-                          information provided above may be used and disclosed
-                          by Mon Automobile and/or its agents or service
-                          providers (collectively, the "Dealer") as necessary to
-                          obtain credit, financial and related personal
-                          information (including a credit or consumer
-                          information report) about me from any credit bureau or
-                          credit reporting agency, and to advise me on credit
-                          availability in connection with product and/or service
-                          purchase financing. Personal information I provide and
-                          credit information obtained may also be retained by
-                          Dealer and used to facilitate the application process
-                          should I subsequently choose to apply for credit
-                          through Dealer.
+                          {t(
+                            "By checking this box, I consent to the collection, use and disclosure of my personal information as described in this paragraph. I agree that the personal information provided above may be used and disclosed by Mon Automobile and/or its agents or service providers (collectively, the 'Dealer') as necessary to obtain credit, financial and related personal information (including a credit or consumer information report) about me from any credit bureau or credit reporting agency, and to advise me on credit availability in connection with product and/or service purchase financing. Personal information I provide and credit information obtained may also be retained by Dealer and used to facilitate the application process should I subsequently choose to apply for credit through Dealer."
+                          )}
                         </span>
                         <br />
                         <strong>
-                          *<input type="checkbox" name="s" />I have read and
-                          agree to the Terms & Conditions above.
+                          *<input type="checkbox" name="s" />
+                          {t(
+                            "I have read and agree to the Terms & Conditions above."
+                          )}
                         </strong>
                       </div>
 
@@ -359,13 +354,13 @@ function Financing() {
                               handleSubmit();
                             }}
                           >
-                            Submit
+                            {t("Submit")}
                             <i className="fa fa-paper-plane" />
                           </a>
                         </div>
                         {isDone && (
                           <strong style={{ color: "green" }}>
-                            thanks we have received ur request
+                            {t("thanks we have received ur request")}
                           </strong>
                         )}
                       </div>
