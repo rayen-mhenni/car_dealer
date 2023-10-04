@@ -10,6 +10,7 @@ import Listing from "./Listing";
 import Contact from "./Contact";
 import Details from "./Details";
 import Financing from "./Financing";
+import "./i18n";
 
 function App() {
   return (

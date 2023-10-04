@@ -1,8 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
   const [visible, setvisible] = useState(false);
+  const [activeLgn, setActiveLgn] = useState(
+    localStorage.getItem("i18nextLng")
+  );
+
+  const { i18n, t } = useTranslation();
+
+  const handleLangUpdate = (lang) => {
+    i18n.changeLanguage(lang);
+    setActiveLgn(lang);
+  };
   return (
     <>
       <header className="site-header">
@@ -40,6 +51,26 @@ const Header = (props) => {
                   <li>
                     <Link to="/contact">Conatct us</Link>
                   </li>
+                  <li>
+                    <div className="lang-nav">
+                      <span
+                        className={activeLgn === "fr" ? "active" : "lang-item"}
+                        onClick={() => handleLangUpdate("fr")}
+                      >
+                        {" "}
+                        FR
+                      </span>
+
+                      <span className="fw-bolder"> | </span>
+                      <span
+                        className={activeLgn === "en" ? "active" : "lang-item"}
+                        onClick={() => handleLangUpdate("en")}
+                      >
+                        {" "}
+                        EN
+                      </span>
+                    </div>
+                  </li>
                 </ul>
               </nav>
             )}
@@ -55,10 +86,28 @@ const Header = (props) => {
                 <li>
                   <Link to="/financing">Financing</Link>
                 </li>
-                <li >
+                <li>
                   <Link to="/contact">Conatct us</Link>
                 </li>
-                <li >
+                <li>
+                  <div className="lang-nav">
+                    <span
+                      className={activeLgn === "fr" ? "active" : "lang-item"}
+                      onClick={() => handleLangUpdate("fr")}
+                    >
+                      {" "}
+                      FR
+                    </span>
+
+                    <span className="fw-bolder"> | </span>
+                    <span
+                      className={activeLgn === "en" ? "active" : "lang-item"}
+                      onClick={() => handleLangUpdate("en")}
+                    >
+                      {" "}
+                      EN
+                    </span>
+                  </div>
                 </li>
               </ul>
             </nav>
