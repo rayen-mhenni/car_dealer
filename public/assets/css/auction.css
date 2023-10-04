@@ -1643,7 +1643,7 @@ footer .gallery .gallery-item img {
 
 ::placeholder {
   color: #fff;
-  opacity: 1; 
+  opacity: 1;
 }
 
 /* .contact-form #contact_form input[class="name"] {
@@ -2347,6 +2347,7 @@ footer .gallery .gallery-item img {
 }
 
 .carPic {
+  aspect-ratio: 4/3;
   max-height: 210px;
   max-width: 310px;
 }
@@ -3732,6 +3733,11 @@ footer .gallery .gallery-item img {
   height: 40px;
   background-color: #e4ca73;
   line-height: 40px;
+  cursor: pointer;
+}
+
+.mb {
+  margin-bottom: 10px;
 }
 
 .search_info {

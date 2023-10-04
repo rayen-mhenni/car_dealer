@@ -1,8 +1,37 @@
-import React from "react";
+/* eslint-disable jsx-a11y/alt-text */
+import React, { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 export default function Details() {
+
+  const [isload, setisload] = useState(true);
+  const [refetech, setrefetech] = useState(false);
+  const [data, setData] = useState({});
+  const [images, setimages] = useState([]);
+  const { id } = useParams();
+
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:5000/api/car/" + id)
+      .then((response) => {
+        if (response.data) {
+          setData(response.data.car);
+          setimages(response.data.car?.images ?? []);
+          setisload(false);
+        } else {
+          setisload(false);
+        }
+      });
+  }, [refetech]);
+
+  const handrefetech = () => {
+    setrefetech(!refetech);
+  };
+
   return (
     <div className="inventory">
       <div id="page-heading">
@@ -21,37 +50,33 @@ export default function Details() {
           <div className="row">
             <div id="single-car" className="col-md-8">
               <div className="up-content clearfix">
-                <h2>Audi a6 tsi s-line</h2>
-                <span>$30.000</span>
+                <h2>{data.name}</h2>
+                <span>${data.Price}</span>
               </div>
+
+
+
               <Carousel>
-                <div>
-                  <img className="carousel-car" src="https://hips.hearstapps.com/hmg-prod/images/2024-audi-rs6-performance-city-rear-1669663117.jpg?crop=0.488xw:0.651xh;0.139xw,0.236xh&resize=1200:*" />
-                  {/* <p className="legend">Legend 1</p> */}
-                </div>
-                <div>
-                  <img className="carousel-car" src="https://static.moniteurautomobile.be/imgcontrol/images_tmp/clients/moniteur/c680-d465/content/medias/images/news/40000/900/50/audi_rs6-performance-31.jpg" />
-                  {/* <p className="legend">Legend 2</p> */}
-                </div>
-                <div>
-                  <img className="carousel-car" src="https://i.gaw.to/content/photos/43/51/435124-l-audi-rs-6-avant-2021-a-un-prix-qui-reflete-bien-sa-folie.jpeg?1024x640" />
-                  {/* <p className="legend">Legend 3</p> */}
-                </div>
+                {
+                  images && images.map((el, i) => {
+                    return (
+                      <div key={i}>
+                        <img className="carousel-car" src={el} />
+                      </div>
+                    )
+                  })
+                }
+
               </Carousel>
+
+
               <div className="tab">
                 <div className="tabs">
                   <div className="tab-content">
                     <div id="tab2" className="tab active">
                       <h6>Description</h6>
                       <p>
-                        Selvage drinking vinegar roof party bitters beard wolf
-                        craft beer Blue Bottle, literally you probably haven't
-                        heard of them. Deep v jean shorts Williamsburg synth
-                        pork belly actually. Organic PBRB viral four loko
-                        Bushwick pork belly. Selvage fashion axe sartorial
-                        cliche before they sold out, mustache vinyl DIY
-                        gastropub fingerstache mlkshk. High Life lo-fi chillwave
-                        meggings.
+                        {data?.description}
                       </p>
                     </div>
                   </div>
@@ -66,37 +91,37 @@ export default function Details() {
                 <div className="list-info">
                   <ul>
                     <li>
-                      <span>Make:</span>Audi
+                      <span>Make:</span>  {data?.Make}
                     </li>
                     <li>
-                      <span>Model :</span>rs6
+                      <span>Model :</span>{data?.Model}
                     </li>
                     <li>
-                      <span>Year :</span>2015-6-17
+                      <span>Year :</span>{data?.Year}
                     </li>
                     <li>
-                      <span>Mileage:</span>17000 mile
+                      <span>Mileage:</span>{data?.Mileage}
                     </li>
                     <li>
-                      <span>Engine:</span>1.8L
+                      <span>Engine:</span>{data?.Engine}
                     </li>
                     <li>
-                      <span>Cylinder:</span>4
+                      <span>Cylinder:</span>{data?.Cylinder}
                     </li>
                     <li>
-                      <span>Transmission:</span> Automatic
+                      <span>Transmission:</span> {data?.Transmission}
                     </li>
                     <li>
-                      <span>Body type:</span>Sedan
+                      <span>Body type:</span>{data?.Bodytype}
                     </li>
                     <li>
-                      <span>INTERIOR COLOR:</span>black
+                      <span>INTERIOR COLOR:</span>{data?.INTERIORCOLOR}
                     </li>
                     <li>
-                      <span>EXTERIOR COLOR:</span>black
+                      <span>EXTERIOR COLOR:</span>{data?.EXTERIORCOLOR}
                     </li>
                     <li>
-                      <span>Price:</span>$30,000
+                      <span>Price:</span>${data?.Price}
                     </li>
                   </ul>
                 </div>
@@ -109,32 +134,23 @@ export default function Details() {
                   <div className="row">
                     <div className="third-info">
                       <ul>
-                        <li>
-                          <i className="fa fa-check" />
-                          ABS
-                        </li>
-                        <li>
-                          <i className="fa fa-check" />
-                          Xenon Headlights
-                        </li>
-                        <li>
-                          <i className="fa fa-check" />
-                          Immobilizer
-                        </li>
+                        {
+                          data?.options?.map((el) => {
+                            return (
+                              <li>
+                                <i className="fa fa-check" />
+                                {el}
+                              </li>
+                            )
+                          })
+                        }
+
+
                       </ul>
                     </div>
                   </div>
                 </div>
-                {/* <div className="subhead-side-bar">
-                  <h4>Contact the Seller</h4>
-                </div>
-                <div className="call-info">
-                  <i className="fa fa-phone" />
-                  <h6>816-819-0221</h6>
-                  <p>
-                    Car code: <span>55637</span>
-                  </p>
-                </div> */}
+
               </div>
             </div>
           </div>
