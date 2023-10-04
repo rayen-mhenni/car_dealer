@@ -86,22 +86,22 @@ function Contact() {
               <div className="contact-info">
                 <div className="phone">
                   <h4> {t("Phone")}</h4>
-                  <span>+33 20966400 1342 </span>
+                  <span>{t("+33 20966400 1342")} </span>
                 </div>
                 <div className="fax">
                   <h4> {t("Fax")}</h4>
-                  <span>+33 20966400 1342</span>
+                  <span>{t("+33 20966400 1342")}</span>
                 </div>
                 <div className="email">
                   <h4> {t("Email")}</h4>
-                  <span>test@RO.com</span>
+                  <span>{t("test@RO.com")}</span>
                 </div>
                 <div className="address">
                   <h4>{t("Address")}</h4>
                   <span>
-                    2855 Simpson Square
+                    {t("2855 Simpson Square")}
                     <br />
-                    Coldwater, OK 67029
+                    {t("Coldwater, OK 67029 ")}
                   </span>
                 </div>
               </div>
