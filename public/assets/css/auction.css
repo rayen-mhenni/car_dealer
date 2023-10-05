@@ -1638,6 +1638,8 @@ footer .gallery .gallery-item img {
 .contact-form {
   margin-top: 40px;
   color: #fff;
+  text-align: start;
+  line-height: 30px;
 }
 
 .contact-form #contact_form input {
@@ -2904,6 +2906,7 @@ footer .gallery .gallery-item img {
 }
 
 #left-info .details .list-info {
+  text-align: start;
   margin: 10px 20px;
 }
 
@@ -3323,6 +3326,18 @@ footer .gallery .gallery-item img {
   image-resolution: 300dpi;
   padding-top: 80px;
   padding-bottom: 80px;
+  isolation: isolate;
+  position: relative;
+  
+}
+
+#page-heading::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: #0000009e;
+
 }
 
 #page-heading h1 {
