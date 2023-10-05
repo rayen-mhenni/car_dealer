@@ -60,15 +60,17 @@ export const Home = () => {
           });
         });
 
-        Model.forEach((el) => {
+        Model.forEach((el, i) => {
           modelOp.push({
+            key: i,
             value: el,
             label: el,
           });
         });
 
-        Year.forEach((el) => {
+        Year.forEach((el, i) => {
           YearOp.push({
+            key: i,
             value: el,
             label: el,
           });
@@ -101,6 +103,7 @@ export const Home = () => {
     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
       return {
         ...styles,
+        textAlign:'center',
         backgroundColor: !isDisabled
           ? isSelected
             ? "#e4ca73"
@@ -110,6 +113,7 @@ export const Home = () => {
         fontSize: "larger",
         ":active": {
           ...styles[":active"],
+          backgroundColor: "#e4ca73"
         },
       };
     },
@@ -182,8 +186,7 @@ export const Home = () => {
             className="home-advanced-button"
             onClick={() => {
               nav(
-                `/listing?markfilter=${markfilter ?? ""}&modelFilter=${
-                  modelFilter ?? ""
+                `/listing?markfilter=${markfilter ?? ""}&modelFilter=${modelFilter ?? ""
                 }&yearFilter=${yearFilter ?? ""}`
               );
             }}

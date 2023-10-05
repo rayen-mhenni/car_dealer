@@ -62,26 +62,29 @@ export default function Listing() {
           const modelOp = []
           const YearOp = []
 
-          Make.forEach((el) => {
+          Make.forEach((el, i) => {
             marksOp.push({
+              key: i,
               value: el,
               label: el,
-            })
-          })
-
-          Model.forEach((el) => {
+            });
+          });
+  
+          Model.forEach((el, i) => {
             modelOp.push({
+              key: i,
               value: el,
               label: el,
-            })
-          })
-
-          Year.forEach((el) => {
+            });
+          });
+  
+          Year.forEach((el, i) => {
             YearOp.push({
+              key: i,
               value: el,
               label: el,
-            })
-          })
+            });
+          });
 
           setmark(marksOp)
           setmodel(modelOp)
@@ -326,44 +329,44 @@ export default function Listing() {
 
 
   const colourStyles = {
-    control: styles => ({
+    control: (styles) => ({
       ...styles,
-      backgroundColor: 'rgba(135, 129, 129, 0.264)',
-      border: 'none',
-      color: '#000',
+      backgroundColor: "rgba(135, 129, 129, 0.264)",
+      border: "none",
+      color: "#000",
       outline: "none",
-      padding: '3px'
+      padding: "8px",
     }),
     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
       return {
         ...styles,
-        backgroundColor: 'rgba(135, 129, 129, 0.264)',
-        textAlign: 'center',
-        color: '#000',
-        fontSize: 'smal',
-        ':active': {
-          ...styles[':active'],
-          backgroundColor: !isDisabled
-            ? isSelected
-              ? '#e4ca73'
-              : 'rgba(135, 129, 129, 0.264)'
-            : undefined
+        textAlign:'center',
+        backgroundColor: !isDisabled
+          ? isSelected
+            ? "#e4ca73"
+            : "rgba(135, 129, 129, 0.264)"
+          : undefined,
+        color: "#000",
+        fontSize: "smal",
+        ":active": {
+          ...styles[":active"],
+          backgroundColor: "#e4ca73"
         },
       };
     },
     placeholder: (styles) => ({
       ...styles,
-      color: '#fff',
-      fontSize: 'smal'
+      color: "#fff",
+      fontSize: "smal",
+      textAlign:'center'
     }),
     singleValue: (styles, { data }) => ({
       ...styles,
-      color: '#fff',
-      fontSize: 'smal'
+      color: "#fff",
+      fontSize: "smal",
+      textAlign:'center'
     }),
-    input: (styles) => ({ ...styles, color: '#fff' }),
-
-
+    input: (styles) => ({ ...styles, color: "#fff",   textAlign:'center' }),
   };
 
 
