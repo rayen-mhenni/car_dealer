@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import axios from "axios";
@@ -5,6 +6,7 @@ import Select from "react-select";
 import _ from 'lodash'
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import moment from "moment";
 
 export default function Listing() {
 
@@ -47,7 +49,14 @@ export default function Listing() {
   const yearparam = searchParams.get('yearFilter')
 
 
-  useEffect(() => {
+  useEffect( () => {
+
+    if (!localStorage.getItem("visit")) {
+       axios.post("http://127.0.0.1:5000/api/statistic/visit/" + String(moment().format("YYYY-MM")))
+        .then(() => localStorage.setItem("visit", "true"))
+        .catch(() => console.warn("error"));
+    }
+
     axios
       .get("http://127.0.0.1:5000/api/car")
       .then((response) => {
@@ -69,7 +78,7 @@ export default function Listing() {
               label: el,
             });
           });
-  
+
           Model.forEach((el, i) => {
             modelOp.push({
               key: i,
@@ -77,7 +86,7 @@ export default function Listing() {
               label: el,
             });
           });
-  
+
           Year.forEach((el, i) => {
             YearOp.push({
               key: i,
@@ -105,6 +114,11 @@ export default function Listing() {
   };
 
   const handelFilter = () => {
+
+
+    axios.post("http://127.0.0.1:5000/api/statistic/res/" + String(moment().format("YYYY-MM"))).then((response) => {
+    });
+
     setfilter(true)
     setfilterUrl(false)
 
@@ -340,7 +354,7 @@ export default function Listing() {
     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
       return {
         ...styles,
-        textAlign:'center',
+        textAlign: 'center',
         backgroundColor: !isDisabled
           ? isSelected
             ? "#e4ca73"
@@ -358,15 +372,15 @@ export default function Listing() {
       ...styles,
       color: "#fff",
       fontSize: "smal",
-      textAlign:'center'
+      textAlign: 'center'
     }),
     singleValue: (styles, { data }) => ({
       ...styles,
       color: "#fff",
       fontSize: "smal",
-      textAlign:'center'
+      textAlign: 'center'
     }),
-    input: (styles) => ({ ...styles, color: "#fff",   textAlign:'center' }),
+    input: (styles) => ({ ...styles, color: "#fff", textAlign: 'center' }),
   };
 
 

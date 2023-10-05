@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Select from "react-select";
 import _ from "lodash";
 import { useNavigate } from "react-router";
+import moment from "moment/moment";
 
 export const Home = () => {
   const nav = useNavigate();
@@ -27,6 +28,7 @@ export const Home = () => {
   const [yearFilter, setyearFilter] = useState(null);
   const [transmissionFilter, settransmissionFilter] = useState(null);
   const [sortFilter, setSortFilter] = useState(null);
+
 
   const [transmission, settransmission] = useState([
     {
@@ -130,6 +132,17 @@ export const Home = () => {
     input: (styles) => ({ ...styles, color: "#fff" }),
   };
 
+  const  handelSreach =()=> {
+    nav(
+      `/listing?markfilter=${markfilter ?? ""}&modelFilter=${modelFilter ?? ""
+      }&yearFilter=${yearFilter ?? ""}`
+    );
+
+    axios.post("http://127.0.0.1:5000/api/statistic/res/"+String(moment().format("YYYY-MM")) ).then((response) => {
+    });
+
+  }
+
   return (
     <div className="home">
       <div className="cover">
@@ -185,10 +198,7 @@ export const Home = () => {
           <button
             className="home-advanced-button"
             onClick={() => {
-              nav(
-                `/listing?markfilter=${markfilter ?? ""}&modelFilter=${modelFilter ?? ""
-                }&yearFilter=${yearFilter ?? ""}`
-              );
+              handelSreach()
             }}
           >
             {t("Search Now")}{" "}
