@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Footer from "./Footer";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
+import moment from "moment";
 
 function Financing() {
   const [Title, setTitle] = useState("");
@@ -24,6 +25,7 @@ function Financing() {
   const [MonthlyRent, setMonthlyRent] = useState("");
   const [isDone, setisDone] = useState(false);
   const handleSubmit = () => {
+
     axios
       .post("http://127.0.0.1:5000/api/financing", {
         Title,
@@ -44,6 +46,7 @@ function Financing() {
         MonthlyIncome,
         ResidentialStatus,
         MonthlyRent,
+        month:String(moment().format("YYYY-MM"))
       })
       .then((response) => {
         setisDone(true);
