@@ -3,17 +3,18 @@ import Footer from "./Footer";
 import axios from "axios";
 import Select from "react-select";
 import _ from 'lodash'
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export default function Listing() {
 
-  const { markparam , modelparam, yearparam } = useParams();
+
 
   const { t } = useTranslation();
 
   const [isload, setisload] = useState(true);
   const [filter, setfilter] = useState(false);
+  const [filterUrl, setfilterUrl] = useState(false);
 
   const [data, setData] = useState([]);
   const [page, setpage] = useState(1);
@@ -38,6 +39,12 @@ export default function Listing() {
       label: 'Manuelle', value: 'manuelle'
     }
   ]);
+
+  const [searchParams] = useSearchParams();
+
+  const markparam = searchParams.get('markfilter')
+  const modelparam = searchParams.get('modelFilter')
+  const yearparam = searchParams.get('yearFilter')
 
 
   useEffect(() => {
@@ -81,6 +88,9 @@ export default function Listing() {
           setyear(YearOp)
 
           setisload(false);
+          if (searchParams.size > 0) {
+            setfilterUrl(true)
+          }
         } else {
           setisload(false);
         }
@@ -93,6 +103,7 @@ export default function Listing() {
 
   const handelFilter = () => {
     setfilter(true)
+    setfilterUrl(false)
 
     let updatedData = data
     if (markfilter) {
@@ -190,6 +201,7 @@ export default function Listing() {
 
   const RestFilter = () => {
     setfilter(false)
+    setfilterUrl(false)
   }
 
   const paginateArray = (array, perPage, page) =>
@@ -199,25 +211,102 @@ export default function Listing() {
 
   const randerData = () => {
 
-    let thedata = []
+    if (filterUrl) {
 
-    if (filter) {
-      thedata = filterdata
+      let updatedData = data
+
+      if (markparam) {
+
+        updatedData = updatedData?.filter((item) => {
+          const startsWith = item.Make
+
+            .toLowerCase()
+            .startsWith(markparam.toLowerCase());
+
+          const includes = item.Make
+            .toLowerCase()
+            .includes(markparam.toLowerCase());
+
+          if (startsWith) {
+            return startsWith;
+          } else if (!startsWith && includes) {
+            return includes;
+          } else return null;
+        });
+
+
+      }
+
+      if (modelparam) {
+
+        updatedData = updatedData?.filter((item) => {
+          const startsWith = item.Model
+
+            .toLowerCase()
+            .startsWith(modelparam.toLowerCase());
+
+          const includes = item.Make
+            .toLowerCase()
+            .includes(modelparam.toLowerCase());
+
+          if (startsWith) {
+            return startsWith;
+          } else if (!startsWith && includes) {
+            return includes;
+          } else return null;
+        });
+
+
+      }
+
+      if (yearparam) {
+
+        updatedData = updatedData?.filter((item) => {
+          const startsWith = item.Year
+
+            .toLowerCase()
+            .startsWith(yearparam.toLowerCase());
+
+          const includes = item.Make
+            .toLowerCase()
+            .includes(yearparam.toLowerCase());
+
+          if (startsWith) {
+            return startsWith;
+          } else if (!startsWith && includes) {
+            return includes;
+          } else return null;
+        });
+
+
+      }
+
+      return updatedData
+
+
     } else {
-      thedata = data
+
+      let thedata = []
+
+      if (filter) {
+        thedata = filterdata
+      } else {
+        thedata = data
+      }
+
+
+      if (sortFilter === '2') {
+        thedata = _.sortBy(thedata, function (o) { return Number(o?.Price ?? 0) }).reverse();
+        return thedata
+      } else if (sortFilter === '1') {
+        thedata = _.sortBy(thedata, function (o) { return Number(o?.Price ?? 0) })
+        return thedata
+
+      } else {
+        return thedata
+      }
     }
 
-
-    if (sortFilter === '2') {
-      thedata = _.sortBy(thedata, function (o) { return Number(o?.Price ?? 0) }).reverse();
-      return thedata
-    } else if (sortFilter === '1') {
-      thedata = _.sortBy(thedata, function (o) { return Number(o?.Price ?? 0) })
-      return thedata
-
-    } else {
-      return thedata
-    }
 
   }
 
