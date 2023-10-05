@@ -128,7 +128,7 @@ export default function Details() {
               </div>
               <div className="enquiry">
                 <div className="head-side-bar">
-                  <h4>{t("OPTIONS")}</h4>
+                  <h4>{t("Options")}</h4>
                 </div>
                 <div className="more-info">
                   <div className="row">

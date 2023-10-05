@@ -12,5 +12,15 @@
   "Phone": "Phone",
   "Address": "Address",
   "Vehicle details": "Vehicle details",
-  "Driving Innovation, Delivering Satisfaction": "Driving Innovation, Delivering Satisfaction"
+  "Driving Innovation, Delivering Satisfaction": "Driving Innovation, Delivering Satisfaction",
+  "Make": "Make",
+  "Model": "Model",
+  "Year": "Year",
+  "Mileage": "Mileage",
+  "Engine": "Engine",
+  "Cylinder": "Cylinder",
+  "Body type": "Body type",
+  "INTERIOR COLOR": "interior color",
+  "EXTERIOR COLOR": "exterior color",
+  "Price": "Price"
 }

@@ -58,7 +58,7 @@ function Financing() {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1>{t("Financing Us")}</h1>
+                <h1>{t("Financing")}</h1>
                 <div className="line" />
                 <span>{t("Your dream car is just a visit away!")}</span>
               </div>
@@ -79,7 +79,7 @@ function Financing() {
                       encType="multipart/form-data"
                     >
                       <div className="row">
-                        <h4> {t("PERSONAL INFORMATION")}</h4>
+                        <h4> {t("Personal information")}</h4>
                         <br />
 
                         <div className="col-md-3 col-sm-6 col-xs-12">
@@ -170,7 +170,7 @@ function Financing() {
                       <hr />
 
                       <div className="row">
-                        <h4>{t("CONTACT INFORMATION")}</h4>
+                        <h4>{t("Contact information")}</h4>
                         <br />
                       </div>
 
@@ -238,7 +238,7 @@ function Financing() {
                       <br />
                       <hr />
                       <div className="row">
-                        <h4>{t("CURRENT JOB")}</h4>
+                        <h4>{t("Current job")}</h4>
                         <br />
                       </div>
 
@@ -267,7 +267,7 @@ function Financing() {
                           />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
-                          {t("Duration (Years) ")}
+                          {t("Duration (Years)")}
 
                           <input
                             type="text"
@@ -283,7 +283,7 @@ function Financing() {
                       <br />
                       <hr />
                       <div className="row">
-                        <h4> {t("FINANCIAL INFORMATION")}</h4>
+                        <h4> {t("Financial information")}</h4>
                         <br />
                       </div>
 
