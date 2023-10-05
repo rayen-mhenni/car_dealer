@@ -2,16 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Select from "react-select";
-import _ from 'lodash'
+import _ from "lodash";
 import { useNavigate } from "react-router";
 
 export const Home = () => {
-
-  const nav = useNavigate()
+  const nav = useNavigate();
 
   const { t } = useTranslation();
-
-
 
   const [isload, setisload] = useState(true);
   const [filter, setfilter] = useState(false);
@@ -33,66 +30,64 @@ export const Home = () => {
 
   const [transmission, settransmission] = useState([
     {
-      label: 'Automatique', value: 'automatique'
+      label: "Automatique",
+      value: "automatique",
     },
     {
-      label: 'Manuelle', value: 'manuelle'
-    }
+      label: "Manuelle",
+      value: "manuelle",
+    },
   ]);
 
-
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:5000/api/car")
-      .then((response) => {
-        if (response.data.car) {
-          setData(response.data.car);
+    axios.get("http://127.0.0.1:5000/api/car").then((response) => {
+      if (response.data.car) {
+        setData(response.data.car);
 
-          let Make = Object.keys(_.groupBy(response.data.car, 'Make'))
-          let Model = Object.keys(_.groupBy(response.data.car, 'Model'))
-          let Year = Object.keys(_.groupBy(response.data.car, 'Year'))
+        let Make = Object.keys(_.groupBy(response.data.car, "Make"));
+        let Model = Object.keys(_.groupBy(response.data.car, "Model"));
+        let Year = Object.keys(_.groupBy(response.data.car, "Year"));
 
-          const marksOp = []
-          const modelOp = []
-          const YearOp = []
+        const marksOp = [];
+        const modelOp = [];
+        const YearOp = [];
 
-          Make.forEach((el) => {
-            marksOp.push({
-              value: el,
-              label: el,
-            })
-          })
+        Make.forEach((el, i) => {
+          marksOp.push({
+            key: i,
+            value: el,
+            label: el,
+          });
+        });
 
-          Model.forEach((el) => {
-            modelOp.push({
-              value: el,
-              label: el,
-            })
-          })
+        Model.forEach((el) => {
+          modelOp.push({
+            value: el,
+            label: el,
+          });
+        });
 
-          Year.forEach((el) => {
-            YearOp.push({
-              value: el,
-              label: el,
-            })
-          })
+        Year.forEach((el) => {
+          YearOp.push({
+            value: el,
+            label: el,
+          });
+        });
 
-          setmark(marksOp)
-          setmodel(modelOp)
-          setyear(YearOp)
+        setmark(marksOp);
+        setmodel(modelOp);
+        setyear(YearOp);
 
-          setisload(false);
-        } else {
-          setisload(false);
-        }
-      });
+        setisload(false);
+      } else {
+        setisload(false);
+      }
+    });
   }, [refetech]);
-
 
   const handrefetech = () => {
     setrefetech(!refetech);
   };
-
 
   const colourStyles = {
     control: (styles) => ({
@@ -106,16 +101,15 @@ export const Home = () => {
     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
       return {
         ...styles,
-        backgroundColor: "rgba(135, 129, 129, 0.264)",
+        backgroundColor: !isDisabled
+          ? isSelected
+            ? "#e4ca73"
+            : "rgba(135, 129, 129, 0.264)"
+          : undefined,
         color: "#000",
         fontSize: "larger",
         ":active": {
           ...styles[":active"],
-          backgroundColor: !isDisabled
-            ? isSelected
-              ? "#e4ca73"
-              : "rgba(135, 129, 129, 0.264)"
-            : undefined,
         },
       };
     },
@@ -151,7 +145,7 @@ export const Home = () => {
             maxMenuHeight={"100px"}
             options={mark}
             onChange={(e) => {
-              setmarkfilter(e?.value)
+              setmarkfilter(e?.value);
             }}
             styles={colourStyles}
           />
@@ -165,7 +159,7 @@ export const Home = () => {
             options={model}
             maxMenuHeight={"100px"}
             onChange={(e) => {
-              setmodelFilter(e?.value)
+              setmodelFilter(e?.value);
             }}
             styles={colourStyles}
           />
@@ -179,14 +173,23 @@ export const Home = () => {
             options={year}
             maxMenuHeight={"100px"}
             onChange={(e) => {
-              setyearFilter(e?.value)
+              setyearFilter(e?.value);
             }}
             styles={colourStyles}
           />
 
-          <button className="home-advanced-button" onClick={() => {
-            nav(`/listing?markfilter=${markfilter ?? ''}&modelFilter=${modelFilter ?? ""}&yearFilter=${yearFilter ?? ''}`)
-          }}>{t("Search Now")} </button>
+          <button
+            className="home-advanced-button"
+            onClick={() => {
+              nav(
+                `/listing?markfilter=${markfilter ?? ""}&modelFilter=${
+                  modelFilter ?? ""
+                }&yearFilter=${yearFilter ?? ""}`
+              );
+            }}
+          >
+            {t("Search Now")}{" "}
+          </button>
         </div>
       </div>
 
