@@ -1,11 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./Footer";
 import { useTranslation } from "react-i18next";
+import emailjs from '@emailjs/browser';
 
 function Contact() {
   const { t } = useTranslation();
+
+  const [name, setname] = useState(null);
+  const [email, setemail] = useState(null);
+  const [subject, setsubject] = useState(null);
+  const [message, setmessage] = useState(null);
+
+  const sendEmail = () => {
+
+    const data = {
+      name, email, subject, message
+    }
+
+    const templateParams = {
+      name: data.name,
+      email: data.email,
+      subject: data.subject,
+      message: data.message
+    };
+
+    const serviceID = 'service_qgweni8'
+    const templateID = 'template_6w9s59f'
+    const publicKey = 'JCl2nVedMtBs6NSlz'
+
+    emailjs
+      .send(
+        serviceID,
+        templateID,
+        templateParams,
+        publicKey
+      )
+      .then(() => {
+        alert("Email Send ")
+        setemail('')
+        setname('')
+        setsubject('')
+        setmessage('')
+      })
+      .catch((res) => {
+        alert("Error Email Send ")
+      });
+
+  }
+
   return (
-    <div className="inventory">
+
+    //contact!primo!carthage
+
+    < div className="inventory" >
       <div id="page-heading">
         <div className="container">
           <div className="row">
@@ -35,6 +82,10 @@ function Contact() {
                         type="text"
                         className="name"
                         name="s"
+                        onChange={(e) => {
+                          setname(e.target.value)
+                        }}
+                        value={name}
                         placeholder={t("First name")}
                       />
                     </div>
@@ -43,15 +94,23 @@ function Contact() {
                         type="text"
                         className="email"
                         name="s"
+                        onChange={(e) => {
+                          setemail(e.target.value)
+                        }}
+                        value={email}
                         placeholder={t("Email address")}
                       />
                     </div>
-               
+
                     <div className="col-md-6 col-sm-12 col-xs-12">
                       <input
                         type="text"
                         className="phone"
                         name="s"
+                        onChange={(e) => {
+                          setsubject(e.target.value)
+                        }}
+                        value={subject}
                         placeholder={t("subject")}
                       />
                     </div>
@@ -60,12 +119,18 @@ function Contact() {
                         id="message"
                         className="message"
                         name="message"
+                        onChange={(e) => {
+                          setmessage(e.target.value)
+                        }}
+                        value={message}
                         placeholder={t("Write message")}
                       />
                     </div>
                     <div className="col-md-12 col-sm-12 col-xs-12">
-                      <div className="advanced-button">
-                        <a href="#">
+                      <div className="advanced-button" onClick={() => {
+                        sendEmail()
+                      }}>
+                        <a>
                           {t("Send Message")}
                           <i className="fa fa-paper-plane" />
                         </a>
@@ -114,7 +179,7 @@ function Contact() {
         loading="lazy"
       ></iframe>
       <Footer />
-    </div>
+    </div >
   );
 }
 
