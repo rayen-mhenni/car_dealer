@@ -146,7 +146,7 @@ export const Home = () => {
             className="basic-single select-home"
             isClearable={true}
             classNamePrefix="select"
-            placeholder="Select Mark"
+            placeholder={t("Select Mark")}
             name="color"
             maxMenuHeight={"100px"}
             options={mark}
@@ -160,7 +160,7 @@ export const Home = () => {
             className="basic-single select-home"
             isClearable={true}
             classNamePrefix="select"
-            placeholder="Select Model"
+            placeholder={t("Select model")}
             name="color"
             options={model}
             maxMenuHeight={"100px"}
@@ -174,7 +174,7 @@ export const Home = () => {
             className="basic-single select-home"
             isClearable={true}
             classNamePrefix="select"
-            placeholder="Select Year"
+            placeholder={t("Select year")}
             name="color"
             options={year}
             maxMenuHeight={"100px"}
