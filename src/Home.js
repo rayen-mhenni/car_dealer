@@ -42,7 +42,7 @@ export const Home = () => {
   ]);
 
   useEffect(() => {
-    axios.get("https://www.primocarthageauto.ca/api/car").then((response) => {
+    axios.get("https://www.primocarthageauto.ca:433/api/car").then((response) => {
       if (response.data.car) {
         setData(response.data.car);
 
@@ -138,7 +138,7 @@ export const Home = () => {
       }&yearFilter=${yearFilter ?? ""}`
     );
 
-    axios.post("https://www.primocarthageauto.ca/api/statistic/res/"+String(moment().format("YYYY-MM")) ).then((response) => {
+    axios.post("https://www.primocarthageauto.ca:433/api/statistic/res/"+String(moment().format("YYYY-MM")) ).then((response) => {
     });
 
   }
