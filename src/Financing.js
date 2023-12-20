@@ -27,7 +27,7 @@ function Financing() {
   const handleSubmit = () => {
 
     axios
-      .post("https://www.primocarthageauto.ca:433/api/financing", {
+      .post("https://www.primocarthageauto.ca/api/financing", {
         Title,
         Firstname,
         Lastname,

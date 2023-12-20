@@ -14,7 +14,7 @@ export default function Details() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get("https://www.primocarthageauto.ca:433/api/car/" + id).then((response) => {
+    axios.get("https://www.primocarthageauto.ca/api/car/" + id).then((response) => {
       if (response.data) {
         setData(response.data.car);
         setimages(response.data.car?.images ?? []);
