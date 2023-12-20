@@ -52,13 +52,13 @@ export default function Listing() {
   useEffect( () => {
 
     if (!localStorage.getItem("visit")) {
-       axios.post("http://127.0.0.1:5000/api/statistic/visit/" + String(moment().format("YYYY-MM")))
+       axios.post("https://www.primocarthageauto.ca//api/statistic/visit/" + String(moment().format("YYYY-MM")))
         .then(() => localStorage.setItem("visit", "true"))
         .catch(() => console.warn("error"));
     }
 
     axios
-      .get("http://127.0.0.1:5000/api/car")
+      .get("https://www.primocarthageauto.ca//api/car")
       .then((response) => {
         if (response.data.car) {
           setData(response.data.car);
@@ -116,7 +116,7 @@ export default function Listing() {
   const handelFilter = () => {
 
 
-    axios.post("http://127.0.0.1:5000/api/statistic/res/" + String(moment().format("YYYY-MM"))).then((response) => {
+    axios.post("https://www.primocarthageauto.ca//api/statistic/res/" + String(moment().format("YYYY-MM"))).then((response) => {
     });
 
     setfilter(true)

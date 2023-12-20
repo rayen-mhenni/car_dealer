@@ -42,7 +42,7 @@ export const Home = () => {
   ]);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:5000/api/car").then((response) => {
+    axios.get("https://www.primocarthageauto.ca//api/car").then((response) => {
       if (response.data.car) {
         setData(response.data.car);
 
@@ -138,7 +138,7 @@ export const Home = () => {
       }&yearFilter=${yearFilter ?? ""}`
     );
 
-    axios.post("http://127.0.0.1:5000/api/statistic/res/"+String(moment().format("YYYY-MM")) ).then((response) => {
+    axios.post("https://www.primocarthageauto.ca//api/statistic/res/"+String(moment().format("YYYY-MM")) ).then((response) => {
     });
 
   }

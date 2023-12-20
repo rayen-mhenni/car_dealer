@@ -27,7 +27,7 @@ function Financing() {
   const handleSubmit = () => {
 
     axios
-      .post("http://127.0.0.1:5000/api/financing", {
+      .post("https://www.primocarthageauto.ca//api/financing", {
         Title,
         Firstname,
         Lastname,
