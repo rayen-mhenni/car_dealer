@@ -209,7 +209,7 @@ export const Home = () => {
       <hr className="home-hr" />
 
       <p>
-        Copyrights 2024 <em>Primo Carthage</em> Developed by <em>RO</em>
+        Copyrights 2024 <em>Primo Carthage</em> 
       </p>
     </div>
   );

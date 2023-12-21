@@ -566,6 +566,15 @@ footer .featured-links ul {
   list-style: none;
   display: inline-block;
 }
+footer .horaire {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+  color: white;
+}
 
 footer .featured-links ul li {
   margin-bottom: 15px;

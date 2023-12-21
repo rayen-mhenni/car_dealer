@@ -144,12 +144,9 @@ function Contact() {
               <div className="contact-info">
                 <div className="phone">
                   <h4> {t("Phone")}</h4>
-                  <span>{t("+33 20966400 1342")} </span>
+                  <span>{t("+1 5146637749")} </span>
                 </div>
-                <div className="fax">
-                  <h4> {t("Fax")}</h4>
-                  <span>{t("+33 20966400 1342")}</span>
-                </div>
+                  <span>{t("+1 5142370153")}</span>
                 <div className="email">
                   <h4> {t("E-mail")}</h4>
                   <span>{t("test@RO.com")}</span>
@@ -157,9 +154,9 @@ function Contact() {
                 <div className="address">
                   <h4>{t("Address")}</h4>
                   <span>
-                    {t("2855 Simpson Square")}
+                    {t("168 Av. Broadway, Montréal-Est,")}
                     <br />
-                    {t("Coldwater, OK 67029 ")}
+                    {t("QC H1B 5A3, Canada")}
                   </span>
                 </div>
               </div>
@@ -170,7 +167,7 @@ function Contact() {
 
       <iframe
         className="map"
-        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Québec,%20Canada+(Québec)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=168 Av. Broadway, Montréal-Est, QC H1B 5A3, Canada&amp;output=embed"
         width="100%"
         height="450"
         title="myFrame"

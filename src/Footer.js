@@ -10,27 +10,23 @@ const Footer = () => {
       <footer>
         <div className="container">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-3">
               <div className="about-us">
                 <img src="assets/images/logo_3.png" alt="" />
               </div>
             </div>
 
-            <div className="col-md-4">
+            <div className="col-md-3">
               <div className="about-us">
-                <p>
-                  {t(
-                    "Maecenas ne mollis orci. Phasell iacu sapie non aliquet exeuismo ac."
-                  )}
-                </p>
+                <p>{t("primo carthage automobile")}</p>
                 <ul>
                   <li>
                     <i className="fa fa-map-marker" />
-                    {t("Raver Croft Drive Knoxville, 37921")}
+                    {t("168 Av. Broadway, Montréal-Est, QC H1B 5A3, Canada")}
                   </li>
                   <li>
                     <i className="fa fa-phone" />
-                    {t("+55 417-634-7071")}
+                    {t("+1 5146637749 / +1 5142370153")}
                   </li>
                   <li>
                     <i className="fa fa-envelope-o" />
@@ -40,36 +36,48 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-md-4">
+            <div className="col-md-3">
               <div className="featured-links">
                 <h4> {t("Featured Links")}</h4>
                 <ul>
                   <li>
-                    <a href="#">
+                    <a href="/">
                       <i className="fa fa-caret-right" />
                       {t("Home")}
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="/listing">
                       <i className="fa fa-caret-right" />
                       {t("Inventory")}
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="/financing">
                       <i className="fa fa-caret-right" />
                       {t("Financing")}
                     </a>
                   </li>
 
                   <li>
-                    <a href="#">
+                    <a href="/contact">
                       <i className="fa fa-caret-right" />
                       {t("Contact")}
                     </a>
                   </li>
                 </ul>
+              </div>
+            </div>
+            <div className="col-md-3">
+              <div className="horaire">
+                <h4> {t("Heures d'ouverture")}</h4>
+                <div>Lundi: 10:00 AM - 06:00 PM</div>
+                <div> Mardi: 10:00 AM - 06:00 PM</div>
+                <div> Mercredi: 10:00 AM - 06:00 PM</div>
+                <div> Jeudi: 10:00 AM - 06:00 PM</div>
+                <div> Vendredi: 10:00 AM - 06:00 PM</div>
+                <div> Samedi: 10:00 AM - 06:00 PM</div>
+                <div> Dimanche: 10:00 AM - 06:00 PM</div>
               </div>
             </div>
           </div>
@@ -80,8 +88,7 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-12 col-sm-12">
               <p>
-                Copyrights 2024 <em>Primo Carthage</em>. Developed by{" "}
-                <em>RO</em>
+                Copyrights 2024 <em>Primo Carthage</em>
               </p>
             </div>
           </div>

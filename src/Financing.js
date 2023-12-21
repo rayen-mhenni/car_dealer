@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import moment from "moment";
+import Select from "react-select";
 
 function Financing() {
   const [Title, setTitle] = useState("");
@@ -25,7 +26,7 @@ function Financing() {
   const [MonthlyRent, setMonthlyRent] = useState("");
   const [isDone, setisDone] = useState(false);
   const handleSubmit = () => {
-
+    console.log("testttt",Title)
     axios
       .post("https://www.primocarthageauto.ca/api/financing", {
         Title,
@@ -46,7 +47,7 @@ function Financing() {
         MonthlyIncome,
         ResidentialStatus,
         MonthlyRent,
-        month:String(moment().format("YYYY-MM"))
+        month: String(moment().format("YYYY-MM")),
       })
       .then((response) => {
         setisDone(true);
@@ -54,6 +55,46 @@ function Financing() {
   };
   const { t } = useTranslation();
 
+  const colourStyles = {
+    control: (styles) => ({
+      ...styles,
+      backgroundColor: "rgba(135, 129, 129, 0.264)",
+      border: "none",
+      color: "#000",
+      outline: "none",
+      height: "40px",
+    }),
+    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+      return {
+        ...styles,
+        textAlign: "center",
+        backgroundColor: !isDisabled ? (isSelected ? "#e4ca73" : "rgba(135, 129, 129, 0.264)") : undefined,
+        color: "#000",
+        fontSize: "larger",
+        height: "40px",
+
+        ":active": {
+          ...styles[":active"],
+          backgroundColor: "#e4ca73",
+        },
+      };
+    },
+    placeholder: (styles) => ({
+      ...styles,
+      color: "#fff",
+      fontSize: "larger",
+      height: "40px",
+    }),
+    singleValue: (styles, { data }) => ({
+      ...styles,
+      color: "#fff",
+      fontSize: "larger",
+      height:"40px"
+
+    }),
+    input: (styles) => ({ ...styles, color: "#fff",      height:"38px"
+  }),
+  };
   return (
     <>
       <div className="inventory">
@@ -75,25 +116,34 @@ function Financing() {
               <div className="row">
                 <div className="col-md-12">
                   <div className="contact-form">
-                    <form
-                      id="contact_form"
-                      action="#"
-                      method="POST"
-                      encType="multipart/form-data"
-                    >
+                    <form id="contact_form" action="#" method="POST" encType="multipart/form-data">
                       <div className="row">
                         <h4> {t("Personal information")}</h4>
                         <br />
 
                         <div className="col-md-3 col-sm-6 col-xs-12">
                           {t("Title")}
-                          <input
-                            type="text"
-                            name="s"
-                            value={Title}
-                            onChange={(val) => {
-                              setTitle(val.target.value);
+
+                          <Select
+                            className="basic-single select-home"
+                            classNamePrefix="select"
+                            // placeholder={t("Select")}
+                            name="color"
+                            maxMenuHeight={"100px"}
+                            options={[
+                              {
+                                label: "M.",
+                                value: "M.",
+                              },
+                              {
+                                label: "Mme",
+                                value: "Mme",
+                              },
+                            ]}
+                            onChange={(e) => {
+                              setTitle(e.value);
                             }}
+                            styles={colourStyles}
                           />
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
@@ -344,9 +394,7 @@ function Financing() {
                         <br />
                         <strong>
                           *<input type="checkbox" name="s" />
-                          {t(
-                            "I have read and agree to the Terms & Conditions above."
-                          )}
+                          {t("I have read and agree to the Terms & Conditions above.")}
                         </strong>
                       </div>
 
@@ -361,11 +409,7 @@ function Financing() {
                             <i className="fa fa-paper-plane" />
                           </a>
                         </div>
-                        {isDone && (
-                          <strong style={{ color: "green" }}>
-                            {t("thanks we have received ur request")}
-                          </strong>
-                        )}
+                        {isDone && <strong style={{ color: "green" }}>{t("thanks we have received ur request")}</strong>}
                       </div>
                     </form>
                   </div>
