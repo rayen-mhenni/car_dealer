@@ -149,7 +149,7 @@ function Contact() {
                   <span>{t("+1 5142370153")}</span>
                 <div className="email">
                   <h4> {t("E-mail")}</h4>
-                  <span>{t("test@RO.com")}</span>
+                  <span>{t("primocarthageauto@gmail.com")}</span>
                 </div>
                 <div className="address">
                   <h4>{t("Address")}</h4>

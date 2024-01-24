@@ -30,7 +30,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <i className="fa fa-envelope-o" />
-                    {t("contact@RO.com")}
+                    {t("primocarthageauto@gmail.com")}
                   </li>
                 </ul>
               </div>
