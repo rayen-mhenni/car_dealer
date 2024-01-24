@@ -25,7 +25,6 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
 }
 
 .cover .title {
@@ -37,7 +36,6 @@
   margin-top: 56px;
   max-width: 100%;
 }
-
 
 .home .card {
   display: flex;
@@ -60,7 +58,6 @@
   justify-content: center;
 }
 
-
 .home .search-form {
   cursor: pointer;
   width: 100%;
@@ -81,7 +78,7 @@
   margin-left: 10px;
 }
 
- .select-inv {
+.select-inv {
   margin-bottom: 15px;
 }
 
@@ -95,13 +92,7 @@
   border: none;
 }
 
-
-
-
-
 @media screen and (max-width: 767px) {
-
-
   .cover .title img {
     height: auto;
     margin-top: 10px;
@@ -138,8 +129,6 @@
   filter: grayscale(100%) invert(92%) contrast(83%);
 }
 
-
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -165,6 +154,19 @@
 .App-link {
   color: #61dafb;
 }
+
+.carousel-car {
+  height: 421px;
+  width: 750px;
+  overflow: hidden;
+}
+.carousel-car img {
+  object-fit: cover;
+}
+.carousel .thumb {
+  height: 62.5px;
+}
+
 
 @keyframes App-logo-spin {
   from {

@@ -2411,7 +2411,7 @@ footer .gallery .gallery-item img {
 }
 
 .carPic {
-  aspect-ratio: 4/3;
+  aspect-ratio: auto ;
   max-height: 210px;
   max-width: 310px;
 }
