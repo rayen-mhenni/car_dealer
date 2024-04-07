@@ -57,7 +57,8 @@ export default function Details() {
                 {images &&
                   images.map((el, i) => {
                     return (
-                      <div key={i} className="carousel-car">
+                      <div key={i}>
+                        {/* className="carousel-car" */}
                         <img resizeMode="contain" src={el} />
                       </div>
                     );
