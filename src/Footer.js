@@ -18,7 +18,7 @@ const Footer = () => {
 
             <div className="col-md-3">
               <div className="about-us">
-                <p>{t("primo carthage automobile")}</p>
+                <strong>{t("primo carthage automobile")}</strong>
                 <ul>
                   <li>
                     <i className="fa fa-map-marker" />
@@ -71,13 +71,34 @@ const Footer = () => {
             <div className="col-md-3">
               <div className="horaire">
                 <h4> {t("Heures d'ouverture")}</h4>
-                <div>Lundi: 10:00 AM - 06:00 PM</div>
-                <div> Mardi: 10:00 AM - 06:00 PM</div>
-                <div> Mercredi: 10:00 AM - 06:00 PM</div>
-                <div> Jeudi: 10:00 AM - 06:00 PM</div>
-                <div> Vendredi: 10:00 AM - 06:00 PM</div>
-                <div> Samedi: 10:00 AM - 06:00 PM</div>
-                <div> Dimanche: 10:00 AM - 06:00 PM</div>
+                <div className="horaire-item">
+                  <span>Lundi: </span>
+                  <span>10:00 AM - 06:00 PM</span>
+                </div>
+                <div className="horaire-item">
+                  <span> Mardi: </span>
+                  <span>10:00 AM - 06:00 PM</span>
+                </div>
+                <div className="horaire-item">
+                  <span> Mercredi: </span>
+                  <span>10:00 AM - 06:00 PM</span>
+                </div>
+                <div className="horaire-item">
+                  <span> Jeudi: </span>
+                  <span>10:00 AM - 06:00 PM</span>
+                </div>
+                <div className="horaire-item">
+                  <span> Vendredi: </span>
+                  <span>10:00 AM - 06:00 PM</span>
+                </div>
+                <div className="horaire-item">
+                  <span> Samedi: </span>
+                  <span>10:00 AM - 06:00 PM</span>
+                </div>
+                <div className="horaire-item">
+                  <span> Dimanche: </span>
+                  <span>10:00 AM - 06:00 PM</span>
+                </div>
               </div>
             </div>
           </div>

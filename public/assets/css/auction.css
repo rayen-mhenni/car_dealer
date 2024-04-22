@@ -500,7 +500,7 @@ footer {
   padding: 60px 0px 70px 0px;
 }
 
-footer p {
+footer strong {
   color: #fff;
 }
 
@@ -514,6 +514,14 @@ footer h4 {
   margin-top: 15px;
 }
 
+footer .about-us {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
 footer .about-us img {
   width: 100%;
 }
@@ -526,7 +534,13 @@ footer .about-us p {
 footer .about-us ul {
   padding: 0;
   margin: 0;
+  margin-top: 2rem;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 footer .about-us ul li {
@@ -563,17 +577,28 @@ footer .about-us ul li:hover {
 footer .featured-links ul {
   padding: 0;
   margin-right: 30px;
+  margin-left: 5rem;
   list-style: none;
   display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 footer .horaire {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  align-content: center;
+  align-content: center; */
   color: white;
+}
+footer .horaire-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 footer .featured-links ul li {
@@ -1212,24 +1237,12 @@ footer .gallery .gallery-item img {
   color: #e4ca73;
 }
 
-.blog-page
-  .blog-item-video
-  .video-content
-  .inner-content
-  .tittle
-  ul
-  li:last-child {
+.blog-page .blog-item-video .video-content .inner-content .tittle ul li:last-child {
   border-right: none;
   margin-left: 10px;
 }
 
-.blog-page
-  .blog-item-video
-  .video-content
-  .inner-content
-  .tittle
-  ul
-  li:first-child {
+.blog-page .blog-item-video .video-content .inner-content .tittle ul li:first-child {
   margin-left: 0px;
 }
 
@@ -1881,26 +1894,13 @@ footer .gallery .gallery-item img {
   font-family: "Roboto", sans-serif;
 }
 
-.featured-listing
-  #featured-cars
-  .featured-item
-  .down-content
-  .car-info
-  ul
-  li
-  i {
+.featured-listing #featured-cars .featured-item .down-content .car-info ul li i {
   margin-left: -5px;
   margin-right: 5px;
   color: #222222;
 }
 
-.featured-listing
-  #featured-cars
-  .featured-item
-  .down-content
-  .car-info
-  ul
-  li:last-child {
+.featured-listing #featured-cars .featured-item .down-content .car-info ul li:last-child {
   border-right: none;
   padding-right: 0px;
 }
@@ -2374,25 +2374,13 @@ footer .gallery .gallery-item img {
   }
 }
 
-.listing-page
-  #listing-cars
-  .featured-item
-  .right-content
-  .car-info
-  ul
-  li:last-child {
+.listing-page #listing-cars .featured-item .right-content .car-info ul li:last-child {
   border-right: none;
   padding-right: 0px;
 }
 
 @media (max-width: 991px) {
-  .listing-page
-    #listing-cars
-    .featured-item
-    .right-content
-    .car-info
-    ul
-    li:last-child {
+  .listing-page #listing-cars .featured-item .right-content .car-info ul li:last-child {
     display: none;
   }
 }
@@ -2411,7 +2399,7 @@ footer .gallery .gallery-item img {
 }
 
 .carPic {
-  aspect-ratio: auto ;
+  aspect-ratio: auto;
   max-height: 210px;
   max-width: 310px;
 }
@@ -2801,12 +2789,7 @@ footer .gallery .gallery-item img {
   margin-right: 15px;
 }
 
-#sidebar
-  .sidebar-content
-  .search-form
-  .slider-range
-  .ui-slider-horizontal
-  .ui-slider-range {
+#sidebar .sidebar-content .search-form .slider-range .ui-slider-horizontal .ui-slider-range {
   background-color: #e4ca73;
 }
 
@@ -3337,16 +3320,14 @@ footer .gallery .gallery-item img {
   padding-bottom: 80px;
   isolation: isolate;
   position: relative;
-  
 }
 
 #page-heading::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   background-color: #0000009e;
-
 }
 
 #page-heading h1 {
@@ -4482,10 +4463,8 @@ footer .gallery .gallery-item img {
 @font-face {
   font-family: "flexslider-icon";
   src: url("../fonts/flexslider-icon.eot");
-  src: url("../fonts/flexslider-icon.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/flexslider-icon.woff") format("woff"),
-    url("../fonts/flexslider-icon.ttf") format("truetype"),
-    url("../fonts/flexslider-icon.svg#flexslider-icon") format("svg");
+  src: url("../fonts/flexslider-icon.eot?#iefix") format("embedded-opentype"), url("../fonts/flexslider-icon.woff") format("woff"),
+    url("../fonts/flexslider-icon.ttf") format("truetype"), url("../fonts/flexslider-icon.svg#flexslider-icon") format("svg");
   font-weight: normal;
   font-style: normal;
 }

@@ -596,7 +596,7 @@ export default function Listing() {
                           <ul>
                             <li>
                               <i className="icon-gaspump" />
-                              Diesel
+                              {el?.Energy}
                             </li>
                             <li>
                               <i className="icon-road2" />

@@ -5,6 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { isEmpty, isNil } from "lodash";
 
 export default function Details() {
   const [isload, setisload] = useState(true);
@@ -103,6 +104,10 @@ export default function Details() {
                       {data?.Engine}
                     </li>
                     <li>
+                      <span>{t("Energy")}:</span>
+                      {data?.Energy}
+                    </li>
+                    <li>
                       <span>{t("Cylinder")}:</span>
                       {data?.Cylinder}
                     </li>
@@ -124,6 +129,13 @@ export default function Details() {
                     <li>
                       <span>{t("Price")}:</span>${data?.Price}
                     </li>
+                    {!isEmpty(data?.CARFAX) && !isNil(data?.CARFAX) && (
+                      <li style={{ textAlign: "center" }}>
+                        <a href={data?.CARFAX} target="_blank" rel="noreferrer">
+                          <img src="assets/images/carfax.jpg" className="carfax-detail-button" alt="" />
+                        </a>
+                      </li>
+                    )}
                   </ul>
                 </div>
               </div>
