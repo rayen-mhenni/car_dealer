@@ -3,15 +3,12 @@ import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import axios from "axios";
 import Select from "react-select";
-import _ from 'lodash'
+import _ from "lodash";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import moment from "moment";
 
 export default function Listing() {
-
-
-
   const { t } = useTranslation();
 
   const [isload, setisload] = useState(true);
@@ -35,105 +32,173 @@ export default function Listing() {
 
   const [transmission, settransmission] = useState([
     {
-      label: 'Automatique', value: 'automatique'
+      label: "Automatique",
+      value: "automatique",
     },
     {
-      label: 'Manuelle', value: 'manuelle'
-    }
+      label: "Manuelle",
+      value: "Manuel",
+    },
   ]);
 
   const [searchParams] = useSearchParams();
 
-  const markparam = searchParams.get('markfilter')
-  const modelparam = searchParams.get('modelFilter')
-  const yearparam = searchParams.get('yearFilter')
+  const markparam = searchParams.get("markfilter");
+  const modelparam = searchParams.get("modelFilter");
+  const yearparam = searchParams.get("yearFilter");
 
-
-  useEffect( () => {
-
+  useEffect(() => {
     if (!localStorage.getItem("visit")) {
-       axios.post("https://www.primocarthageauto.ca/api/statistic/visit/" + String(moment().format("YYYY-MM")))
+      axios
+        .post(
+          "https://www.primocarthageauto.ca/api/statistic/visit/" +
+            String(moment().format("YYYY-MM"))
+        )
         .then(() => localStorage.setItem("visit", "true"))
         .catch(() => console.warn("error"));
     }
 
-    axios
-      .get("https://www.primocarthageauto.ca/api/car")
-      .then((response) => {
-        if (response.data.car) {
-          setData(response.data.car);
+    axios.get("https://www.primocarthageauto.ca/api/car").then((response) => {
+      if (response.data.car) {
+        setData(response.data.car);
 
-          let Make = Object.keys(_.groupBy(response.data.car, 'Make'))
-          let Model = Object.keys(_.groupBy(response.data.car, 'Model'))
-          let Year = Object.keys(_.groupBy(response.data.car, 'Year'))
+        let Make = Object.keys(_.groupBy(response.data.car, "Make"));
+        let Model = Object.keys(_.groupBy(response.data.car, "Model"));
+        let Year = Object.keys(_.groupBy(response.data.car, "Year"));
 
-          const marksOp = []
-          const modelOp = []
-          const YearOp = []
+        const marksOp = [];
+        const modelOp = [];
+        const YearOp = [];
 
-          Make.forEach((el, i) => {
-            marksOp.push({
-              key: i,
-              value: el,
-              label: el,
-            });
+        Make.forEach((el, i) => {
+          marksOp.push({
+            key: i,
+            value: el,
+            label: el,
           });
+        });
 
-          Model.forEach((el, i) => {
-            modelOp.push({
-              key: i,
-              value: el,
-              label: el,
-            });
+        Model.forEach((el, i) => {
+          modelOp.push({
+            key: i,
+            value: el,
+            label: el,
           });
+        });
 
-          Year.forEach((el, i) => {
-            YearOp.push({
-              key: i,
-              value: el,
-              label: el,
-            });
+        Year.forEach((el, i) => {
+          YearOp.push({
+            key: i,
+            value: el,
+            label: el,
           });
+        });
 
-          setmark(marksOp)
-          setmodel(modelOp)
-          setyear(YearOp)
+        setmark(marksOp);
+        setmodel(modelOp);
+        setyear(YearOp);
 
-          setisload(false);
-          if (searchParams.size > 0) {
-            setfilterUrl(true)
-          }
-        } else {
-          setisload(false);
+        setisload(false);
+        if (searchParams.size > 0) {
+          setfilterUrl(true);
         }
-      });
+      } else {
+        setisload(false);
+      }
+    });
   }, [refetech]);
 
   const handrefetech = () => {
     setrefetech(!refetech);
   };
 
-  const handelFilter = () => {
+  const onselectMark = (mark) => {
+    setmarkfilter(mark);
 
+    setmodel([]);
+    setyear([]);
+    setyearFilter(null);
+    setmodelFilter(null);
 
-    axios.post("https://www.primocarthageauto.ca/api/statistic/res/" + String(moment().format("YYYY-MM"))).then((response) => {
+    const filteredData = data.filter((el) =>
+      el.Make.toLowerCase().trim().includes(mark?.trim().toLowerCase())
+    );
+
+    let Model = Object.keys(_.groupBy(filteredData, "Model"));
+    let Year = Object.keys(_.groupBy(filteredData, "Year"));
+
+    const modelOp = [];
+    const YearOp = [];
+
+    Model.forEach((el, i) => {
+      modelOp.push({
+        key: i,
+        value: el,
+        label: el,
+      });
     });
 
-    setfilter(true)
-    setfilterUrl(false)
+    Year.forEach((el, i) => {
+      YearOp.push({
+        key: i,
+        value: el,
+        label: el,
+      });
+    });
 
-    let updatedData = data
+    setmodel(modelOp);
+    setyear(YearOp);
+  };
+
+  const onselectModel = (Model) => {
+    setmodelFilter(Model);
+    setyear([]);
+    setyearFilter(null);
+
+    const filteredData = data.filter(
+      (el) =>
+        el.Make.toLowerCase()
+          .trim()
+          .includes(markfilter?.trim().toLowerCase()) &&
+        el.Model.toLowerCase().trim().includes(Model?.trim().toLowerCase())
+    );
+
+    let Year = Object.keys(_.groupBy(filteredData, "Year"));
+
+    const YearOp = [];
+
+    Year.forEach((el, i) => {
+      YearOp.push({
+        key: i,
+        value: el,
+        label: el,
+      });
+    });
+
+    setyear(YearOp);
+  };
+
+  const handelFilter = () => {
+    axios
+      .post(
+        "https://www.primocarthageauto.ca/api/statistic/res/" +
+          String(moment().format("YYYY-MM"))
+      )
+      .then((response) => {});
+
+    setfilter(true);
+    setfilterUrl(false);
+
+    let updatedData = data;
     if (markfilter) {
-
       updatedData = updatedData?.filter((item) => {
-        const startsWith = item.Make
+        const startsWith = item.Make.toLowerCase().trim().startsWith(
+          markfilter?.trim().toLowerCase()
+        );
 
-          .toLowerCase()
-          .startsWith(markfilter.toLowerCase());
-
-        const includes = item.Make
-          .toLowerCase()
-          .includes(markfilter.toLowerCase());
+        const includes = item.Make.toLowerCase().trim().includes(
+          markfilter?.trim().toLowerCase()
+        );
 
         if (startsWith) {
           return startsWith;
@@ -141,21 +206,17 @@ export default function Listing() {
           return includes;
         } else return null;
       });
-
-
     }
 
     if (modelFilter) {
-
       updatedData = updatedData?.filter((item) => {
-        const startsWith = item.Model
+        const startsWith = item.Model.toLowerCase().trim().startsWith(
+          modelFilter?.trim().toLowerCase()
+        );
 
-          .toLowerCase()
-          .startsWith(modelFilter.toLowerCase());
-
-        const includes = item.Make
-          .toLowerCase()
-          .includes(modelFilter.toLowerCase());
+        const includes = item.Make.toLowerCase().trim().includes(
+          modelFilter?.trim().toLowerCase()
+        );
 
         if (startsWith) {
           return startsWith;
@@ -163,21 +224,17 @@ export default function Listing() {
           return includes;
         } else return null;
       });
-
-
     }
 
     if (yearFilter) {
-
       updatedData = updatedData?.filter((item) => {
-        const startsWith = item.Year
+        const startsWith = item.Year.trim().toLowerCase().startsWith(
+          yearFilter?.trim().toLowerCase()
+        );
 
-          .toLowerCase()
-          .startsWith(yearFilter.toLowerCase());
-
-        const includes = item.Make
-          .toLowerCase()
-          .includes(yearFilter.toLowerCase());
+        const includes = item.Make.trim().toLowerCase().includes(
+          yearFilter?.trim().toLowerCase()
+        );
 
         if (startsWith) {
           return startsWith;
@@ -185,21 +242,17 @@ export default function Listing() {
           return includes;
         } else return null;
       });
-
-
     }
 
     if (transmissionFilter) {
-
       updatedData = updatedData?.filter((item) => {
-        const startsWith = item.Transmission
+        const startsWith = item.Transmission.trim().toLowerCase().startsWith(
+          transmissionFilter?.trim().toLowerCase()
+        );
 
-          .toLowerCase()
-          .startsWith(transmissionFilter.toLowerCase());
-
-        const includes = item.Make
-          .toLowerCase()
-          .includes(transmissionFilter.toLowerCase());
+        const includes = item.Make?.trim().toLowerCase().includes(
+          transmissionFilter?.trim().toLowerCase()
+        );
 
         if (startsWith) {
           return startsWith;
@@ -207,42 +260,32 @@ export default function Listing() {
           return includes;
         } else return null;
       });
-
-
     }
 
     setFilterData([...updatedData]);
-
-
-  }
+  };
 
   const RestFilter = () => {
-    setfilter(false)
-    setfilterUrl(false)
-  }
+    setfilter(false);
+    setfilterUrl(false);
+  };
 
   const paginateArray = (array, perPage, page) =>
-    array.slice((page - 1) * perPage, page * perPage)
-
-
+    array.slice((page - 1) * perPage, page * perPage);
 
   const randerData = () => {
-
     if (filterUrl) {
-
-      let updatedData = data
+      let updatedData = data;
 
       if (markparam) {
-
         updatedData = updatedData?.filter((item) => {
-          const startsWith = item.Make
+          const startsWith = item.Make?.trim().toLowerCase().startsWith(
+            markparam?.trim().toLowerCase()
+          );
 
-            .toLowerCase()
-            .startsWith(markparam.toLowerCase());
-
-          const includes = item.Make
-            .toLowerCase()
-            .includes(markparam.toLowerCase());
+          const includes = item.Make?.trim().toLowerCase().includes(
+            markparam?.trim().toLowerCase()
+          );
 
           if (startsWith) {
             return startsWith;
@@ -250,21 +293,17 @@ export default function Listing() {
             return includes;
           } else return null;
         });
-
-
       }
 
       if (modelparam) {
-
         updatedData = updatedData?.filter((item) => {
-          const startsWith = item.Model
+          const startsWith = item.Model?.trim().toLowerCase().startsWith(
+            modelparam?.trim().toLowerCase()
+          );
 
-            .toLowerCase()
-            .startsWith(modelparam.toLowerCase());
-
-          const includes = item.Make
-            .toLowerCase()
-            .includes(modelparam.toLowerCase());
+          const includes = item.Make?.trim().toLowerCase().includes(
+            modelparam?.trim().toLowerCase()
+          );
 
           if (startsWith) {
             return startsWith;
@@ -272,21 +311,17 @@ export default function Listing() {
             return includes;
           } else return null;
         });
-
-
       }
 
       if (yearparam) {
-
         updatedData = updatedData?.filter((item) => {
-          const startsWith = item.Year
+          const startsWith = item.Year?.trim().toLowerCase().startsWith(
+            yearparam?.trim().toLowerCase()
+          );
 
-            .toLowerCase()
-            .startsWith(yearparam.toLowerCase());
-
-          const includes = item.Make
-            .toLowerCase()
-            .includes(yearparam.toLowerCase());
+          const includes = item.Make?.trim().toLowerCase().includes(
+            yearparam?.trim().toLowerCase()
+          );
 
           if (startsWith) {
             return startsWith;
@@ -294,53 +329,45 @@ export default function Listing() {
             return includes;
           } else return null;
         });
-
-
       }
 
-      return updatedData
-
-
+      return updatedData;
     } else {
-
-      let thedata = []
+      let thedata = [];
 
       if (filter) {
-        thedata = filterdata
+        thedata = filterdata;
       } else {
-        thedata = data
+        thedata = data;
       }
 
-
-      if (sortFilter === '2') {
-        thedata = _.sortBy(thedata, function (o) { return Number(o?.Price ?? 0) }).reverse();
-        return thedata
-      } else if (sortFilter === '1') {
-        thedata = _.sortBy(thedata, function (o) { return Number(o?.Price ?? 0) })
-        return thedata
-
+      if (sortFilter === "2") {
+        thedata = _.sortBy(thedata, function (o) {
+          return Number(o?.Price ?? 0);
+        }).reverse();
+        return thedata;
+      } else if (sortFilter === "1") {
+        thedata = _.sortBy(thedata, function (o) {
+          return Number(o?.Price ?? 0);
+        });
+        return thedata;
       } else {
-        return thedata
+        return thedata;
       }
     }
-
-
-  }
+  };
 
   const handlePagination = (page) => setpage(page + 1);
 
   const handleNext = () => {
     if (paginateArray(randerData(), 10, page + 1)?.length > 0)
-      setpage(page + 1)
-  }
+      setpage(page + 1);
+  };
 
   const handlePrev = () => {
     if (paginateArray(randerData(), 10, page - 1)?.length > 0)
-      setpage(page - 1)
-  }
-
-
-
+      setpage(page - 1);
+  };
 
   const colourStyles = {
     control: (styles) => ({
@@ -354,7 +381,7 @@ export default function Listing() {
     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
       return {
         ...styles,
-        textAlign: 'center',
+        textAlign: "center",
         backgroundColor: !isDisabled
           ? isSelected
             ? "#e4ca73"
@@ -364,7 +391,7 @@ export default function Listing() {
         fontSize: "smal",
         ":active": {
           ...styles[":active"],
-          backgroundColor: "#e4ca73"
+          backgroundColor: "#e4ca73",
         },
       };
     },
@@ -372,18 +399,16 @@ export default function Listing() {
       ...styles,
       color: "#fff",
       fontSize: "smal",
-      textAlign: 'center'
+      textAlign: "center",
     }),
     singleValue: (styles, { data }) => ({
       ...styles,
       color: "#fff",
       fontSize: "smal",
-      textAlign: 'center'
+      textAlign: "center",
     }),
-    input: (styles) => ({ ...styles, color: "#fff", textAlign: 'center' }),
+    input: (styles) => ({ ...styles, color: "#fff", textAlign: "center" }),
   };
-
-
 
   return (
     <div className="inventory">
@@ -408,21 +433,19 @@ export default function Listing() {
             <div id="sidebar" className="col-md-3">
               <div className="sidebar-content">
                 <div className="head-side-bar">
-                  <h4>{t('Search our inventory')} </h4>
+                  <h4>{t("Search our inventory")} </h4>
                 </div>
                 <div className="search-form">
                   <Select
                     className="basic-single select-inv"
                     isClearable={true}
                     classNamePrefix="select"
-                    placeholder={t('Select Mark')}
+                    placeholder={t("Select Mark")}
                     name="color"
                     maxMenuHeight={"200px"}
-                    options={
-                      mark
-                    }
+                    options={mark}
                     onChange={(e) => {
-                      setmarkfilter(e?.value)
+                      onselectMark(e?.value);
                     }}
                     styles={colourStyles}
                   />
@@ -431,14 +454,12 @@ export default function Listing() {
                     className="basic-single select-inv"
                     isClearable={true}
                     classNamePrefix="select"
-                    placeholder={t('Select Model')}
+                    placeholder={t("Select Model")}
                     name="color"
                     maxMenuHeight={"200px"}
-                    options={
-                      model
-                    }
+                    options={model}
                     onChange={(e) => {
-                      setmodelFilter(e?.value)
+                      onselectModel(e?.value);
                     }}
                     styles={colourStyles}
                   />
@@ -446,14 +467,12 @@ export default function Listing() {
                     className="basic-single select-inv"
                     isClearable={true}
                     classNamePrefix="select"
-                    placeholder={t('Select Year')}
+                    placeholder={t("Select Year")}
                     name="color"
                     maxMenuHeight={"200px"}
-                    options={
-                      year
-                    }
+                    options={year}
                     onChange={(e) => {
-                      setyearFilter(e?.value)
+                      setyearFilter(e?.value);
                     }}
                     styles={colourStyles}
                   />
@@ -461,31 +480,35 @@ export default function Listing() {
                     className="basic-single select-inv"
                     isClearable={true}
                     classNamePrefix="select"
-                    placeholder={t('Select Transmissions')}
+                    placeholder={t("Select Transmissions")}
                     name="color"
                     maxMenuHeight={"200px"}
-                    options={
-                      transmission
-                    }
+                    options={transmission}
                     onChange={(e) => {
-                      settransmissionFilter(e?.value)
+                      settransmissionFilter(e?.value);
                     }}
                     styles={colourStyles}
                   />
-                  <div className="advanced-button mb" onClick={() => {
-                    handelFilter()
-                  }}>
-                    <a >
-                      {t('Search Now')}
+                  <div
+                    className="advanced-button mb"
+                    onClick={() => {
+                      handelFilter();
+                    }}
+                  >
+                    <a>
+                      {t("Search Now")}
                       <i className="fa fa-search" />
                     </a>
                   </div>
 
-                  <div className="advanced-button" onClick={() => {
-                    RestFilter()
-                  }}>
-                    <a >
-                      {t('Reset Filter')}
+                  <div
+                    className="advanced-button"
+                    onClick={() => {
+                      RestFilter();
+                    }}
+                  >
+                    <a>
+                      {t("Reset Filter")}
                       <i className="fa fa-search" />
                     </a>
                   </div>
@@ -496,7 +519,10 @@ export default function Listing() {
             <div id="listing-cars" className="col-md-9">
               <div className="pre-featured">
                 <div className="info-text">
-                  <h4> {randerData()?.length} {t('results founded')}  </h4>
+                  <h4>
+                    {" "}
+                    {randerData()?.length} {t("results founded")}{" "}
+                  </h4>
                 </div>
                 <div className="right-content">
                   <div className="input-select">
@@ -504,17 +530,15 @@ export default function Listing() {
                       className="basic-single"
                       isClearable={true}
                       classNamePrefix="select"
-                      placeholder='Sord Cars By'
+                      placeholder="Sord Cars By"
                       name="color"
                       maxMenuHeight={"200px"}
-                      options={
-                        [
-                          { value: '1', label: 'low to high' },
-                          { value: '2', label: 'high to low' },
-                        ]
-                      }
+                      options={[
+                        { value: "1", label: "low to high" },
+                        { value: "2", label: "high to low" },
+                      ]}
                       onChange={(e) => {
-                        setSortFilter(e?.value)
+                        setSortFilter(e?.value);
                       }}
                       styles={colourStyles}
                     />
@@ -528,11 +552,7 @@ export default function Listing() {
                 paginateArray(randerData(), 10, page).map((el) => {
                   return (
                     <div className="featured-item last-featured">
-                      <img
-                        src={el?.images[0]}
-                        className="carPic"
-                        alt=""
-                      />
+                      <img src={el?.images[0]} className="carPic" alt="" />
                       <div className="right-content">
                         <Link to={`/details/${el._id}`}>
                           <h2>{el.name}</h2>
@@ -545,7 +565,7 @@ export default function Listing() {
                               <tbody>
                                 <tr>
                                   <td class="option-primary">Vin:&nbsp;</td>
-                                  <td class="spec">{el?.Vin ?? 'NONE'}</td>
+                                  <td class="spec">{el?.Vin ?? "NONE"}</td>
                                 </tr>
                                 <tr>
                                   <td class="option-primary">Make:&nbsp;</td>
@@ -556,7 +576,9 @@ export default function Listing() {
                                   <td class="spec">{el.Model}</td>
                                 </tr>
                                 <tr>
-                                  <td class="option-primary">Body type:&nbsp;</td>
+                                  <td class="option-primary">
+                                    Body type:&nbsp;
+                                  </td>
                                   <td class="spec">{el.Bodytype}</td>
                                 </tr>
                               </tbody>
@@ -569,7 +591,9 @@ export default function Listing() {
                                   <td class="spec">{el.Engine}</td>
                                 </tr>
                                 <tr>
-                                  <td class="option-primary">Cylinders:&nbsp;</td>
+                                  <td class="option-primary">
+                                    Cylinders:&nbsp;
+                                  </td>
                                   <td class="spec">{el.Cylinder}</td>
                                 </tr>
                                 <tr>
@@ -587,7 +611,9 @@ export default function Listing() {
                               </tbody>
                             </table>
                             <div className="view-details">
-                              <Link to={`/details/${el._id}`}>{t(' View Details')} </Link>
+                              <Link to={`/details/${el._id}`}>
+                                {t(" View Details")}{" "}
+                              </Link>
                             </div>
                           </div>
                         </p>
@@ -600,7 +626,8 @@ export default function Listing() {
                             </li>
                             <li>
                               <i className="icon-road2" />
-                              year {el.Year}</li>
+                              year {el.Year}
+                            </li>
                             <li>
                               <i className="icon-road2" />
                               {el.Mileage}
@@ -610,13 +637,8 @@ export default function Listing() {
                         </div>
                       </div>
                     </div>
-                  )
-                })
-
-
-
-              }
-
+                  );
+                })}
 
               {/* List cars */}
 
@@ -629,9 +651,13 @@ export default function Listing() {
                 </div>
                 <div className="page-numbers">
                   <ul>
-                    {[...Array(Math.ceil(randerData().length / 10) || 1).keys()].map((x) => (
-                      <li className={`${x + 1 === page ? 'active' : ''} `}>
-                        <a to="#" onClick={() => handlePagination(x)} >{x + 1}</a>
+                    {[
+                      ...Array(Math.ceil(randerData().length / 10) || 1).keys(),
+                    ].map((x) => (
+                      <li className={`${x + 1 === page ? "active" : ""} `}>
+                        <a to="#" onClick={() => handlePagination(x)}>
+                          {x + 1}
+                        </a>
                       </li>
                     ))}
                   </ul>

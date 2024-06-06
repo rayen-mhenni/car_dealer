@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -5,6 +6,15 @@ import Select from "react-select";
 import _ from "lodash";
 import { useNavigate } from "react-router";
 import moment from "moment/moment";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+
+import { EffectCoverflow, Pagination } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   const nav = useNavigate();
@@ -29,7 +39,6 @@ export const Home = () => {
   const [transmissionFilter, settransmissionFilter] = useState(null);
   const [sortFilter, setSortFilter] = useState(null);
 
-
   const [transmission, settransmission] = useState([
     {
       label: "Automatique",
@@ -37,7 +46,7 @@ export const Home = () => {
     },
     {
       label: "Manuelle",
-      value: "manuelle",
+      value: "Manuel",
     },
   ]);
 
@@ -93,6 +102,76 @@ export const Home = () => {
     setrefetech(!refetech);
   };
 
+  const onselectMark = (mark) => {
+    setmarkfilter(mark);
+
+    setmodel([]);
+    setyear([]);
+    setyearFilter(null);
+    setmodelFilter(null);
+
+    const filteredData = data.filter((el) =>
+      el.Make.toLowerCase().trim().includes(mark?.trim().toLowerCase())
+    );
+
+    let Model = Object.keys(_.groupBy(filteredData, "Model"));
+    let Year = Object.keys(_.groupBy(filteredData, "Year"));
+
+    const modelOp = [];
+    const YearOp = [];
+
+    Model.forEach((el, i) => {
+      modelOp.push({
+        key: i,
+        value: el,
+        label: el,
+      });
+    });
+
+    Year.forEach((el, i) => {
+      YearOp.push({
+        key: i,
+        value: el,
+        label: el,
+      });
+    });
+
+    setmodel(modelOp);
+    setyear(YearOp);
+  };
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  const onselectModel = (Model) => {
+    setmodelFilter(Model);
+    setyear([]);
+    setyearFilter(null);
+
+    const filteredData = data.filter(
+      (el) =>
+        el.Make.toLowerCase()
+          .trim()
+          .includes(markfilter?.trim().toLowerCase()) &&
+        el.Model.toLowerCase().trim().includes(Model?.trim().toLowerCase())
+    );
+
+    let Year = Object.keys(_.groupBy(filteredData, "Year"));
+
+    const YearOp = [];
+
+    Year.forEach((el, i) => {
+      YearOp.push({
+        key: i,
+        value: el,
+        label: el,
+      });
+    });
+
+    setyear(YearOp);
+  };
+
   const colourStyles = {
     control: (styles) => ({
       ...styles,
@@ -105,7 +184,7 @@ export const Home = () => {
     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
       return {
         ...styles,
-        textAlign:'center',
+        textAlign: "center",
         backgroundColor: !isDisabled
           ? isSelected
             ? "#e4ca73"
@@ -115,7 +194,7 @@ export const Home = () => {
         fontSize: "larger",
         ":active": {
           ...styles[":active"],
-          backgroundColor: "#e4ca73"
+          backgroundColor: "#e4ca73",
         },
       };
     },
@@ -132,16 +211,20 @@ export const Home = () => {
     input: (styles) => ({ ...styles, color: "#fff" }),
   };
 
-  const  handelSreach =()=> {
+  const handelSreach = () => {
     nav(
-      `/listing?markfilter=${markfilter ?? ""}&modelFilter=${modelFilter ?? ""
+      `/listing?markfilter=${markfilter ?? ""}&modelFilter=${
+        modelFilter ?? ""
       }&yearFilter=${yearFilter ?? ""}`
     );
 
-    axios.post("https://www.primocarthageauto.ca/api/statistic/res/"+String(moment().format("YYYY-MM")) ).then((response) => {
-    });
-
-  }
+    axios
+      .post(
+        "https://www.primocarthageauto.ca/api/statistic/res/" +
+          String(moment().format("YYYY-MM"))
+      )
+      .then((response) => {});
+  };
 
   return (
     <div className="home">
@@ -162,7 +245,7 @@ export const Home = () => {
             maxMenuHeight={"100px"}
             options={mark}
             onChange={(e) => {
-              setmarkfilter(e?.value);
+              onselectMark(e?.value);
             }}
             styles={colourStyles}
           />
@@ -176,7 +259,7 @@ export const Home = () => {
             options={model}
             maxMenuHeight={"100px"}
             onChange={(e) => {
-              setmodelFilter(e?.value);
+              onselectModel(e?.value);
             }}
             styles={colourStyles}
           />
@@ -198,7 +281,7 @@ export const Home = () => {
           <button
             className="home-advanced-button"
             onClick={() => {
-              handelSreach()
+              handelSreach();
             }}
           >
             {t("Search Now")}{" "}
@@ -206,10 +289,64 @@ export const Home = () => {
         </div>
       </div>
 
+      <div className="card">
+        <h1 className="titel"> Top rated Cards</h1>
+
+        <div className="search-form2">
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            breakpoints={{
+        
+              500: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
+            }}
+            pagination={false}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            {data.map((el) => (
+              <SwiperSlide>
+                <div>
+                  <img src={el?.images[0]} alt="" />
+                  <div className="marke_swiper"> {el.Make}</div>
+                  <div className="model_swiper">
+                    {" "}
+                    {el.Model} {el.Year}
+                  </div>
+                  <div className="km_swiper">
+                    <i className="icon-road2 iconeMileage" />
+                    {numberWithCommas(el.Mileage)} KM
+                  </div>
+                  <div className="price_swiper">
+                    {" "}
+                    {numberWithCommas(el.Price)} $
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+
       <hr className="home-hr" />
 
       <p>
-        Copyrights 2024 <em>Primo Carthage</em> 
+        Copyrights 2024 <em>Primo Carthage</em>
       </p>
     </div>
   );

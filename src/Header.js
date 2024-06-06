@@ -22,7 +22,7 @@ const Header = (props) => {
           <div className="inner-header container clearfix">
             <div className="logo">
               <Link to="/">
-                <img src="assets/images/logo_3.png" alt="" />
+                <img src="assets/images/logo_4.png" alt="" />
               </Link>
             </div>
             <div className="header-right-toggle pull-right hidden-md hidden-lg">
