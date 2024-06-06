@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
+import { isEmpty } from 'lodash';
 
 export const Home = () => {
   const nav = useNavigate();
@@ -25,6 +26,7 @@ export const Home = () => {
   const [filter, setfilter] = useState(false);
 
   const [data, setData] = useState([]);
+  const [dataTop, setDataTop] = useState([]);
   const [page, setpage] = useState(1);
   const [filterdata, setFilterData] = useState([]);
   const [refetech, setrefetech] = useState(false);
@@ -54,6 +56,7 @@ export const Home = () => {
     axios.get("https://www.primocarthageauto.ca/api/car").then((response) => {
       if (response.data.car) {
         setData(response.data.car);
+        setDataTop(response.data.car.filter((el) => el.top));
 
         let Make = Object.keys(_.groupBy(response.data.car, "Make"));
         let Model = Object.keys(_.groupBy(response.data.car, "Model"));
@@ -289,59 +292,60 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="card">
-        <h1 className="titel"> Top rated Cards</h1>
+      {!isEmpty(dataTop) && (
+        <div className="card">
+          <h1 className="titel"> Top rated Cards</h1>
 
-        <div className="search-form2">
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            breakpoints={{
-        
-              500: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 50,
-              },
-            }}
-            pagination={false}
-            modules={[Pagination]}
-            className="mySwiper"
-          >
-            {data.map((el) => (
-              <SwiperSlide>
-                <div>
-                  <img src={el?.images[0]} alt="" />
-                  <div className="marke_swiper"> {el.Make}</div>
-                  <div className="model_swiper">
-                    {" "}
-                    {el.Model} {el.Year}
+          <div className="search-form2">
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={30}
+              breakpoints={{
+                500: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                640: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 40,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 50,
+                },
+              }}
+              pagination={false}
+              modules={[Pagination]}
+              className="mySwiper"
+            >
+              {dataTop?.map((el) => (
+                <SwiperSlide>
+                  <div>
+                    <img src={el?.images[0]} alt="" />
+                    <div className="marke_swiper"> {el.Make}</div>
+                    <div className="model_swiper">
+                      {" "}
+                      {el.Model} {el.Year}
+                    </div>
+                    <div className="km_swiper">
+                      <i className="icon-road2 iconeMileage" />
+                      {numberWithCommas(el.Mileage)} KM
+                    </div>
+                    <div className="price_swiper">
+                      {" "}
+                      {numberWithCommas(el.Price)} $
+                    </div>
                   </div>
-                  <div className="km_swiper">
-                    <i className="icon-road2 iconeMileage" />
-                    {numberWithCommas(el.Mileage)} KM
-                  </div>
-                  <div className="price_swiper">
-                    {" "}
-                    {numberWithCommas(el.Price)} $
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
-      </div>
+      )}
 
       <hr className="home-hr" />
 
