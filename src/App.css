@@ -188,7 +188,7 @@
   margin-bottom: 30px;
   background-color: rgba(135, 129, 129, 0.264);
 
-  box-shadow: rgba(118, 107, 26, 0.532) 0px 4px 12px;
+  box-shadow: rgba(118, 107, 26, 0.532) 1px 1px 1.5px 1px;
 
   border-radius: 10px;
   display: flex;
@@ -220,13 +220,13 @@
 }
 
 .swiper-slide .km_swiper {
-  padding-top: 15px;
+  padding-top: 5px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
 .swiper-slide .price_swiper {
-  padding-top: 15px;
+  padding-top: 5px;
   padding-bottom: 15px;
   padding-left: 15px;
   padding-right: 15px;

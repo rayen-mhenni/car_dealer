@@ -15,7 +15,7 @@ import "swiper/css/pagination";
 
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
-import { isEmpty } from 'lodash';
+import { isEmpty } from "lodash";
 
 export const Home = () => {
   const nav = useNavigate();
@@ -294,7 +294,7 @@ export const Home = () => {
 
       {!isEmpty(dataTop) && (
         <div className="card">
-          <h1 className="titel"> Top rated Cards</h1>
+          <h1 className="titel"> {t("Top rated Cars")}</h1>
 
           <div className="search-form2">
             <Swiper
@@ -311,11 +311,11 @@ export const Home = () => {
                 },
                 768: {
                   slidesPerView: 3,
-                  spaceBetween: 40,
+                  spaceBetween: 20,
                 },
                 1024: {
-                  slidesPerView: 3,
-                  spaceBetween: 50,
+                  slidesPerView: 4,
+                  spaceBetween: 30,
                 },
               }}
               pagination={false}
@@ -324,7 +324,7 @@ export const Home = () => {
             >
               {dataTop?.map((el) => (
                 <SwiperSlide>
-                  <div>
+                  <div onClick={() => nav(`/details/${el._id}`)}>
                     <img src={el?.images[0]} alt="" />
                     <div className="marke_swiper"> {el.Make}</div>
                     <div className="model_swiper">
